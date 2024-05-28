@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: ""
 ---
 ![me](/assets/me.JPG)

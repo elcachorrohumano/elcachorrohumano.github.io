@@ -92,5 +92,5 @@ Oh yeah
 
 Songwriters: Charlie Wayne / Georgia Ellery / Isaac Wood / Lewis Evans / Luke Mark / May Kershaw / Sergio Maschetzko / Tyler Hyde
 
-This song is introductory to one of my all time favourite albums called Ants From Up There (it is actually the second song on the album but it is the first one with any lyrics). I will talk about this album later in the blog. For now, I hope you go listen the song and lije it very much :).
+This song is introductory to one of my all time favourite albums called Ants From Up There (it is actually the second song on the album but it is the first one with any lyrics). I will talk about this album later in the blog. For now, I hope you go listen the song and like it very much :).
 

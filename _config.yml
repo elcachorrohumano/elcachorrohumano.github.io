@@ -17,7 +17,7 @@ minimal: false             # use a dark header
 
 navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {title: "Blog", file: "blog.md"}
-  - {title: "CV", url: "assets/MyCV_JorgeEstebanRamirezSashida.pdf"}
+  - {title: "CV", link: "assets/MyCV_JorgeEstebanRamirezSashida.pdf"}
   - {title: "Haiku Generator", url: "https://huggingface.co/spaces/SantiVillaRam7/haiku-generator"}
 
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons

@@ -6,11 +6,13 @@ categories:
   - music
   - introduction
 ---
+![Isaac Wood](https://static01.nyt.com/images/2022/02/08/arts/07blackcountry-review1/merlin_201346224_3203bed0-0a63-43f4-aafc-d1a5d9ec0df9-articleLarge.jpg?quality=75&auto=webp&disable=upscale)
+
 ## The name
 
 I named my page Chaos Space Marine after one of my favourite songs by Black Country New Road. I am going to take advantage of this introduction to share the lyrics of the song with you:
 
-And though England is mine
+{% capture txt %}And though England is mine
 I must leave it all behind
 The war is over
 Lift the anchor, set an open course
@@ -48,7 +50,7 @@ I'm coming home
 Billie Eilish style
 A Concorde will fly
 Ignore the whole I've dug again
-Oh yeah
+Oh yeah{% endcapture %}
 
 Songwriters: Charlie Wayne / Georgia Ellery / Isaac Wood / Lewis Evans / Luke Mark / May Kershaw / Sergio Maschetzko / Tyler Hyde
 

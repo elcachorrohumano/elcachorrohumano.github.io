@@ -6,7 +6,7 @@ categories:
   - music
   - introduction
 ---
-![Isaac Wood](https://static01.nyt.com/images/2022/02/08/arts/07blackcountry-review1/merlin_201346224_3203bed0-0a63-43f4-aafc-d1a5d9ec0df9-articleLarge.jpg?quality=75&auto=webp&disable=upscale)
+![BCNR](https://blog.roughtrade.com/content/images/2022/02/BCNR_Recounting_AntsFromUpThere.jpg)
 
 ## The name
 

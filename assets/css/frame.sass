@@ -3,25 +3,24 @@
 
 @import index, font, basic, layout, classes
 
+// Define fallback colors for frame layout
+$frame-bg: #E8E4DC
+$frame-card: #FFFFFF
+$frame-shadow: rgba(0, 0, 0, 0.1)
+
 html
-  background: lighten($dark, 70%)
+  background: $frame-bg
   padding: 0 calc(38% - 22em)
 
 body
-  box-shadow: 0 0 .3em lighten($dark, 65%)
+  box-shadow: 0 0 .3em $frame-shadow
+  background: var(--bg-primary)
 
 body > header, body > footer
-  background: lighten($dark, 5%)
-  color: $light
+  background: var(--bg-elevated)
+  color: var(--text-primary)
+  border-color: var(--border-subtle)
 
 @media (min-width: 32em)
   body > header, body > article, body > footer
     padding: 1.75em calc(22% - 6em)
-
-@media (prefers-color-scheme: dark)
-  html
-    background: darken($dark, 4%)
-  body > header, body > footer
-    background: $dark
-  body, body > header, body > footer
-    box-shadow: 0 0 0 1px lighten($dark, 8%)

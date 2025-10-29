@@ -1,6 +1,6 @@
-title: "Chaos Space Marine"
+title: "Jorge Esteban Ramírez Sashida"
 author: "Jorge Esteban Ramírez Sashida"
-description: "Data Science, ITAM"
+description: "Data Scientist · Music + Machine Learning"
 permalink: /:title/
 lang: "en"
 excerpt_separator: "\n\n\n"
@@ -11,20 +11,23 @@ date_format: "%B %d, %Y"
 show_excerpts: true        # show article excerpts on the home page
 show_frame: true           # adds a gray frame to the site
 show_sidebar: false        # show a sidebar instead of the usual header
-minimal: false             # use a dark header
+minimal: true              # use a dark header
 
 # Menu
 
 navigation:                # accepts {file, title, url, icon, sidebaricon}
+  - {title: "About", file: "about.md"}
+  - {title: "Work", file: "work.md"}
   - {title: "Blog", file: "blog.md"}
-  - {title: "CV", link: "assets/MyCV_JorgeEstebanRamirezSashida.pdf"}
-  - {title: "Haiku Generator", url: "https://huggingface.co/spaces/SantiVillaRam7/haiku-generator"}
+  - {title: "CV", url: "/assets/MyCV_JorgeEstebanRamirezSashida.pdf"}
 
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
-  - {title: Mail, icon: envelope, url: "mailto:esteban.ramirezsashida@gmail.com"}
-  - {title: Github, icon: github, url: "https://github.com/elcachorrohumano"}
-  - {title: Spotify, icon: spotify, url: "https://open.spotify.com/user/esteban.ramirezsashida?si=505757fe32ed4821"}
+  - {title: Spotify, icon: spotify, url: "https://open.spotify.com/user/esteban.ramirezsashida?si=01004f844f314c84"}
+  - {title: Tidal, icon: music, url: "https://tidal.com/@cachorrohumano"}
+  - {title: Last.fm, icon: headphones, url: "https://www.last.fm/user/jestebanrs"}
   - {title: Instagram, icon: instagram, url: "https://www.instagram.com/elcachorrohumano/"}
+  - {title: LinkedIn, icon: linkedin, url: "https://www.linkedin.com/in/jorge-esteban-ramirez-sashida-26a80129a"}
+  - {title: Github, icon: github, url: "https://github.com/elcachorrohumano"}
 
 comments:
 #  disqus_shortname: ""    # see https://disqus.com/

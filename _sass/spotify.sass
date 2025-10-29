@@ -1,0 +1,88 @@
+$dark: #121212 !default
+$light: #ECECEC !default
+$link-color: #1DB954 !default
+
+body
+  background: $dark
+  color: $light
+
+a
+  color: $link-color
+  &:hover
+    opacity: .9
+
+.btn
+  display: inline-block
+  padding: .6em 1em
+  border-radius: 999px
+  background: $link-color
+  color: #000
+  font-weight: 600
+  text-decoration: none
+  &:hover
+    transform: translateY(-1px)
+
+.cards
+  display: grid
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr))
+  gap: 1rem
+
+.card
+  background: #181818
+  border-radius: 14px
+  padding: 1rem
+  box-shadow: 0 8px 24px rgba(0,0,0,.2)
+  transition: transform .15s ease, box-shadow .15s ease
+  &:hover
+    transform: translateY(-2px)
+    box-shadow: 0 12px 28px rgba(0,0,0,.25)
+  header h3
+    margin: 0 0 .25rem 0
+  small
+    opacity: .8
+
+.timeline
+  position: relative
+  margin-left: 1rem
+  &::before
+    content: ""
+    position: absolute
+    left: .4rem
+    top: 0
+    bottom: 0
+    width: 2px
+    background: rgba(255,255,255,.1)
+
+.timeline-item
+  position: relative
+  display: grid
+  grid-template-columns: 2rem 1fr
+  gap: .75rem
+  margin-bottom: 1.25rem
+
+.timeline-marker
+  width: .8rem
+  height: .8rem
+  border-radius: 50%
+  background: $link-color
+  margin: .25rem 0 0 .05rem
+
+.timeline-content
+  background: #181818
+  border-radius: 12px
+  padding: .75rem 1rem
+  header h3
+    margin: 0
+  small
+    opacity: .8
+
+.company-logo
+  max-height: 36px
+  margin: .5rem 0
+  display: block
+
+body > header a.title
+  font-weight: 700
+  color: $light
+
+

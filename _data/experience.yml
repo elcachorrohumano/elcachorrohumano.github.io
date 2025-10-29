@@ -1,0 +1,28 @@
+- company: deep_dive
+  role: Data Scientist Jr.
+  location: Mexico City
+  period: Mar 2025 – present
+  start: 2025-03
+  end: present
+  logo: /files_and_phhotos/deep_dive.png
+  summary: Delivering ML features and analytics products with a focus on music/data apps.
+
+- company: Palenca
+  role: Machine Learning Intern
+  location: Mexico City
+  period: Nov 2024 – Feb 2025
+  start: 2024-11
+  end: 2025-02
+  logo: /files_and_phhotos/palenca_logo.png
+  summary: Prototyped and evaluated ML models; collaborated across product and engineering.
+
+- company: SonsUK
+  role: Data Science Intern
+  location: London
+  period: Mar 2024 – Oct 2024
+  start: 2024-03
+  end: 2024-10
+  logo: /files_and_phhotos/sons_uk_logo.png
+  summary: Supported data analysis, dashboards, and ML experimentation in production contexts.
+
+

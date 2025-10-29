@@ -17,12 +17,12 @@ body > header
   justify-content: center
   gap: 2em
   padding: 1.5em 2em
-  background: $bg-elevated
-  border-bottom: 1px solid $border-subtle
+  background: var(--bg-elevated)
+  border-bottom: 1px solid var(--border-subtle)
   position: sticky
   top: 0
   z-index: 100
-  box-shadow: 0 2px 8px $shadow-sm
+  box-shadow: 0 2px 8px var(--shadow-sm)
 
 body > header .title
   margin-right: auto
@@ -32,8 +32,8 @@ body > footer
   flex-wrap: wrap
   align-items: center
   justify-content: center
-  background: $bg-secondary
-  border-top: 1px solid $border-subtle
+  background: var(--bg-secondary)
+  border-top: 1px solid var(--border-subtle)
   padding: 3em 2em
   margin-top: 4em
   
@@ -45,11 +45,11 @@ body > footer nav a
   display: inline-flex
   align-items: center
   transition: $transition-speed all
-  color: $text-secondary
+  color: var(--text-secondary)
   
 body > footer nav a:hover
   transform: translateY(-2px)
-  color: $accent-primary
+  color: var(--accent-primary)
 
 article header
   margin-bottom: 2em
@@ -58,7 +58,7 @@ article header
 article header h1
   font-size: 2.2em
   margin: 0 0 .5em
-  color: $accent-primary
+  color: var(--accent-primary)
 
 nav
   display: flex
@@ -69,19 +69,19 @@ nav a
   font-weight: 500
   transition: $transition-speed all
   position: relative
-  color: $text-secondary
+  color: var(--text-secondary)
   letter-spacing: 0.01em
   
 nav a:hover
-  color: $accent-primary
+  color: var(--accent-primary)
   
 nav a.selected
-  color: $accent-primary
+  color: var(--accent-primary)
   font-weight: 600
 
 .theme-toggle
   background: transparent
-  border: 1.5px solid $border-subtle
+  border: 1.5px solid var(--border-subtle)
   border-radius: 8px
   padding: 0.5em
   cursor: pointer
@@ -89,13 +89,13 @@ nav a.selected
   align-items: center
   justify-content: center
   transition: $transition-speed all
-  color: $text-secondary
+  color: var(--text-secondary)
   margin-left: 1em
   
 .theme-toggle:hover
-  background: $bg-secondary
-  border-color: $accent-primary
-  color: $accent-primary
+  background: var(--bg-secondary)
+  border-color: var(--accent-primary)
+  color: var(--accent-primary)
   transform: rotate(90deg)
 
 .theme-toggle svg

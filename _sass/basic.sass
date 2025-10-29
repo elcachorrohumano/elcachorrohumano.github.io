@@ -2,8 +2,8 @@ html
   scroll-behavior: smooth
 
 body
-  background: $dark
-  color: $light
+  background: var(--bg-primary)
+  color: var(--text-primary)
   font-family: $font-family
   font-weight: $font-weight
   font-size: $font-size
@@ -18,7 +18,7 @@ body
 h1, h2, h3, h4, h5, h6
   font-weight: $heading-weight
   letter-spacing: -0.02em
-  color: $text-primary
+  color: var(--text-primary)
 
 h1
   font-size: 2.5em
@@ -27,54 +27,54 @@ h1
 h2
   font-size: 2em
   margin: 1em 0 0.5em
-  color: $accent-primary
+  color: var(--accent-primary)
 
 h3
   font-size: 1.5em
   margin: 1.5em 0 0.75em
-  color: $text-primary
+  color: var(--text-primary)
 
 b, strong, th
   font-weight: 600
-  color: $text-primary
+  color: var(--text-primary)
 
 p
   text-align: left
-  color: $text-secondary
+  color: var(--text-secondary)
   margin: 1em 0
 
 a
-  color: $link-color
+  color: var(--accent-primary)
   text-decoration: none
   transition: $transition-speed color
   font-weight: 500
   &:hover
-    color: $accent-secondary
+    color: var(--accent-secondary)
     text-decoration: none
 
 header a, footer a, aside a
   color: inherit
 
 header time
-  color: $text-tertiary
+  color: var(--text-tertiary)
 
 hr
   border: none
-  border-top: 1px solid $border-subtle
+  border-top: 1px solid var(--border-subtle)
   margin: 3em 0
 
 article:not(:last-of-type)
-  border-bottom: 1px solid $border-subtle
+  border-bottom: 1px solid var(--border-subtle)
   padding-bottom: 3em
   margin-bottom: 3em
 
 blockquote
-  background: $bg-secondary
-  border-left: 3px solid $accent-primary
+  background: var(--bg-secondary)
+  border-left: 3px solid var(--accent-primary)
   padding: 0.5em 1.5em
   border-radius: 6px
   margin: 2em 0
-  color: $text-secondary
+  color: var(--text-secondary)
 
 blockquote, figure
   margin: 1.5em 0
@@ -84,7 +84,7 @@ img
 
 li
   margin: .4em 0
-  color: $text-secondary
+  color: var(--text-secondary)
 
 img
   border-radius: 8px
@@ -97,41 +97,41 @@ table
   overflow-y: scroll
   border-spacing: 0
   border-radius: 10px
-  background: $bg-elevated
+  background: var(--bg-elevated)
   overflow: hidden
-  border: 1px solid $border-subtle
+  border: 1px solid var(--border-subtle)
 
 th, td
   padding: 0.9em 1.3em
-  border: 1px solid $border-subtle
+  border: 1px solid var(--border-subtle)
   text-align: left
 
 th
-  background: $bg-secondary
-  color: $accent-primary
+  background: var(--bg-secondary)
+  color: var(--accent-primary)
   font-weight: 600
 
 tr:hover td
-  background: $bg-secondary
+  background: var(--bg-secondary)
 
 tr:nth-child(even) td
   background: rgba(0, 0, 0, 0.02)
 
 pre
-  background: $bg-secondary
+  background: var(--bg-secondary)
   border-radius: 10px
   font-size: 0.9em
   margin: 1.5em 0
   padding: 1.2em 1.5em
   overflow-x: auto
-  border: 1px solid $border-subtle
+  border: 1px solid var(--border-subtle)
 
 \:not(pre) > code
   font-size: 0.88em
-  background: $bg-secondary
-  color: $accent-primary
+  background: var(--bg-secondary)
+  color: var(--accent-primary)
   border-radius: 4px
   margin: 0 0.1em
   padding: 0.25em 0.5em
   font-weight: 500
-  border: 1px solid $border-subtle
+  border: 1px solid var(--border-subtle)

@@ -84,20 +84,36 @@ $transition-speed: 0.35s
   --shadow-sm: rgba(51, 45, 38, 0.08)
   --shadow-md: rgba(51, 45, 38, 0.12)
 
-// SASS variables using CSS custom properties
-$dark: var(--bg-primary)
-$light: var(--text-primary)
-$bg-secondary: var(--bg-secondary)
-$bg-elevated: var(--bg-elevated)
-$text-primary: var(--text-primary)
-$text-secondary: var(--text-secondary)
-$text-tertiary: var(--text-tertiary)
-$accent-primary: var(--accent-primary)
-$accent-secondary: var(--accent-secondary)
-$accent-tertiary: var(--accent-tertiary)
-$border-subtle: var(--border-subtle)
-$shadow-sm: var(--shadow-sm)
-$shadow-md: var(--shadow-md)
+// SASS fallback variables (for use in Sass functions/operations)
+// Default theme values as Sass variables
+$dark-fallback: #F5F0E8
+$light-fallback: #2C2416
+$bg-secondary-fallback: #EDE8DF
+$bg-elevated-fallback: #FFFFFF
+$text-primary-fallback: #2C2416
+$text-secondary-fallback: #5A5246
+$text-tertiary-fallback: #8B8175
+$accent-primary-fallback: #C85A3E
+$accent-secondary-fallback: #6B8E7F
+$accent-tertiary-fallback: #D4A574
+$border-subtle-fallback: rgba(44, 36, 22, 0.1)
+$shadow-sm-fallback: rgba(44, 36, 22, 0.08)
+$shadow-md-fallback: rgba(44, 36, 22, 0.12)
+
+// Main variables - use CSS custom properties where possible, fallback for Sass operations
+$dark: $dark-fallback
+$light: $light-fallback
+$bg-secondary: $bg-secondary-fallback
+$bg-elevated: $bg-elevated-fallback
+$text-primary: $text-primary-fallback
+$text-secondary: $text-secondary-fallback
+$text-tertiary: $text-tertiary-fallback
+$accent-primary: $accent-primary-fallback
+$accent-secondary: $accent-secondary-fallback
+$accent-tertiary: $accent-tertiary-fallback
+$border-subtle: $border-subtle-fallback
+$shadow-sm: $shadow-sm-fallback
+$shadow-md: $shadow-md-fallback
 
 // Compatibility aliases
 $link-color: $accent-primary
@@ -109,4 +125,4 @@ $light-text: $text-primary
 $mid-gray: $text-tertiary
 
 @function reduce ($percent)
-  @return var(--border-subtle)
+  @return $border-subtle

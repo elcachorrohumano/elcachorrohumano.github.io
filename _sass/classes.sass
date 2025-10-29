@@ -1,12 +1,12 @@
 .title
   font-size: 1.4em
   font-weight: 600
-  color: $accent-primary
+  color: var(--accent-primary)
   transition: $transition-speed all
   letter-spacing: -0.01em
   
 .title:hover
-  color: $accent-secondary
+  color: var(--accent-secondary)
 
 // Modern Button Styles
 .more
@@ -14,49 +14,49 @@
 
 .more a
   border-radius: 10px
-  border: 1.5px solid $accent-primary
+  border: 1.5px solid var(--accent-primary)
   padding: 0.7em 1.5em
   transition: $transition-speed all
   font-weight: 500
-  color: $accent-primary
+  color: var(--accent-primary)
   background: transparent
 
 .more a:hover
-  background: $accent-primary
-  color: $bg-elevated
+  background: var(--accent-primary)
+  color: var(--bg-elevated)
   text-decoration: none
   transform: translateY(-2px)
-  box-shadow: 0 4px 12px $shadow-md
+  box-shadow: 0 4px 12px var(--shadow-md)
 
 // CTA Button Styles
 .cta-button
   display: inline-block
-  background: $accent-primary
-  color: $bg-elevated
+  background: var(--accent-primary)
+  color: var(--bg-elevated)
   padding: 0.9em 2.2em
   border-radius: 12px
   font-weight: 500
   margin: 0.5em 0.8em 0.5em 0
   transition: $transition-speed all
   text-decoration: none
-  border: 1.5px solid $accent-primary
+  border: 1.5px solid var(--accent-primary)
 
 .cta-button:hover
   background: transparent
-  color: $accent-primary
+  color: var(--accent-primary)
   transform: translateY(-2px)
-  box-shadow: 0 6px 16px $shadow-md
+  box-shadow: 0 6px 16px var(--shadow-md)
   text-decoration: none
 
 .cta-button.secondary
-  background: $accent-secondary
-  border-color: $accent-secondary
-  color: $bg-elevated
+  background: var(--accent-secondary)
+  border-color: var(--accent-secondary)
+  color: var(--bg-elevated)
   
 .cta-button.secondary:hover
   background: transparent
-  color: $accent-secondary
-  box-shadow: 0 6px 16px $shadow-md
+  color: var(--accent-secondary)
+  box-shadow: 0 6px 16px var(--shadow-md)
 
 .archive
   font-size: 1.1em
@@ -80,7 +80,7 @@ footer .icon
   width: 1.5em
 
 a:hover .icon
-  color: $teal
+  color: var(--accent-secondary)
   transform: scale(1.15)
 
 .full table
@@ -111,26 +111,26 @@ a:hover .icon
   margin: 2.5em 0
 
 .project-card
-  background: $bg-elevated
+  background: var(--bg-elevated)
   border-radius: 14px
   padding: 2em
   transition: $transition-speed all
-  border: 1px solid $border-subtle
-  box-shadow: 0 2px 8px $shadow-sm
+  border: 1px solid var(--border-subtle)
+  box-shadow: 0 2px 8px var(--shadow-sm)
 
 .project-card:hover
   transform: translateY(-4px)
-  box-shadow: 0 8px 24px $shadow-md
-  border-color: $accent-primary
+  box-shadow: 0 8px 24px var(--shadow-md)
+  border-color: var(--accent-primary)
 
 .project-card h3
-  color: $accent-primary
+  color: var(--accent-primary)
   margin-top: 0
   font-size: 1.4em
   font-weight: 600
 
 .project-card .date
-  color: $text-tertiary
+  color: var(--text-tertiary)
   font-size: 0.9em
   margin-bottom: 0.8em
 
@@ -141,23 +141,23 @@ a:hover .icon
   margin: 1.2em 0
 
 .tech-tag
-  background: $bg-secondary
-  color: $accent-secondary
+  background: var(--bg-secondary)
+  color: var(--accent-secondary)
   padding: 0.4em 0.9em
   border-radius: 8px
   font-size: 0.85em
   font-weight: 500
-  border: 1px solid $border-subtle
+  border: 1px solid var(--border-subtle)
 
 .project-link
   display: inline-block
-  color: $accent-primary
+  color: var(--accent-primary)
   margin-top: 1em
   font-weight: 500
   transition: $transition-speed color
 
 .project-link:hover
-  color: $accent-secondary
+  color: var(--accent-secondary)
 
 // Timeline Styles
 .timeline
@@ -171,7 +171,7 @@ a:hover .icon
   top: 0
   bottom: 0
   width: 2px
-  background: $border-subtle
+  background: var(--border-subtle)
   transform: translateX(-50%)
 
 .timeline-item
@@ -189,19 +189,19 @@ a:hover .icon
   padding-left: 3em
 
 .timeline-content
-  background: $bg-elevated
+  background: var(--bg-elevated)
   padding: 2em
   border-radius: 14px
   width: 45%
   position: relative
-  border: 1px solid $border-subtle
+  border: 1px solid var(--border-subtle)
   transition: $transition-speed all
-  box-shadow: 0 2px 8px $shadow-sm
+  box-shadow: 0 2px 8px var(--shadow-sm)
 
 .timeline-content:hover
   transform: translateY(-3px)
-  box-shadow: 0 8px 24px $shadow-md
-  border-color: $accent-primary
+  box-shadow: 0 8px 24px var(--shadow-md)
+  border-color: var(--accent-primary)
 
 .timeline-marker
   position: absolute
@@ -209,25 +209,25 @@ a:hover .icon
   width: 16px
   height: 16px
   border-radius: 50%
-  background: $accent-primary
-  border: 3px solid $bg-primary
+  background: var(--accent-primary)
+  border: 3px solid var(--bg-primary)
   transform: translateX(-50%)
   z-index: 1
-  box-shadow: 0 2px 8px $shadow-sm
+  box-shadow: 0 2px 8px var(--shadow-sm)
 
 .timeline-content h3
-  color: $accent-primary
+  color: var(--accent-primary)
   margin-top: 0
   font-weight: 600
 
 .timeline-content .position
-  color: $accent-secondary
+  color: var(--accent-secondary)
   font-size: 1.1em
   margin-bottom: 0.5em
   font-weight: 500
 
 .timeline-content .location
-  color: $text-tertiary
+  color: var(--text-tertiary)
   font-size: 0.9em
   margin-bottom: 1em
 
@@ -243,13 +243,13 @@ a:hover .icon
   margin-top: 1em
 
 .skill-tag
-  background: $bg-secondary
-  color: $accent-secondary
+  background: var(--bg-secondary)
+  color: var(--accent-secondary)
   padding: 0.4em 0.9em
   border-radius: 8px
   font-size: 0.85em
   font-weight: 500
-  border: 1px solid $border-subtle
+  border: 1px solid var(--border-subtle)
 
 // Hero Section
 .hero
@@ -262,26 +262,26 @@ a:hover .icon
   border-radius: 16px
   margin: 0 auto 2em
   display: block
-  border: 2px solid $border-subtle
-  box-shadow: 0 8px 24px $shadow-md
+  border: 2px solid var(--border-subtle)
+  box-shadow: 0 8px 24px var(--shadow-md)
   object-fit: cover
   transition: $transition-speed all
 
 .hero-image:hover
   transform: translateY(-4px)
-  box-shadow: 0 12px 32px $shadow-md
-  border-color: $accent-primary
+  box-shadow: 0 12px 32px var(--shadow-md)
+  border-color: var(--accent-primary)
 
 .hero h1
   font-size: 2.8em
   margin-bottom: 0.3em
-  color: $text-primary
+  color: var(--text-primary)
   font-weight: 600
   letter-spacing: -0.02em
 
 .hero .tagline
   font-size: 1.2em
-  color: $text-tertiary
+  color: var(--text-tertiary)
   margin-bottom: 2.5em
   font-weight: 400
 
@@ -298,12 +298,12 @@ a:hover .icon
 .stat-number
   font-size: 2.3em
   font-weight: 600
-  color: $accent-primary
+  color: var(--accent-primary)
   display: block
   margin-bottom: 0.2em
 
 .stat-label
-  color: $text-tertiary
+  color: var(--text-tertiary)
   font-size: 0.9em
   font-weight: 500
 
@@ -316,7 +316,7 @@ a:hover .icon
 .section-title
   font-size: 2.2em
   margin-bottom: 1.5em
-  color: $accent-primary
+  color: var(--accent-primary)
   text-align: center
   font-weight: 600
 

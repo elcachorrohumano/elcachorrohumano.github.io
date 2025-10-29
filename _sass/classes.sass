@@ -1,19 +1,56 @@
 .title
-  font-size: 1.25em
+  font-size: 1.5em
+  font-weight: 700
+  background: linear-gradient(135deg, $teal, $purple)
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  background-clip: text
+  transition: $transition-speed all
+  
+.title:hover
+  transform: scale(1.05)
 
+// Modern Button Styles
 .more
   margin: 2em 0 1em
 
 .more a
-  border-radius: 2px
-  border: 1.5px solid $link-color
-  padding: .4em .8em
-  transition: .2s background, .2s color
+  border-radius: 8px
+  border: 2px solid $link-color
+  padding: .6em 1.2em
+  transition: $transition-speed background, $transition-speed color, $transition-speed transform
+  font-weight: 600
 
 .more a:hover
-  color: #fff
+  color: $dark
   background: $link-color
   text-decoration: inherit
+  transform: translateY(-2px)
+
+// CTA Button Styles
+.cta-button
+  display: inline-block
+  background: $accent-color
+  color: $dark
+  padding: 0.8em 2em
+  border-radius: 30px
+  font-weight: 700
+  margin: 0.5em 1em 0.5em 0
+  transition: $transition-speed all
+  text-decoration: none
+
+.cta-button:hover
+  background: lighten($accent-color, 10%)
+  transform: translateY(-3px)
+  box-shadow: 0 10px 25px rgba($accent-color, 0.3)
+  text-decoration: none
+
+.cta-button.secondary
+  background: $accent-secondary
+  
+.cta-button.secondary:hover
+  background: lighten($accent-secondary, 10%)
+  box-shadow: 0 10px 25px rgba($accent-secondary, 0.3)
 
 .archive
   font-size: 1.1em
@@ -28,12 +65,17 @@
   height: 1em
   width: 1em
   fill: currentColor
-  transition: .2s color
+  transition: $transition-speed all
   vertical-align: middle
   margin-bottom: .15em
 
+footer .icon
+  height: 1.5em
+  width: 1.5em
+
 a:hover .icon
-  color: reduce(100)
+  color: $teal
+  transform: scale(1.15)
 
 .full table
   display: table
@@ -54,6 +96,226 @@ a:hover .icon
   .gl pre
     margin: 0 1.5em 0 .25em
     opacity: .5
+
+// Project Cards
+.project-grid
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+  gap: 2em
+  margin: 2em 0
+
+.project-card
+  background: $dark-charcoal
+  border-radius: 12px
+  padding: 2em
+  transition: $transition-speed transform, $transition-speed box-shadow
+  border: 1px solid rgba($teal, 0.2)
+
+.project-card:hover
+  transform: translateY(-5px)
+  box-shadow: 0 12px 30px rgba($teal, 0.15)
+
+.project-card h3
+  color: $teal
+  margin-top: 0
+  font-size: 1.5em
+
+.project-card .date
+  color: $mid-gray
+  font-size: 0.9em
+  margin-bottom: 0.5em
+
+.project-card .tech-stack
+  display: flex
+  flex-wrap: wrap
+  gap: 0.5em
+  margin: 1em 0
+
+.tech-tag
+  background: rgba($purple, 0.2)
+  color: $purple
+  padding: 0.3em 0.8em
+  border-radius: 15px
+  font-size: 0.85em
+  font-weight: 600
+
+.project-link
+  display: inline-block
+  color: $teal
+  margin-top: 1em
+  font-weight: 600
+  transition: $transition-speed color
+
+.project-link:hover
+  color: lighten($teal, 20%)
+
+// Timeline Styles
+.timeline
+  position: relative
+  padding: 2em 0
+  
+.timeline:before
+  content: ''
+  position: absolute
+  left: 50%
+  top: 0
+  bottom: 0
+  width: 2px
+  background: $dark-charcoal
+  transform: translateX(-50%)
+
+.timeline-item
+  position: relative
+  margin-bottom: 3em
+  display: flex
+  align-items: center
+  
+.timeline-item:nth-child(odd)
+  flex-direction: row-reverse
+  
+.timeline-item:nth-child(odd) .timeline-content
+  text-align: right
+  padding-right: 0
+  padding-left: 3em
+
+.timeline-content
+  background: $dark-charcoal
+  padding: 2em
+  border-radius: 12px
+  width: 45%
+  position: relative
+  border: 1px solid rgba($coral, 0.2)
+  transition: $transition-speed all
+
+.timeline-content:hover
+  transform: scale(1.02)
+  box-shadow: 0 10px 30px rgba($coral, 0.2)
+
+.timeline-marker
+  position: absolute
+  left: 50%
+  width: 20px
+  height: 20px
+  border-radius: 50%
+  background: $coral
+  border: 4px solid $dark
+  transform: translateX(-50%)
+  z-index: 1
+
+.timeline-content h3
+  color: $coral
+  margin-top: 0
+
+.timeline-content .position
+  color: $teal
+  font-size: 1.1em
+  margin-bottom: 0.5em
+  font-weight: 600
+
+.timeline-content .location
+  color: $mid-gray
+  font-size: 0.9em
+  margin-bottom: 1em
+
+.timeline-content .company-logo
+  max-width: 120px
+  margin-bottom: 1em
+  border-radius: 8px
+
+.skills-list
+  display: flex
+  flex-wrap: wrap
+  gap: 0.5em
+  margin-top: 1em
+
+.skill-tag
+  background: rgba($teal, 0.2)
+  color: $teal
+  padding: 0.3em 0.8em
+  border-radius: 15px
+  font-size: 0.85em
+  font-weight: 600
+
+// Hero Section
+.hero
+  text-align: center
+  padding: 4em 0
+  
+.hero-image
+  width: 200px
+  height: 200px
+  border-radius: 50%
+  margin: 0 auto 2em
+  display: block
+  border: 4px solid $teal
+  box-shadow: 0 10px 40px rgba($teal, 0.3)
+
+.hero h1
+  font-size: 3em
+  margin-bottom: 0.2em
+  background: linear-gradient(135deg, $teal, $purple)
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  background-clip: text
+
+.hero .tagline
+  font-size: 1.3em
+  color: $mid-gray
+  margin-bottom: 2em
+
+.stats
+  display: flex
+  justify-content: center
+  gap: 3em
+  margin: 2em 0
+  flex-wrap: wrap
+
+.stat-item
+  text-align: center
+  
+.stat-number
+  font-size: 2.5em
+  font-weight: 700
+  color: $coral
+  display: block
+
+.stat-label
+  color: $mid-gray
+  font-size: 0.9em
+
+// Section Styles
+.section
+  padding: 3em 0
+  
+.section-title
+  font-size: 2.5em
+  margin-bottom: 1em
+  color: $teal
+  text-align: center
+
+// Responsive Design
+@media (max-width: 768px)
+  .timeline:before
+    left: 30px
+  
+  .timeline-item
+    flex-direction: column !important
+    align-items: flex-start
+    padding-left: 60px
+  
+  .timeline-content
+    width: 100%
+    text-align: left !important
+    padding: 1.5em !important
+  
+  .timeline-marker
+    left: 30px
+  
+  .hero h1
+    font-size: 2em
+  
+  .project-grid
+    grid-template-columns: 1fr
 
 .highlight // https://github.com/richleland/pygments-css/blob/master/monokai.css <http://unlicense.org>
   pre

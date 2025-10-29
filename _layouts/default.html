@@ -6,11 +6,7 @@
 <meta name="author" content="{{ page.author | default: site.author | escape }}">
 <meta name="generator" content="Jekyll v{{ jekyll.version }}">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
-{% if site.show_frame %}
-<link rel="stylesheet" href="{{ "/assets/css/frame.css" | relative_url }}">
-{% else %}
 <link rel="stylesheet" href="{{ "/assets/css/index.css" | relative_url }}">
-{% endif %}
 {% if site.plugins contains "jekyll-feed" %}<link rel="alternate" href="{{ site.feed.path | default: "/feed.xml" | relative_url }}" type="application/atom+xml" title="{{ site.title }}">{% endif %}
 {% if page.mathjax or site.mathjax %}
 <link rel="stylesheet" href="{{ "/assets/katex/katex.min.css" | relative_url }}">
@@ -30,15 +26,17 @@
 <header>
   <a href="{{ "/" | relative_url }}" class="title">{{ site.title | escape }}</a>
   {% include menu.html menu=pages %}
-  {% if site.external %}{% include menu.html menu=site.external %}{% endif %}
 </header>
 
 {{ content }}
 
 {% if site.external %}
 <footer>
-  <div>{{ site.description | default: site.title }}</div>
-  {% include menu.html menu=site.external %}
+  <div style="text-align: center; width: 100%;">
+    <div style="margin-bottom: 1em; font-size: 1.1em; color: #8a8d93;">{{ site.description | default: site.title }}</div>
+    {% include menu.html menu=site.external %}
+    <div style="margin-top: 1em; font-size: 0.9em; color: #8a8d93;">© 2025 Jorge Esteban Ramírez Sashida</div>
+  </div>
 </footer>
 {% endif %}
 

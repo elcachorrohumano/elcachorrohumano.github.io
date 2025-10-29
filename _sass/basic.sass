@@ -13,56 +13,81 @@ body
   -webkit-text-size-adjust: 100%
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
+  transition: background-color 0.4s ease, color 0.4s ease
 
 h1, h2, h3, h4, h5, h6
   font-weight: $heading-weight
+  letter-spacing: -0.02em
+  color: $text-primary
+
+h1
+  font-size: 2.5em
+  margin: 0.5em 0
+
+h2
+  font-size: 2em
+  margin: 1em 0 0.5em
+  color: $accent-primary
+
+h3
+  font-size: 1.5em
+  margin: 1.5em 0 0.75em
+  color: $text-primary
 
 b, strong, th
-  font-weight: $font-weight + 200
+  font-weight: 600
+  color: $text-primary
 
 p
   text-align: left
+  color: $text-secondary
+  margin: 1em 0
 
 a
   color: $link-color
-  text-decoration: inherit
+  text-decoration: none
+  transition: $transition-speed color
+  font-weight: 500
   &:hover
-    text-decoration: underline
+    color: $accent-secondary
+    text-decoration: none
 
 header a, footer a, aside a
   color: inherit
 
 header time
-  color: $mid-gray
+  color: $text-tertiary
 
 hr
   border: none
-  border-top: 2px solid rgba($teal, 0.2)
-  margin: 2em 0
+  border-top: 1px solid $border-subtle
+  margin: 3em 0
 
 article:not(:last-of-type)
-  border-bottom: 1px solid rgba($teal, 0.15)
-  padding-bottom: 2em
-  margin-bottom: 2em
+  border-bottom: 1px solid $border-subtle
+  padding-bottom: 3em
+  margin-bottom: 3em
 
 blockquote
-  background: $dark-charcoal
-  border-left: 4px solid $coral
-  padding: 1px 1.5em
-  border-radius: 4px
-  margin: 1.5em 0
+  background: $bg-secondary
+  border-left: 3px solid $accent-primary
+  padding: 0.5em 1.5em
+  border-radius: 6px
+  margin: 2em 0
+  color: $text-secondary
 
 blockquote, figure
+  margin: 1.5em 0
+
+img
   margin: 1em 0
 
-img
-  margin: .5em 0
-
 li
-  margin: .25em 0
+  margin: .4em 0
+  color: $text-secondary
 
 img
-  border-radius: 2px
+  border-radius: 8px
   max-width: 100%
   height: auto
 
@@ -70,40 +95,43 @@ table
   display: inline-block
   max-width: 100%
   overflow-y: scroll
-  border-spacing: 1px
-  border-radius: 8px
-  background: $dark-charcoal
+  border-spacing: 0
+  border-radius: 10px
+  background: $bg-elevated
   overflow: hidden
+  border: 1px solid $border-subtle
 
 th, td
-  padding: .7em 1.2em
-  border: 1px solid rgba($teal, 0.1)
+  padding: 0.9em 1.3em
+  border: 1px solid $border-subtle
+  text-align: left
 
 th
-  background: rgba($teal, 0.15)
-  color: $teal
-  font-weight: 700
+  background: $bg-secondary
+  color: $accent-primary
+  font-weight: 600
 
 tr:hover td
-  background: rgba($purple, 0.1)
+  background: $bg-secondary
 
-tr:nth-child(odd) td
-  background: rgba($teal, 0.05)
+tr:nth-child(even) td
+  background: rgba(0, 0, 0, 0.02)
 
 pre
-  background: $dark-charcoal
-  border-radius: 8px
-  font-size: .9em
+  background: $bg-secondary
+  border-radius: 10px
+  font-size: 0.9em
   margin: 1.5em 0
-  padding: 1em 1.5em
+  padding: 1.2em 1.5em
   overflow-x: auto
-  border: 1px solid rgba($purple, 0.2)
+  border: 1px solid $border-subtle
 
 \:not(pre) > code
-  font-size: .9em
-  background: rgba($purple, 0.2)
-  color: $purple
+  font-size: 0.88em
+  background: $bg-secondary
+  color: $accent-primary
   border-radius: 4px
-  margin: 0 .1em
-  padding: .3em .6em
-  font-weight: 600
+  margin: 0 0.1em
+  padding: 0.25em 0.5em
+  font-weight: 500
+  border: 1px solid $border-subtle

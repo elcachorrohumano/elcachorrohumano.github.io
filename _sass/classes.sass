@@ -1,56 +1,62 @@
 .title
-  font-size: 1.5em
-  font-weight: 700
-  background: linear-gradient(135deg, $teal, $purple)
-  -webkit-background-clip: text
-  -webkit-text-fill-color: transparent
-  background-clip: text
+  font-size: 1.4em
+  font-weight: 600
+  color: $accent-primary
   transition: $transition-speed all
+  letter-spacing: -0.01em
   
 .title:hover
-  transform: scale(1.05)
+  color: $accent-secondary
 
 // Modern Button Styles
 .more
   margin: 2em 0 1em
 
 .more a
-  border-radius: 8px
-  border: 2px solid $link-color
-  padding: .6em 1.2em
-  transition: $transition-speed background, $transition-speed color, $transition-speed transform
-  font-weight: 600
+  border-radius: 10px
+  border: 1.5px solid $accent-primary
+  padding: 0.7em 1.5em
+  transition: $transition-speed all
+  font-weight: 500
+  color: $accent-primary
+  background: transparent
 
 .more a:hover
-  color: $dark
-  background: $link-color
-  text-decoration: inherit
+  background: $accent-primary
+  color: $bg-elevated
+  text-decoration: none
   transform: translateY(-2px)
+  box-shadow: 0 4px 12px $shadow-md
 
 // CTA Button Styles
 .cta-button
   display: inline-block
-  background: $accent-color
-  color: $dark
-  padding: 0.8em 2em
-  border-radius: 30px
-  font-weight: 700
-  margin: 0.5em 1em 0.5em 0
+  background: $accent-primary
+  color: $bg-elevated
+  padding: 0.9em 2.2em
+  border-radius: 12px
+  font-weight: 500
+  margin: 0.5em 0.8em 0.5em 0
   transition: $transition-speed all
   text-decoration: none
+  border: 1.5px solid $accent-primary
 
 .cta-button:hover
-  background: lighten($accent-color, 10%)
-  transform: translateY(-3px)
-  box-shadow: 0 10px 25px rgba($accent-color, 0.3)
+  background: transparent
+  color: $accent-primary
+  transform: translateY(-2px)
+  box-shadow: 0 6px 16px $shadow-md
   text-decoration: none
 
 .cta-button.secondary
   background: $accent-secondary
+  border-color: $accent-secondary
+  color: $bg-elevated
   
 .cta-button.secondary:hover
-  background: lighten($accent-secondary, 10%)
-  box-shadow: 0 10px 25px rgba($accent-secondary, 0.3)
+  background: transparent
+  color: $accent-secondary
+  box-shadow: 0 6px 16px $shadow-md
 
 .archive
   font-size: 1.1em
@@ -102,52 +108,56 @@ a:hover .icon
   display: grid
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
   gap: 2em
-  margin: 2em 0
+  margin: 2.5em 0
 
 .project-card
-  background: $dark-charcoal
-  border-radius: 12px
+  background: $bg-elevated
+  border-radius: 14px
   padding: 2em
-  transition: $transition-speed transform, $transition-speed box-shadow
-  border: 1px solid rgba($teal, 0.2)
+  transition: $transition-speed all
+  border: 1px solid $border-subtle
+  box-shadow: 0 2px 8px $shadow-sm
 
 .project-card:hover
-  transform: translateY(-5px)
-  box-shadow: 0 12px 30px rgba($teal, 0.15)
+  transform: translateY(-4px)
+  box-shadow: 0 8px 24px $shadow-md
+  border-color: $accent-primary
 
 .project-card h3
-  color: $teal
+  color: $accent-primary
   margin-top: 0
-  font-size: 1.5em
+  font-size: 1.4em
+  font-weight: 600
 
 .project-card .date
-  color: $mid-gray
+  color: $text-tertiary
   font-size: 0.9em
-  margin-bottom: 0.5em
+  margin-bottom: 0.8em
 
 .project-card .tech-stack
   display: flex
   flex-wrap: wrap
-  gap: 0.5em
-  margin: 1em 0
+  gap: 0.6em
+  margin: 1.2em 0
 
 .tech-tag
-  background: rgba($purple, 0.2)
-  color: $purple
-  padding: 0.3em 0.8em
-  border-radius: 15px
+  background: $bg-secondary
+  color: $accent-secondary
+  padding: 0.4em 0.9em
+  border-radius: 8px
   font-size: 0.85em
-  font-weight: 600
+  font-weight: 500
+  border: 1px solid $border-subtle
 
 .project-link
   display: inline-block
-  color: $teal
+  color: $accent-primary
   margin-top: 1em
-  font-weight: 600
+  font-weight: 500
   transition: $transition-speed color
 
 .project-link:hover
-  color: lighten($teal, 20%)
+  color: $accent-secondary
 
 // Timeline Styles
 .timeline
@@ -161,7 +171,7 @@ a:hover .icon
   top: 0
   bottom: 0
   width: 2px
-  background: $dark-charcoal
+  background: $border-subtle
   transform: translateX(-50%)
 
 .timeline-item
@@ -179,119 +189,136 @@ a:hover .icon
   padding-left: 3em
 
 .timeline-content
-  background: $dark-charcoal
+  background: $bg-elevated
   padding: 2em
-  border-radius: 12px
+  border-radius: 14px
   width: 45%
   position: relative
-  border: 1px solid rgba($coral, 0.2)
+  border: 1px solid $border-subtle
   transition: $transition-speed all
+  box-shadow: 0 2px 8px $shadow-sm
 
 .timeline-content:hover
-  transform: scale(1.02)
-  box-shadow: 0 10px 30px rgba($coral, 0.2)
+  transform: translateY(-3px)
+  box-shadow: 0 8px 24px $shadow-md
+  border-color: $accent-primary
 
 .timeline-marker
   position: absolute
   left: 50%
-  width: 20px
-  height: 20px
+  width: 16px
+  height: 16px
   border-radius: 50%
-  background: $coral
-  border: 4px solid $dark
+  background: $accent-primary
+  border: 3px solid $bg-primary
   transform: translateX(-50%)
   z-index: 1
+  box-shadow: 0 2px 8px $shadow-sm
 
 .timeline-content h3
-  color: $coral
+  color: $accent-primary
   margin-top: 0
-
-.timeline-content .position
-  color: $teal
-  font-size: 1.1em
-  margin-bottom: 0.5em
   font-weight: 600
 
+.timeline-content .position
+  color: $accent-secondary
+  font-size: 1.1em
+  margin-bottom: 0.5em
+  font-weight: 500
+
 .timeline-content .location
-  color: $mid-gray
+  color: $text-tertiary
   font-size: 0.9em
   margin-bottom: 1em
 
 .timeline-content .company-logo
   max-width: 120px
   margin-bottom: 1em
-  border-radius: 8px
+  border-radius: 10px
 
 .skills-list
   display: flex
   flex-wrap: wrap
-  gap: 0.5em
+  gap: 0.6em
   margin-top: 1em
 
 .skill-tag
-  background: rgba($teal, 0.2)
-  color: $teal
-  padding: 0.3em 0.8em
-  border-radius: 15px
+  background: $bg-secondary
+  color: $accent-secondary
+  padding: 0.4em 0.9em
+  border-radius: 8px
   font-size: 0.85em
-  font-weight: 600
+  font-weight: 500
+  border: 1px solid $border-subtle
 
 // Hero Section
 .hero
   text-align: center
-  padding: 4em 0
+  padding: 3em 0 4em
   
 .hero-image
-  width: 200px
-  height: 200px
-  border-radius: 50%
+  width: 240px
+  height: 320px
+  border-radius: 16px
   margin: 0 auto 2em
   display: block
-  border: 4px solid $teal
-  box-shadow: 0 10px 40px rgba($teal, 0.3)
+  border: 2px solid $border-subtle
+  box-shadow: 0 8px 24px $shadow-md
+  object-fit: cover
+  transition: $transition-speed all
+
+.hero-image:hover
+  transform: translateY(-4px)
+  box-shadow: 0 12px 32px $shadow-md
+  border-color: $accent-primary
 
 .hero h1
-  font-size: 3em
-  margin-bottom: 0.2em
-  background: linear-gradient(135deg, $teal, $purple)
-  -webkit-background-clip: text
-  -webkit-text-fill-color: transparent
-  background-clip: text
+  font-size: 2.8em
+  margin-bottom: 0.3em
+  color: $text-primary
+  font-weight: 600
+  letter-spacing: -0.02em
 
 .hero .tagline
-  font-size: 1.3em
-  color: $mid-gray
-  margin-bottom: 2em
+  font-size: 1.2em
+  color: $text-tertiary
+  margin-bottom: 2.5em
+  font-weight: 400
 
 .stats
   display: flex
   justify-content: center
-  gap: 3em
-  margin: 2em 0
+  gap: 3.5em
+  margin: 2.5em 0
   flex-wrap: wrap
 
 .stat-item
   text-align: center
   
 .stat-number
-  font-size: 2.5em
-  font-weight: 700
-  color: $coral
+  font-size: 2.3em
+  font-weight: 600
+  color: $accent-primary
   display: block
+  margin-bottom: 0.2em
 
 .stat-label
-  color: $mid-gray
+  color: $text-tertiary
   font-size: 0.9em
+  font-weight: 500
 
 // Section Styles
 .section
   padding: 3em 0
+  max-width: 750px
+  margin: 0 auto
   
 .section-title
-  font-size: 2.5em
-  margin-bottom: 1em
-  color: $teal
+  font-size: 2.2em
+  margin-bottom: 1.5em
+  color: $accent-primary
   text-align: center
+  font-weight: 600
 
 // Responsive Design
 @media (max-width: 768px)
@@ -313,6 +340,13 @@ a:hover .icon
   
   .hero h1
     font-size: 2em
+    
+  .hero-image
+    width: 200px
+    height: 267px
+  
+  .stats
+    gap: 2em
   
   .project-grid
     grid-template-columns: 1fr

@@ -1,6 +1,6 @@
 title: "Jorge Esteban Ramírez Sashida"
 author: "Jorge Esteban Ramírez Sashida"
-description: "Data Scientist · Music + Machine Learning"
+description: "Data Scientist | Music Enthusiast | Ocean Lover"
 permalink: /:title/
 lang: "en"
 excerpt_separator: "\n\n\n"
@@ -9,25 +9,27 @@ date_format: "%B %d, %Y"
 # Layout
 
 show_excerpts: true        # show article excerpts on the home page
-show_frame: true           # adds a gray frame to the site
+show_frame: false          # adds a gray frame to the site
 show_sidebar: false        # show a sidebar instead of the usual header
-minimal: true              # use a dark header
+minimal: false             # use a dark header
 
 # Menu
 
 navigation:                # accepts {file, title, url, icon, sidebaricon}
-  - {title: "About", file: "about.md"}
-  - {title: "Work", file: "work.md"}
+  - {title: "Home", file: "index.md"}
+  - {title: "Portfolio", file: "portfolio.md"}
+  - {title: "Career", file: "career.md"}
   - {title: "Blog", file: "blog.md"}
-  - {title: "CV", url: "/assets/MyCV_JorgeEstebanRamirezSashida.pdf"}
+  - {title: "CV", url: "/assets/MyCVJorgeEstebanRamirezSashidaFeb2025.pdf"}
 
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
-  - {title: Spotify, icon: spotify, url: "https://open.spotify.com/user/esteban.ramirezsashida?si=01004f844f314c84"}
-  - {title: Tidal, icon: music, url: "https://tidal.com/@cachorrohumano"}
-  - {title: Last.fm, icon: headphones, url: "https://www.last.fm/user/jestebanrs"}
-  - {title: Instagram, icon: instagram, url: "https://www.instagram.com/elcachorrohumano/"}
+  - {title: Email, icon: envelope, url: "mailto:esteban.ramirezsashida@gmail.com"}
   - {title: LinkedIn, icon: linkedin, url: "https://www.linkedin.com/in/jorge-esteban-ramirez-sashida-26a80129a"}
-  - {title: Github, icon: github, url: "https://github.com/elcachorrohumano"}
+  - {title: GitHub, icon: github, url: "https://github.com/elcachorrohumano"}
+  - {title: Spotify, icon: spotify, url: "https://open.spotify.com/user/esteban.ramirezsashida?si=058f89f0db864e2c"}
+  - {title: Tidal, icon: music, url: "https://tidal.com/@cachorrohumano"}
+  - {title: Last.fm, icon: lastfm, url: "https://www.last.fm/user/jestebanrs"}
+  - {title: Instagram, icon: instagram, url: "https://www.instagram.com/elcachorrohumano/"}
 
 comments:
 #  disqus_shortname: ""    # see https://disqus.com/

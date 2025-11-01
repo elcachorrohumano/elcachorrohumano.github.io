@@ -5,3 +5,8 @@
 Gemfile.lock
 _site
 *.gem
+
+
+# Photo Gallery
+# Add your photos to this folder - they will automatically appear on the gallery page
+!photo_gallery/.gitkeep

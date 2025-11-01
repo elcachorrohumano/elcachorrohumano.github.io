@@ -1,17 +1,17 @@
-// Japanese Minimalist Theme Switcher
-// Manages 4 color themes with localStorage persistence
+// Ukiyo-e Theme Switcher (浮世絵)
+// Manages Japanese woodblock print inspired themes with localStorage persistence
 
-const themes = ['sumi-e', 'hokusai', 'zen', 'sunset'];
+const themes = ['hokusai', 'crimson', 'forest', 'sakura'];
 const themeNames = {
-  'sumi-e': 'Sumi-e',
-  'hokusai': 'Hokusai Wave',
-  'zen': 'Modern Zen',
-  'sunset': 'Sunset Tea'
+  'hokusai': 'Hokusai Wave (藍色)',
+  'crimson': 'Crimson Sunset (紅葉)',
+  'forest': 'Forest Temple (森の寺)',
+  'sakura': 'Cherry Blossom (桜)'
 };
 
-// Get current theme from localStorage or default to 'sumi-e'
+// Get current theme from localStorage or default to 'hokusai'
 function getCurrentTheme() {
-  return localStorage.getItem('theme') || 'sumi-e';
+  return localStorage.getItem('theme') || 'hokusai';
 }
 
 // Set theme on document element

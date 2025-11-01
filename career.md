@@ -3,7 +3,11 @@ layout: page
 title: "Career"
 ---
 
-<h2 class="section-title">Professional Experience</h2>
+<div class="ukiyo-section">
+  <div class="section-header">
+    <h2 class="section-title-jp">経歴</h2>
+    <h2 class="section-title-en">Professional Experience</h2>
+  </div>
 
 <div class="timeline">
   
@@ -62,50 +66,75 @@ title: "Career"
 
 </div>
 
-<div class="section" style="margin-top: 4em;">
-  <h2 class="section-title">Technical Skills</h2>
+  <div class="section-header" style="margin-top: 4em;">
+    <h2 class="section-title-jp">技術</h2>
+    <h2 class="section-title-en">Technical Skills</h2>
+  </div>
   
-  <div style="max-width: 800px; margin: 0 auto;">
-    <h3 style="color: #4ECDC4;">Programming Languages</h3>
-    <div class="skills-list">
-      <span class="skill-tag">Python</span>
-      <span class="skill-tag">R</span>
-      <span class="skill-tag">SQL</span>
-      <span class="skill-tag">JavaScript</span>
+  <div style="max-width: 900px; margin: 0 auto;">
+    <div class="skills-category">
+      <h3 class="skills-category-title">
+        <span class="jp-accent">プログラミング</span>
+        <span>Programming Languages</span>
+      </h3>
+      <div class="skills-list">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">R</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">JavaScript</span>
+      </div>
     </div>
 
-    <h3 style="color: #FF6B6B; margin-top: 2em;">Machine Learning & AI</h3>
-    <div class="skills-list">
-      <span class="skill-tag">Scikit-learn</span>
-      <span class="skill-tag">TensorFlow</span>
-      <span class="skill-tag">PyTorch</span>
-      <span class="skill-tag">CatBoost</span>
-      <span class="skill-tag">CNNs</span>
-      <span class="skill-tag">Ensemble Methods</span>
+    <div class="skills-category">
+      <h3 class="skills-category-title">
+        <span class="jp-accent">機械学習</span>
+        <span>Machine Learning & AI</span>
+      </h3>
+      <div class="skills-list">
+        <span class="skill-tag">Scikit-learn</span>
+        <span class="skill-tag">TensorFlow</span>
+        <span class="skill-tag">PyTorch</span>
+        <span class="skill-tag">CatBoost</span>
+        <span class="skill-tag">CNNs</span>
+        <span class="skill-tag">Ensemble Methods</span>
+      </div>
     </div>
 
-    <h3 style="color: #A06CD5; margin-top: 2em;">Data Engineering & Databases</h3>
-    <div class="skills-list">
-      <span class="skill-tag">MongoDB</span>
-      <span class="skill-tag">Neo4j</span>
-      <span class="skill-tag">LanceDB</span>
-      <span class="skill-tag">PostgreSQL</span>
-      <span class="skill-tag">ETL Pipelines</span>
+    <div class="skills-category">
+      <h3 class="skills-category-title">
+        <span class="jp-accent">データベース</span>
+        <span>Data Engineering & Databases</span>
+      </h3>
+      <div class="skills-list">
+        <span class="skill-tag">MongoDB</span>
+        <span class="skill-tag">Neo4j</span>
+        <span class="skill-tag">LanceDB</span>
+        <span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">ETL Pipelines</span>
+      </div>
     </div>
 
-    <h3 style="color: #4ECDC4; margin-top: 2em;">Tools & Platforms</h3>
-    <div class="skills-list">
-      <span class="skill-tag">Git</span>
-      <span class="skill-tag">Docker</span>
-      <span class="skill-tag">Jupyter</span>
-      <span class="skill-tag">Pandas</span>
-      <span class="skill-tag">NumPy</span>
-      <span class="skill-tag">APIs</span>
+    <div class="skills-category">
+      <h3 class="skills-category-title">
+        <span class="jp-accent">道具</span>
+        <span>Tools & Platforms</span>
+      </h3>
+      <div class="skills-list">
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">Jupyter</span>
+        <span class="skill-tag">Pandas</span>
+        <span class="skill-tag">NumPy</span>
+        <span class="skill-tag">APIs</span>
+      </div>
     </div>
   </div>
-</div>
 
-<div style="text-align: center; margin-top: 3em;">
-  <a href="/assets/MyCVJorgeEstebanRamirezSashidaFeb2025.pdf" class="cta-button" download>Download Full CV</a>
+  <div style="text-align: center; margin-top: 3em;">
+    <a href="/assets/MyCVJorgeEstebanRamirezSashidaFeb2025.pdf" class="ukiyo-button primary" download>
+      履歴書
+      <span class="button-en">Download CV</span>
+    </a>
+  </div>
 </div>
 

@@ -1,32 +1,58 @@
 .title
-  font-size: 1.4em
-  font-weight: 600
+  font-size: 1.5em
+  font-weight: 500
   color: var(--accent-primary)
   transition: $transition-speed all
-  letter-spacing: -0.01em
+  letter-spacing: 0.02em
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif
+  position: relative
+  padding-left: 2.5em
+  
+.title::before
+  content: '江'
+  position: absolute
+  left: 0
+  top: 50%
+  transform: translateY(-50%)
+  width: 1.8em
+  height: 1.8em
+  border: 2px solid var(--accent-secondary)
+  border-radius: 50%
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: 0.8em
+  background: var(--bg-elevated)
+  color: var(--accent-secondary)
   
 .title:hover
   color: var(--accent-secondary)
+  
+.title:hover::before
+  border-color: var(--accent-primary)
+  color: var(--accent-primary)
+  transform: translateY(-50%) rotate(15deg)
 
-// Modern Button Styles
+// Ukiyo-e Button Styles  
 .more
   margin: 2em 0 1em
 
 .more a
-  border-radius: 10px
-  border: 1.5px solid var(--accent-primary)
-  padding: 0.7em 1.5em
+  border: 2px solid var(--accent-primary)
+  padding: 0.8em 1.8em
   transition: $transition-speed all
   font-weight: 500
   color: var(--accent-primary)
-  background: transparent
+  background: var(--bg-elevated)
+  box-shadow: 3px 3px 0 var(--border-subtle)
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif
 
 .more a:hover
   background: var(--accent-primary)
   color: var(--bg-elevated)
   text-decoration: none
-  transform: translateY(-2px)
-  box-shadow: 0 4px 12px var(--shadow-md)
+  transform: translate(-2px, -2px)
+  box-shadow: 5px 5px 0 var(--border-subtle)
 
 // CTA Button Styles
 .cta-button
@@ -103,7 +129,7 @@ a:hover .icon
     margin: 0 1.5em 0 .25em
     opacity: .5
 
-// Project Cards
+// Project Cards (Ukiyo-e style)
 .project-grid
   display: grid
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
@@ -112,15 +138,25 @@ a:hover .icon
 
 .project-card
   background: var(--bg-elevated)
-  border-radius: 14px
   padding: 2em
   transition: $transition-speed all
-  border: 1px solid var(--border-subtle)
-  box-shadow: 0 2px 8px var(--shadow-sm)
+  border: 2px solid var(--border-strong)
+  box-shadow: 5px 5px 0 var(--border-subtle)
+  position: relative
 
+.project-card::before
+  content: ''
+  position: absolute
+  top: 8px
+  right: 8px
+  width: 20px
+  height: 20px
+  border: 1px solid var(--accent-tertiary)
+  opacity: 0.3
+  
 .project-card:hover
-  transform: translateY(-4px)
-  box-shadow: 0 8px 24px var(--shadow-md)
+  transform: translate(-3px, -3px)
+  box-shadow: 8px 8px 0 var(--border-subtle)
   border-color: var(--accent-primary)
 
 .project-card h3
@@ -141,13 +177,13 @@ a:hover .icon
   margin: 1.2em 0
 
 .tech-tag
-  background: var(--bg-secondary)
-  color: var(--accent-secondary)
+  background: var(--bg-accent)
+  color: var(--accent-tertiary)
   padding: 0.4em 0.9em
-  border-radius: 8px
   font-size: 0.85em
   font-weight: 500
-  border: 1px solid var(--border-subtle)
+  border: 1px solid var(--border-strong)
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif
 
 .project-link
   display: inline-block
@@ -191,16 +227,15 @@ a:hover .icon
 .timeline-content
   background: var(--bg-elevated)
   padding: 2em
-  border-radius: 14px
   width: 45%
   position: relative
-  border: 1px solid var(--border-subtle)
+  border: 2px solid var(--border-strong)
   transition: $transition-speed all
-  box-shadow: 0 2px 8px var(--shadow-sm)
+  box-shadow: 4px 4px 0 var(--border-subtle)
 
 .timeline-content:hover
-  transform: translateY(-3px)
-  box-shadow: 0 8px 24px var(--shadow-md)
+  transform: translate(-2px, -2px)
+  box-shadow: 6px 6px 0 var(--border-subtle)
   border-color: var(--accent-primary)
 
 .timeline-marker
@@ -234,7 +269,8 @@ a:hover .icon
 .timeline-content .company-logo
   max-width: 120px
   margin-bottom: 1em
-  border-radius: 10px
+  border: 2px solid var(--border-subtle)
+  padding: 0.3em
 
 .skills-list
   display: flex
@@ -243,13 +279,13 @@ a:hover .icon
   margin-top: 1em
 
 .skill-tag
-  background: var(--bg-secondary)
-  color: var(--accent-secondary)
+  background: var(--bg-accent)
+  color: var(--accent-tertiary)
   padding: 0.4em 0.9em
-  border-radius: 8px
   font-size: 0.85em
   font-weight: 500
-  border: 1px solid var(--border-subtle)
+  border: 1px solid var(--border-strong)
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif
 
 // Hero Section
 .hero
@@ -321,6 +357,289 @@ a:hover .icon
   font-weight: 600
 
 // Responsive Design
+// Ukiyo-e Hero Section
+.ukiyo-hero
+  text-align: center
+  padding: 2em 0 4em
+  position: relative
+  background: var(--bg-elevated)
+  border-bottom: 3px solid var(--border-strong)
+  margin-bottom: 3em
+
+.hero-artwork
+  position: relative
+  margin-bottom: 2em
+  
+.wave-pattern
+  width: 100%
+  max-width: 800px
+  height: auto
+  opacity: 0.3
+  margin: 0 auto
+  display: block
+
+.frog-seal
+  position: absolute
+  top: 20px
+  right: 20px
+  width: 60px
+  height: 60px
+  border: 2px solid var(--accent-secondary)
+  border-radius: 50%
+  display: flex
+  align-items: center
+  justify-content: center
+  background: var(--bg-elevated)
+  transform: rotate(-15deg)
+  
+.japanese-text
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif
+  font-size: 1.3em
+  color: var(--accent-secondary)
+  font-weight: 600
+
+.hero-title
+  margin: 1.5em 0 0.5em
+  
+.title-japanese
+  display: block
+  font-size: 1.1em
+  color: var(--text-tertiary)
+  font-weight: 400
+  letter-spacing: 0.1em
+  margin-bottom: 0.3em
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif
+  
+.title-main
+  display: block
+  font-size: 2.5em
+  color: var(--text-primary)
+  font-weight: 500
+  letter-spacing: -0.01em
+
+.hero-subtitle
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif
+  font-size: 1em
+  color: var(--text-tertiary)
+  margin: 0.3em 0
+  letter-spacing: 0.15em
+  
+.hero-subtitle-en
+  font-family: "Georgia", serif
+  font-size: 1.1em
+  color: var(--text-secondary)
+  margin: 0.5em 0 2em
+  font-weight: 400
+
+.hero-divider
+  max-width: 200px
+  margin: 2em auto
+  color: var(--border-strong)
+  opacity: 0.5
+
+.hero-actions
+  display: flex
+  gap: 1.2em
+  justify-content: center
+  flex-wrap: wrap
+  margin-top: 2em
+
+// Ukiyo-e Buttons
+.ukiyo-button
+  display: inline-flex
+  flex-direction: column
+  align-items: center
+  padding: 1em 2em
+  border: 2px solid var(--accent-primary)
+  background: var(--bg-elevated)
+  color: var(--accent-primary)
+  text-decoration: none
+  transition: $transition-speed all
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif
+  font-size: 1.1em
+  font-weight: 500
+  position: relative
+  box-shadow: 4px 4px 0 var(--border-subtle)
+  
+.ukiyo-button:hover
+  transform: translate(-2px, -2px)
+  box-shadow: 6px 6px 0 var(--border-subtle)
+  background: var(--accent-primary)
+  color: var(--bg-elevated)
+  
+.ukiyo-button.primary
+  border-color: var(--accent-primary)
+  color: var(--accent-primary)
+  
+.ukiyo-button.primary:hover
+  background: var(--accent-primary)
+  color: var(--bg-elevated)
+
+.ukiyo-button.secondary
+  border-color: var(--accent-secondary)
+  color: var(--accent-secondary)
+  
+.ukiyo-button.secondary:hover
+  background: var(--accent-secondary)
+  color: var(--bg-elevated)
+
+.ukiyo-button.tertiary
+  border-color: var(--accent-tertiary)
+  color: var(--accent-tertiary)
+  
+.ukiyo-button.tertiary:hover
+  background: var(--accent-tertiary)
+  color: var(--bg-elevated)
+
+.button-en
+  display: block
+  font-size: 0.7em
+  font-family: "Georgia", serif
+  margin-top: 0.3em
+  letter-spacing: 0.05em
+  opacity: 0.8
+
+// Ukiyo-e Section Styles
+.ukiyo-section
+  padding: 3em 2em
+  max-width: 1100px
+  margin: 0 auto
+  
+.section-header
+  text-align: center
+  margin-bottom: 3em
+  border-bottom: 2px solid var(--border-strong)
+  padding-bottom: 1em
+  
+.section-title-jp
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif
+  font-size: 1.3em
+  color: var(--accent-secondary)
+  margin: 0 0 0.3em
+  letter-spacing: 0.2em
+  font-weight: 500
+  
+.section-title-en
+  font-size: 2.5em
+  color: var(--accent-primary)
+  margin: 0
+  font-weight: 500
+  letter-spacing: -0.01em
+
+.content-with-art
+  display: grid
+  grid-template-columns: 1fr 280px
+  gap: 3em
+  align-items: start
+  
+.main-content
+  font-size: 1.05em
+  line-height: 1.9
+  
+.intro-text
+  font-size: 1.1em
+  margin-bottom: 2em
+  color: var(--text-secondary)
+
+.passion-block
+  margin: 2.5em 0
+  padding: 1.5em
+  background: var(--bg-elevated)
+  border-left: 4px solid var(--accent-tertiary)
+  box-shadow: 2px 2px 8px var(--shadow-sm)
+  
+.passion-title
+  display: flex
+  align-items: center
+  gap: 0.8em
+  margin: 0 0 1em
+  color: var(--accent-primary)
+  font-size: 1.4em
+  font-weight: 500
+  
+.jp-accent
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif
+  color: var(--accent-secondary)
+  font-size: 1.1em
+  padding: 0.2em 0.5em
+  background: var(--bg-accent)
+  border-radius: 4px
+
+.art-sidebar
+  position: sticky
+  top: 100px
+  
+.woodblock-frame
+  background: var(--bg-elevated)
+  border: 3px solid var(--border-strong)
+  padding: 1.5em
+  box-shadow: 6px 6px 0 var(--border-subtle)
+  text-align: center
+  
+.frog-illustration
+  width: 100%
+  height: auto
+  margin-bottom: 1em
+  
+.art-caption
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif
+  color: var(--text-tertiary)
+  font-size: 0.95em
+  margin: 0
+
+// Gallery Styles
+.photo-gallery
+  display: grid
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))
+  gap: 2em
+  padding: 2em 0
+  
+.gallery-item
+  position: relative
+  overflow: hidden
+  background: var(--bg-elevated)
+  border: 2px solid var(--border-strong)
+  box-shadow: 4px 4px 0 var(--border-subtle)
+  transition: $transition-speed all
+  aspect-ratio: 4/3
+  
+.gallery-item:hover
+  transform: translate(-2px, -2px)
+  box-shadow: 6px 6px 0 var(--border-subtle)
+  
+.gallery-item img
+  width: 100%
+  height: 100%
+  object-fit: cover
+  display: block
+  transition: $transition-speed transform
+  
+.gallery-item:hover img
+  transform: scale(1.05)
+
+.gallery-empty
+  text-align: center
+  padding: 4em 2em
+  color: var(--text-tertiary)
+  font-style: italic
+
+// Skills Category Styles
+.skills-category
+  margin: 2.5em 0
+  padding: 1.5em
+  background: var(--bg-elevated)
+  border: 2px solid var(--border-strong)
+  box-shadow: 3px 3px 0 var(--border-subtle)
+  
+.skills-category-title
+  display: flex
+  align-items: center
+  gap: 0.8em
+  margin: 0 0 1.2em
+  color: var(--accent-primary)
+  font-size: 1.3em
+  font-weight: 500
+
 @media (max-width: 768px)
   .timeline:before
     left: 30px
@@ -350,6 +669,24 @@ a:hover .icon
   
   .project-grid
     grid-template-columns: 1fr
+    
+  .content-with-art
+    grid-template-columns: 1fr
+    
+  .art-sidebar
+    position: static
+    max-width: 300px
+    margin: 2em auto
+    
+  .title-main
+    font-size: 1.8em
+    
+  .hero-actions
+    flex-direction: column
+    align-items: stretch
+    
+  .ukiyo-button
+    width: 100%
 
 .highlight // https://github.com/richleland/pygments-css/blob/master/monokai.css <http://unlicense.org>
   pre

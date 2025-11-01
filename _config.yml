@@ -19,6 +19,7 @@ navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {title: "Home", file: "index.md"}
   - {title: "Portfolio", file: "portfolio.md"}
   - {title: "Career", file: "career.md"}
+  - {title: "Gallery", file: "gallery.md"}
   - {title: "Blog", file: "blog.md"}
   - {title: "CV", url: "/assets/MyCVJorgeEstebanRamirezSashidaFeb2025.pdf"}
 

@@ -9,6 +9,27 @@ article
   width: 100%
   margin: 0 auto
   padding: 2em 2em
+  position: relative
+  
+article::before
+  content: ''
+  position: absolute
+  top: 0
+  left: 0
+  width: 3px
+  height: 60px
+  background: linear-gradient(to bottom, var(--accent-primary), transparent)
+  opacity: 0.3
+  
+article::after
+  content: ''
+  position: absolute
+  top: 0
+  right: 0
+  width: 3px
+  height: 60px
+  background: linear-gradient(to bottom, var(--accent-secondary), transparent)
+  opacity: 0.3
 
 body > header
   display: flex
@@ -18,25 +39,47 @@ body > header
   gap: 2em
   padding: 1.5em 2em
   background: var(--bg-elevated)
-  border-bottom: 3px solid var(--border-strong)
+  border-bottom: 4px solid var(--border-strong)
   position: sticky
   top: 0
   z-index: 100
   box-shadow: 0 4px 12px var(--shadow-sm)
   position: relative
+  backdrop-filter: blur(10px)
+  background: linear-gradient(to bottom, rgba(255, 253, 251, 0.95), rgba(255, 253, 251, 0.92))
   
 body > header::before
   content: ''
   position: absolute
-  bottom: -3px
+  bottom: -4px
   left: 0
   right: 0
-  height: 3px
+  height: 4px
   background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-secondary) 50%, var(--accent-tertiary) 100%)
+  opacity: 0.5
+
+body > header::after
+  content: ''
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  height: 4px
+  background: repeating-linear-gradient(90deg, var(--accent-primary) 0px, var(--accent-primary) 8px, transparent 8px, transparent 16px)
   opacity: 0.3
 
 body > header .title
   margin-right: auto
+  font-family: $heading-font
+  font-weight: 600
+  font-size: 1.3em
+  color: var(--text-primary)
+  position: relative
+  letter-spacing: 0.05em
+  transition: $transition-speed all
+  
+body > header .title:hover
+  color: var(--accent-primary)
 
 body > footer
   display: flex
@@ -44,19 +87,31 @@ body > footer
   align-items: center
   justify-content: center
   background: var(--bg-secondary)
-  border-top: 3px solid var(--border-strong)
+  border-top: 4px solid var(--border-strong)
   padding: 3em 2em
   margin-top: 4em
   position: relative
+  background: linear-gradient(to top, rgba(235, 230, 223, 0.95), rgba(235, 230, 223, 0.92))
+  backdrop-filter: blur(10px)
   
 body > footer::before
   content: ''
   position: absolute
-  top: -3px
+  top: -4px
   left: 0
   right: 0
-  height: 3px
+  height: 4px
   background: linear-gradient(90deg, var(--accent-tertiary) 0%, var(--accent-primary) 50%, var(--accent-secondary) 100%)
+  opacity: 0.5
+
+body > footer::after
+  content: ''
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  height: 4px
+  background: repeating-linear-gradient(90deg, var(--accent-secondary) 0px, var(--accent-secondary) 8px, transparent 8px, transparent 16px)
   opacity: 0.3
   
 body > footer nav
@@ -76,6 +131,18 @@ body > footer nav a:hover
 article header
   margin-bottom: 2em
   text-align: center
+  position: relative
+  padding: 1.5em 0
+  
+article header::before
+  content: '◆'
+  position: absolute
+  top: 0
+  left: 50%
+  transform: translateX(-50%)
+  color: var(--accent-secondary)
+  opacity: 0.4
+  font-size: 1.2em
 
 article header h1
   font-size: 2.2em

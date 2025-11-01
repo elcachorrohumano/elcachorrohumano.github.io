@@ -18,11 +18,22 @@ body > header
   gap: 2em
   padding: 1.5em 2em
   background: var(--bg-elevated)
-  border-bottom: 1px solid var(--border-subtle)
+  border-bottom: 3px solid var(--border-strong)
   position: sticky
   top: 0
   z-index: 100
-  box-shadow: 0 2px 8px var(--shadow-sm)
+  box-shadow: 0 4px 12px var(--shadow-sm)
+  position: relative
+  
+body > header::before
+  content: ''
+  position: absolute
+  bottom: -3px
+  left: 0
+  right: 0
+  height: 3px
+  background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-secondary) 50%, var(--accent-tertiary) 100%)
+  opacity: 0.3
 
 body > header .title
   margin-right: auto
@@ -33,9 +44,20 @@ body > footer
   align-items: center
   justify-content: center
   background: var(--bg-secondary)
-  border-top: 1px solid var(--border-subtle)
+  border-top: 3px solid var(--border-strong)
   padding: 3em 2em
   margin-top: 4em
+  position: relative
+  
+body > footer::before
+  content: ''
+  position: absolute
+  top: -3px
+  left: 0
+  right: 0
+  height: 3px
+  background: linear-gradient(90deg, var(--accent-tertiary) 0%, var(--accent-primary) 50%, var(--accent-secondary) 100%)
+  opacity: 0.3
   
 body > footer nav
   margin: 1em 0

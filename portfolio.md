@@ -3,7 +3,11 @@ layout: page
 title: "Portfolio"
 ---
 
-<h2 class="section-title">My Projects</h2>
+<div class="ukiyo-section">
+  <div class="section-header">
+    <h2 class="section-title-jp">作品集</h2>
+    <h2 class="section-title-en">Portfolio</h2>
+  </div>
 
 <div class="project-grid">
   
@@ -76,7 +80,9 @@ title: "Portfolio"
 
 </div>
 
-<div style="text-align: center; margin-top: 3em;">
-  <p style="color: #8a8d93;">Want to see more? Check out my <a href="https://github.com/elcachorrohumano" target="_blank" style="color: #4ECDC4; font-weight: 600;">GitHub profile</a> for additional projects and contributions.</p>
+  <div style="text-align: center; margin-top: 3em; padding: 2em; background: var(--bg-elevated); border: 2px solid var(--border-strong); box-shadow: 4px 4px 0 var(--border-subtle);">
+    <p style="color: var(--text-secondary); margin-bottom: 1em;">Want to see more? Check out my GitHub profile for additional projects and contributions.</p>
+    <a href="https://github.com/elcachorrohumano" target="_blank" class="ukiyo-button primary">GitHub<span class="button-en">View More</span></a>
+  </div>
 </div>
 

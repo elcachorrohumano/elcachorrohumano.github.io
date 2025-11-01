@@ -16,16 +16,20 @@ title: "Photo Gallery"
   </div>
 
   <div class="photo-gallery">
-    {% assign gallery_files = site.static_files | where_exp: "file", "file.path contains 'photo_gallery'" %}
-    {% assign image_files = gallery_files | where_exp: "file", "file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.png' or file.extname == '.gif' or file.extname == '.webp' or file.extname == '.JPG' or file.extname == '.JPEG' or file.extname == '.PNG'" %}
+    {% assign gallery_count = 0 %}
+    {% for file in site.static_files %}
+      {% if file.path contains 'photo_gallery' %}
+        {% assign ext = file.extname | downcase %}
+        {% if ext == '.jpg' or ext == '.jpeg' or ext == '.png' or ext == '.gif' or ext == '.webp' %}
+          <div class="gallery-item">
+            <img src="{{ file.path }}" alt="{{ file.name }}" loading="lazy">
+          </div>
+          {% assign gallery_count = gallery_count | plus: 1 %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
     
-    {% if image_files.size > 0 %}
-      {% for image in image_files %}
-        <div class="gallery-item">
-          <img src="{{ image.path }}" alt="{{ image.name }}" loading="lazy">
-        </div>
-      {% endfor %}
-    {% else %}
+    {% if gallery_count == 0 %}
       <div class="gallery-empty">
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width: 150px; height: 150px; margin: 0 auto; opacity: 0.3;">
           <rect x="40" y="60" width="120" height="100" fill="none" stroke="currentColor" stroke-width="2"/>

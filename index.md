@@ -4,11 +4,8 @@ title: ""
 ---
 
 <div class="ukiyo-hero">
-  <div class="hero-artwork">
-    <svg class="wave-pattern" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,200 Q150,150 300,180 T600,200 T900,180 T1200,200 L1200,400 L0,400 Z" fill="#1E3A5F" opacity="0.15"/>
-      <path d="M0,220 Q150,170 300,200 T600,220 T900,200 T1200,220 L1200,400 L0,400 Z" fill="#1E3A5F" opacity="0.1"/>
-    </svg>
+  <div class="hero-banner">
+    <img src="/assets/banner.jpg" alt="Japanese frog banner" class="banner-image">
     <div class="frog-seal">
       <span class="japanese-text">江戸</span>
     </div>
@@ -21,12 +18,6 @@ title: ""
   
   <p class="hero-subtitle">データサイエンティスト · 音楽愛好家 · 海の探検家</p>
   <p class="hero-subtitle-en">Data Scientist | Music Enthusiast | Ocean Lover</p>
-  
-  <div class="hero-divider">
-    <svg viewBox="0 0 100 2" xmlns="http://www.w3.org/2000/svg">
-      <line x1="0" y1="1" x2="100" y2="1" stroke="currentColor" stroke-width="0.5"/>
-    </svg>
-  </div>
   
   <div class="hero-actions">
     <a href="/portfolio/" class="ukiyo-button primary">作品集<span class="button-en">Portfolio</span></a>
@@ -72,17 +63,7 @@ title: ""
     
     <div class="art-sidebar">
       <div class="woodblock-frame">
-        <svg class="frog-illustration" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
-          <!-- Matsumoto Hoji inspired frog -->
-          <ellipse cx="100" cy="140" rx="70" ry="60" fill="#2B5F4F" opacity="0.9"/>
-          <ellipse cx="100" cy="160" rx="60" ry="50" fill="#F9F7F3" opacity="0.95"/>
-          <circle cx="75" cy="120" r="18" fill="white"/>
-          <circle cx="125" cy="120" r="18" fill="white"/>
-          <circle cx="78" cy="118" r="10" fill="#1F1810"/>
-          <circle cx="128" cy="118" r="10" fill="#1F1810"/>
-          <path d="M 85 145 Q 100 150 115 145" stroke="#1F1810" stroke-width="2" fill="none"/>
-          <text x="100" y="30" font-family="serif" font-size="14" fill="#C8503D" text-anchor="middle">蛙</text>
-        </svg>
+        <img src="/assets/frog.jpeg" alt="Traditional Japanese frog painting" class="frog-illustration">
         <p class="art-caption">蛙 (Frog)</p>
       </div>
     </div>

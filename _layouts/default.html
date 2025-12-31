@@ -15,7 +15,6 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="{{ "/assets/css/index.css" | relative_url }}">
-  <script src="{{ "/assets/js/theme-switcher.js" | relative_url }}" defer></script>
   {% if site.plugins contains "jekyll-feed" %}<link rel="alternate" href="{{ site.feed.path | default: "/feed.xml" | relative_url }}" type="application/atom+xml" title="{{ site.title }}">{% endif %}
   {% if page.mathjax or site.mathjax %}
   <link rel="stylesheet" href="{{ "/assets/katex/katex.min.css" | relative_url }}">
@@ -33,7 +32,7 @@
     }
   </style>
 </head>
-<body>
+<body data-theme="forest">
   {% if site.show_sidebar or site.sidebar %}{% include sidebar.html %}{% endif %}
 
   {% if site.navigation %}
@@ -45,12 +44,6 @@
   <header>
     <a href="{{ "/" | relative_url }}" class="title">{{ site.title | escape }}</a>
     {% include menu.html menu=pages %}
-    <button id="theme-toggle" class="theme-toggle" aria-label="Switch theme">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="4"></circle>
-        <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
-      </svg>
-    </button>
   </header>
 
   {{ content }}

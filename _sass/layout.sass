@@ -35,14 +35,14 @@ body > header .title
   font-family: $heading-font
   font-weight: 600
   font-size: 1.125rem
-  color: var(--text-primary)
+  color: var(--accent-indigo)
   letter-spacing: -0.01em
   transition: color $transition-fast
   white-space: nowrap
   position: relative
   
   &:hover
-    color: var(--accent-primary)
+    color: var(--accent-moss)
 
 // ===========================================
 // MAIN NAVIGATION
@@ -132,19 +132,9 @@ article
   margin: 0 auto
   padding: $space-2xl $space-xl $space-3xl
   
-  // Paper panel effect - semi-transparent to show background
+  // Paper panel effect - semi-transparent to show background (Forest theme)
   position: relative
-  background: rgba(248, 245, 237, 0.65)
-  
-  // Theme-specific transparency
-  [data-theme="wave"] &
-    background: rgba(245, 248, 250, 0.65)
-  [data-theme="sakura"] &
-    background: rgba(251, 248, 245, 0.65)
-  [data-theme="forest"] &
-    background: rgba(245, 247, 244, 0.65)
-  [data-theme="night"] &
-    background: rgba(20, 18, 16, 0.80)
+  background: rgba(245, 247, 244, 0.65)
   
   // Subtle paper texture
   &::before

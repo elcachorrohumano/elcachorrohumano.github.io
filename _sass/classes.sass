@@ -1,5 +1,6 @@
 // ===========================================
-// COMPONENT STYLES
+// COMPONENT STYLES - UKIYO-E AESTHETIC
+// コンポーネントスタイル
 // ===========================================
 
 // ===========================================
@@ -28,7 +29,7 @@
   font-family: $font-family
   font-size: 0.9375rem
   font-weight: 500
-  border-radius: 6px
+  border-radius: 4px
   border: 1px solid transparent
   cursor: pointer
   transition: all $transition-fast
@@ -47,6 +48,8 @@
     background: var(--accent-secondary)
     border-color: var(--accent-secondary)
     color: white
+    transform: translateY(-2px)
+    box-shadow: var(--shadow-sm)
 
 .btn-secondary
   background: transparent
@@ -94,54 +97,232 @@
   padding: $space-md $space-xl
   background: var(--bg-elevated)
   border: 1px solid var(--accent-primary)
-  border-radius: 4px
+  border-radius: 3px
   color: var(--accent-primary)
   font-size: 0.9375rem
   font-weight: 500
   text-decoration: none
   transition: all $transition-fast
   box-shadow: var(--shadow-xs)
+  position: relative
+  overflow: hidden
+  
+  // Ink wash effect on hover
+  &::before
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 0
+    height: 0
+    background: var(--accent-primary)
+    border-radius: 50%
+    transform: translate(-50%, -50%)
+    transition: width 0.4s ease, height 0.4s ease
+    z-index: 0
+    opacity: 0
   
   &:hover
-    background: var(--accent-primary)
     color: white
-    transform: translateY(-2px)
-    box-shadow: var(--shadow-sm)
+    transform: translateY(-3px)
+    box-shadow: var(--shadow-md)
+    
+    &::before
+      width: 300%
+      height: 300%
+      opacity: 1
   
   &:focus-visible
     outline: none
     box-shadow: var(--focus-ring)
+  
+  // Text stays above ink effect
+  > *
+    position: relative
+    z-index: 1
 
 .ukiyo-button.primary
   border-color: var(--accent-primary)
   color: var(--accent-primary)
   
-  &:hover
+  &::before
     background: var(--accent-primary)
+  
+  &:hover
     color: white
 
 .ukiyo-button.secondary
   border-color: var(--accent-secondary)
   color: var(--accent-secondary)
   
-  &:hover
+  &::before
     background: var(--accent-secondary)
+  
+  &:hover
     color: white
 
 .ukiyo-button.tertiary
   border-color: var(--accent-tertiary)
   color: var(--accent-tertiary)
   
-  &:hover
+  &::before
     background: var(--accent-tertiary)
+  
+  &:hover
     color: white
 
 .button-en
   display: block
   font-size: 0.75rem
   margin-top: $space-xs
-  opacity: 0.7
+  opacity: 0.8
   font-weight: 400
+  transition: opacity $transition-fast
+
+.ukiyo-button:hover .button-en
+  opacity: 1
+
+// ===========================================
+// HANKO STAMP ACCENTS
+// 判子スタンプ
+// ===========================================
+
+.stamp
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  padding: $space-xs $space-sm
+  background: var(--accent-secondary)
+  color: white
+  font-size: 0.75rem
+  font-weight: 600
+  border-radius: 2px
+  letter-spacing: 0.05em
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.1)
+  transform: rotate(-2deg)
+  
+.stamp-vertical
+  writing-mode: vertical-rl
+  padding: $space-sm $space-xs
+
+// Section stamp decoration
+.section-stamp
+  position: absolute
+  top: 0
+  right: 0
+  background: var(--accent-secondary)
+  color: white
+  padding: $space-sm $space-md
+  font-size: 0.6875rem
+  font-weight: 600
+  letter-spacing: 0.1em
+  text-transform: uppercase
+  transform: rotate(3deg) translate(10%, -50%)
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.15)
+  border-radius: 2px
+
+// ===========================================
+// WAVE DIVIDERS
+// 波の仕切り (Seigaiha-inspired)
+// ===========================================
+
+.wave-divider
+  position: relative
+  height: 40px
+  margin: $space-2xl 0
+  overflow: hidden
+  
+  &::before
+    content: ''
+    position: absolute
+    width: 200%
+    height: 100%
+    left: -50%
+    background: repeating-radial-gradient(circle at 50% 100%, transparent 0, transparent 14px, var(--accent-primary) 14px, var(--accent-primary) 16px, transparent 16px, transparent 30px)
+    background-size: 30px 30px
+    background-position: 0 15px
+    opacity: 0.15
+
+.wave-divider-sm
+  height: 20px
+  margin: $space-lg 0
+  
+  &::before
+    background-size: 20px 20px
+    background-position: 0 10px
+
+// Simple line with wave motif
+.line-wave
+  display: flex
+  align-items: center
+  gap: $space-md
+  margin: $space-xl 0
+  
+  &::before, &::after
+    content: ''
+    flex: 1
+    height: 1px
+    background: linear-gradient(90deg, transparent, var(--border-strong), transparent)
+  
+  span
+    color: var(--accent-primary)
+    font-size: 1.25rem
+    opacity: 0.5
+
+// ===========================================
+// FRAMED CONTENT BLOCKS
+// 枠付きコンテンツ
+// ===========================================
+
+.frame
+  position: relative
+  padding: $space-xl
+  background: var(--bg-elevated)
+  border: 1px solid var(--border-subtle)
+  border-radius: 4px
+  box-shadow: var(--shadow-sm)
+  
+  // Double border effect
+  &::before
+    content: ''
+    position: absolute
+    top: 6px
+    left: 6px
+    right: 6px
+    bottom: 6px
+    border: 1px solid var(--border-light)
+    border-radius: 2px
+    pointer-events: none
+
+.frame-accent
+  border-color: var(--accent-primary)
+  
+  &::before
+    border-color: rgba(27, 58, 75, 0.1)
+
+// Hanging scroll style frame
+.frame-scroll
+  padding: $space-2xl $space-xl
+  background: linear-gradient(to bottom, var(--bg-elevated) 0%, var(--bg-paper) 50%, var(--bg-elevated) 100%)
+  border-radius: 6px
+  box-shadow: var(--shadow-md), inset 0 0 30px rgba(0,0,0,0.02)
+  position: relative
+  
+  // Top and bottom scroll rods
+  &::before, &::after
+    content: ''
+    position: absolute
+    left: $space-lg
+    right: $space-lg
+    height: 4px
+    background: linear-gradient(to bottom, var(--border-strong), var(--text-muted), var(--border-strong))
+    border-radius: 2px
+  
+  &::before
+    top: $space-sm
+    
+  &::after
+    bottom: $space-sm
 
 // ===========================================
 // HERO SECTION
@@ -149,7 +330,7 @@
 
 .ukiyo-hero
   text-align: center
-  padding: $space-xl 0 $space-2xl
+  padding: $space-2xl 0 $space-3xl
   background: var(--bg-elevated)
   border-bottom: 1px solid var(--border-subtle)
   margin-bottom: $space-xl
@@ -168,48 +349,67 @@
   background-size: 600px auto
   background-position: center
   background-repeat: repeat
-  opacity: 0.04
+  opacity: 0.06
+  pointer-events: none
+
+// Hero gradient overlay
+.ukiyo-hero::after
+  content: ''
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: radial-gradient(ellipse at center top, transparent 0%, var(--bg-elevated) 70%)
   pointer-events: none
 
 .hero-title
-  margin: 0 0 $space-md
+  margin: 0 0 $space-lg
   position: relative
+  z-index: 1
 
 .title-japanese
   display: block
-  font-size: 1rem
+  font-family: $display-font
+  font-size: 1.125rem
   color: var(--text-tertiary)
   font-weight: 400
-  letter-spacing: 0.1em
-  margin-bottom: $space-xs
+  letter-spacing: 0.15em
+  margin-bottom: $space-sm
 
 .title-main
   display: block
-  font-size: clamp(1.75rem, 5vw, 2.5rem)
+  font-size: clamp(1.875rem, 5vw, 2.75rem)
   color: var(--text-primary)
   font-weight: 600
   letter-spacing: -0.02em
   line-height: 1.2
 
 .hero-subtitle
-  font-size: 0.9rem
+  font-family: $display-font
+  font-size: 0.9375rem
   color: var(--text-tertiary)
   margin: $space-xs 0
-  letter-spacing: 0.05em
+  letter-spacing: 0.08em
+  position: relative
+  z-index: 1
 
 .hero-subtitle-en
   font-size: 1rem
   color: var(--text-secondary)
   margin: $space-sm 0 $space-lg
   font-weight: 400
+  position: relative
+  z-index: 1
 
 .hero-actions
   display: flex
-  gap: $space-md
+  gap: $space-lg
   justify-content: center
   flex-wrap: wrap
-  margin-top: $space-xl
+  margin-top: $space-2xl
   position: relative
+  z-index: 1
 
 // ===========================================
 // SECTIONS
@@ -221,17 +421,32 @@
 
 .section-header
   text-align: center
-  margin-bottom: $space-xl
-  padding-bottom: $space-md
+  margin-bottom: $space-2xl
+  padding-bottom: $space-lg
   border-bottom: 1px solid var(--border-subtle)
+  position: relative
+
+// Decorative wave under section header
+.section-header::after
+  content: '〰〰〰'
+  position: absolute
+  bottom: -1px
+  left: 50%
+  transform: translateX(-50%)
+  background: var(--bg-paper)
+  padding: 0 $space-lg
+  color: var(--accent-primary)
+  font-size: 0.875rem
+  letter-spacing: -0.2em
+  opacity: 0.4
 
 .section-title-jp
-  font-size: 0.875rem
+  font-family: $display-font
+  font-size: 0.9375rem
   color: var(--accent-secondary)
-  margin: 0 0 $space-xs
-  letter-spacing: 0.15em
+  margin: 0 0 $space-sm
+  letter-spacing: 0.2em
   font-weight: 400
-  text-transform: uppercase
 
 .section-title-en
   font-size: clamp(1.5rem, 4vw, 2rem)
@@ -250,13 +465,13 @@
 
 .main-content
   font-size: 1rem
-  line-height: 1.75
+  line-height: 1.8
 
 .intro-text
   font-size: 1.0625rem
-  margin-bottom: $space-lg
+  margin-bottom: $space-xl
   color: var(--text-secondary)
-  line-height: 1.8
+  line-height: 1.85
 
 // ===========================================
 // PASSION BLOCKS
@@ -264,16 +479,18 @@
 
 .passion-block
   margin: $space-xl 0
-  padding: $space-lg
+  padding: $space-xl $space-xl $space-xl $space-2xl
   background: var(--bg-elevated)
   border-left: 3px solid var(--accent-tertiary)
-  border-radius: 0 8px 8px 0
-  box-shadow: var(--shadow-xs)
-  transition: transform $transition-fast, box-shadow $transition-fast
+  border-radius: 0 6px 6px 0
+  box-shadow: var(--shadow-sm)
+  transition: transform $transition-fast, box-shadow $transition-fast, border-color $transition-fast
+  position: relative
   
   &:hover
-    transform: translateX(4px)
-    box-shadow: var(--shadow-sm)
+    transform: translateX(6px)
+    box-shadow: var(--shadow-md)
+    border-color: var(--accent-primary)
 
 @media (prefers-reduced-motion: reduce)
   .passion-block:hover
@@ -282,19 +499,22 @@
 .passion-title
   display: flex
   align-items: center
-  gap: $space-sm
+  gap: $space-md
   margin: 0 0 $space-md
   color: var(--accent-primary)
   font-size: 1.25rem
   font-weight: 600
 
 .jp-accent
+  font-family: $display-font
   font-size: 0.875rem
   color: var(--accent-secondary)
   padding: $space-xs $space-sm
   background: var(--bg-accent)
-  border-radius: 4px
+  border-radius: 3px
   font-weight: 500
+  letter-spacing: 0.05em
+  border: 1px solid var(--border-light)
 
 // ===========================================
 // PROJECT CARDS
@@ -303,20 +523,37 @@
 .project-grid
   display: grid
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
-  gap: $space-lg
+  gap: $space-xl
 
 .project-card
   background: var(--bg-elevated)
-  padding: $space-lg
-  border-radius: 8px
+  padding: $space-xl
+  border-radius: 6px
   border: 1px solid var(--border-subtle)
-  box-shadow: var(--shadow-xs)
+  box-shadow: var(--shadow-sm)
   transition: all $transition-fast
+  position: relative
+  
+  // Corner accent
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    width: 40px
+    height: 40px
+    background: linear-gradient(135deg, transparent 50%, var(--accent-primary) 50%)
+    opacity: 0.1
+    border-radius: 0 6px 0 0
+    transition: opacity $transition-fast
   
   &:hover
     border-color: var(--accent-primary)
-    box-shadow: var(--shadow-md)
-    transform: translateY(-4px)
+    box-shadow: var(--shadow-lg)
+    transform: translateY(-6px)
+    
+    &::before
+      opacity: 0.2
 
 @media (prefers-reduced-motion: reduce)
   .project-card:hover
@@ -331,19 +568,27 @@
 .project-card .date
   color: var(--text-tertiary)
   font-size: 0.8125rem
-  margin-bottom: $space-sm
+  margin-bottom: $space-md
   font-weight: 500
+  display: inline-flex
+  align-items: center
+  gap: $space-xs
+  
+  &::before
+    content: '◆'
+    font-size: 0.5rem
+    color: var(--accent-secondary)
 
 .project-card p
   color: var(--text-secondary)
   font-size: 0.9375rem
-  line-height: 1.6
+  line-height: 1.7
 
 .project-card .tech-stack
   display: flex
   flex-wrap: wrap
   gap: $space-sm
-  margin: $space-md 0
+  margin: $space-lg 0
 
 .tech-tag
   background: var(--bg-accent)
@@ -351,8 +596,13 @@
   padding: $space-xs $space-sm
   font-size: 0.75rem
   font-weight: 500
-  border-radius: 4px
+  border-radius: 3px
   border: 1px solid var(--border-light)
+  transition: all $transition-fast
+  
+  &:hover
+    border-color: var(--accent-tertiary)
+    background: var(--bg-elevated)
 
 .project-link
   display: inline-flex
@@ -360,10 +610,12 @@
   color: var(--accent-primary)
   font-weight: 500
   font-size: 0.9375rem
-  transition: color $transition-fast
+  transition: color $transition-fast, gap $transition-fast
+  gap: $space-xs
   
   &:hover
     color: var(--accent-secondary)
+    gap: $space-sm
 
 // ===========================================
 // TIMELINE
@@ -372,13 +624,13 @@
 .timeline
   position: relative
   padding: $space-md 0
-  max-width: 800px
+  max-width: 900px
   margin: 0 auto
 
 .timeline-item
   position: relative
-  margin-bottom: $space-xl
-  padding-left: $space-xl
+  margin-bottom: $space-2xl
+  padding-left: $space-2xl
   
   &:last-child
     margin-bottom: 0
@@ -387,8 +639,8 @@
   content: ''
   position: absolute
   left: 5px
-  top: 8px
-  bottom: -$space-xl
+  top: 12px
+  bottom: -$space-2xl
   width: 2px
   background: var(--border-subtle)
 
@@ -398,20 +650,26 @@
 .timeline-marker
   position: absolute
   left: 0
-  top: 4px
+  top: 8px
   width: 12px
   height: 12px
   border-radius: 50%
   background: var(--accent-primary)
-  border: 2px solid var(--bg-primary)
+  border: 3px solid var(--bg-paper)
   box-shadow: 0 0 0 2px var(--accent-primary)
   z-index: 1
 
 .timeline-content
-  transition: transform $transition-fast
+  background: var(--bg-elevated)
+  padding: $space-xl
+  border-radius: 6px
+  border: 1px solid var(--border-subtle)
+  box-shadow: var(--shadow-xs)
+  transition: transform $transition-fast, box-shadow $transition-fast
   
   &:hover
-    transform: translateX(4px)
+    transform: translateX(6px)
+    box-shadow: var(--shadow-sm)
 
 @media (prefers-reduced-motion: reduce)
   .timeline-content:hover
@@ -432,11 +690,11 @@
 .timeline-content .location
   color: var(--text-tertiary)
   font-size: 0.875rem
-  margin-bottom: $space-md
+  margin-bottom: $space-lg
 
 .timeline-content .company-logo
   max-width: 100px
-  margin-bottom: $space-md
+  margin-bottom: $space-lg
   border-radius: 6px
   border: 1px solid var(--border-light)
 
@@ -452,59 +710,90 @@
 .skill-tag
   background: var(--bg-accent)
   color: var(--accent-tertiary)
-  padding: $space-xs $space-sm
+  padding: $space-xs $space-md
   font-size: 0.8125rem
   font-weight: 500
-  border-radius: 4px
+  border-radius: 3px
   border: 1px solid var(--border-light)
   transition: all $transition-fast
   
   &:hover
     border-color: var(--accent-tertiary)
     background: var(--bg-elevated)
+    transform: translateY(-2px)
 
 .skills-category
   margin: $space-lg 0
-  padding: $space-lg
+  padding: $space-xl
   background: var(--bg-elevated)
-  border-radius: 8px
+  border-radius: 6px
   border: 1px solid var(--border-subtle)
+  box-shadow: var(--shadow-xs)
 
 .skills-category-title
   display: flex
   align-items: center
-  gap: $space-sm
-  margin: 0 0 $space-md
+  gap: $space-md
+  margin: 0 0 $space-lg
   color: var(--accent-primary)
   font-size: 1.125rem
   font-weight: 600
 
 // ===========================================
-// PHOTO GALLERY
+// PHOTO GALLERY - 3 COLUMN GRID
+// 写真画廊
 // ===========================================
 
 .photo-gallery
   display: grid
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))
-  gap: $space-lg
+  grid-template-columns: repeat(3, 1fr)
+  gap: $space-md
   padding: $space-md 0
+
+// Responsive: 2 columns on medium
+@media (max-width: 900px)
+  .photo-gallery
+    grid-template-columns: repeat(2, 1fr)
+
+// Responsive: 1 column on small
+@media (max-width: 560px)
+  .photo-gallery
+    grid-template-columns: 1fr
+    gap: $space-lg
 
 .gallery-item
   position: relative
   overflow: hidden
   background: var(--bg-elevated)
-  border-radius: 8px
+  border-radius: 4px
   border: 1px solid var(--border-subtle)
-  box-shadow: var(--shadow-xs)
-  aspect-ratio: 4/3
+  box-shadow: var(--shadow-sm)
+  aspect-ratio: 1 / 1
+  cursor: pointer
   transition: all $transition-fast
   
+  // Frame effect
+  &::before
+    content: ''
+    position: absolute
+    inset: 4px
+    border: 1px solid rgba(255,255,255,0.3)
+    border-radius: 2px
+    z-index: 2
+    pointer-events: none
+    opacity: 0
+    transition: opacity $transition-fast
+  
   &:hover
-    box-shadow: var(--shadow-md)
+    box-shadow: var(--shadow-lg)
     transform: scale(1.02)
+    z-index: 10
+    
+    &::before
+      opacity: 1
     
     img
-      transform: scale(1.05)
+      transform: scale(1.08)
 
 @media (prefers-reduced-motion: reduce)
   .gallery-item:hover
@@ -517,14 +806,17 @@
   width: 100%
   height: 100%
   object-fit: cover
-  border-radius: 7px
+  border-radius: 3px
   transition: transform $transition-speed
 
 .gallery-empty
   text-align: center
-  padding: $space-3xl $space-xl
+  padding: $space-4xl $space-xl
   color: var(--text-tertiary)
   grid-column: 1 / -1
+  background: var(--bg-elevated)
+  border-radius: 6px
+  border: 2px dashed var(--border-subtle)
 
 // ===========================================
 // ARCHIVE (Blog listing)
@@ -577,25 +869,25 @@
   .err
     color: #E53935
   .k, .kc, .kd, .kp, .kr, .kt
-    color: #7C4DFF
+    color: #6B5CA5
   .l, .m, .mf, .mh, .mi, .mo, .il
-    color: #FF9100
+    color: #D4623A
   .n
     color: var(--text-primary)
   .o, .ow
-    color: #E91E63
+    color: #C45B3E
   .p
     color: var(--text-primary)
   .s, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .sr, .s1, .ss
-    color: #8BC34A
+    color: #4A6B5D
   .na
-    color: #00BCD4
+    color: #1B4B6E
   .nb, .nc, .nd, .ne, .nf, .nx
-    color: #2196F3
+    color: #1B3A4B
   .no, .ni, .nl, .nn, .py
     color: var(--text-primary)
   .nt
-    color: #E91E63
+    color: #C45B3E
   .nv, .bp, .vc, .vg, .vi
     color: var(--text-secondary)
   .ge
@@ -607,7 +899,7 @@
   .gd
     color: #E53935
   .gi
-    color: #4CAF50
+    color: #4A6B5D
 
 // ===========================================
 // RESPONSIVE ADJUSTMENTS
@@ -615,12 +907,13 @@
 
 @media (max-width: 768px)
   .ukiyo-hero
-    padding: $space-lg 0 $space-xl
+    padding: $space-xl 0 $space-2xl
     
   .hero-actions
     flex-direction: column
     align-items: stretch
     padding: 0 $space-lg
+    gap: $space-md
     
   .ukiyo-button
     width: 100%
@@ -629,27 +922,27 @@
     grid-template-columns: 1fr
     
   .timeline-item
-    padding-left: $space-lg
+    padding-left: $space-xl
     
   .timeline-marker
     width: 10px
     height: 10px
     
   .passion-block
-    padding: $space-md
+    padding: $space-lg
     
   .skills-category
-    padding: $space-md
+    padding: $space-lg
 
 @media (max-width: 480px)
   .title-main
-    font-size: 1.5rem
+    font-size: 1.625rem
     
   .project-card
-    padding: $space-md
+    padding: $space-lg
     
-  .photo-gallery
-    grid-template-columns: 1fr
+  .timeline-content
+    padding: $space-lg
 
 // ===========================================
 // UTILITY CLASSES
@@ -679,23 +972,40 @@
 .mb-xl
   margin-bottom: $space-xl
 
+.mt-2xl
+  margin-top: $space-2xl
+
+.mb-2xl
+  margin-bottom: $space-2xl
+
 // ===========================================
 // BLOG POST PREVIEWS
 // ===========================================
 
+.blog-posts
+  max-width: 100%
+
 .post-preview
-  margin-bottom: $space-xl
-  padding-bottom: $space-xl
-  border-bottom: 1px solid var(--border-subtle)
+  margin-bottom: $space-2xl
+  padding: $space-xl
+  background: var(--bg-elevated)
+  border-radius: 6px
+  border: 1px solid var(--border-subtle)
+  box-shadow: var(--shadow-xs)
+  transition: all $transition-fast
   
   &:last-child
-    border-bottom: none
+    margin-bottom: 0
+  
+  &:hover
+    border-color: var(--accent-primary)
+    box-shadow: var(--shadow-sm)
     
   header
     margin-bottom: $space-md
     
     h1
-      font-size: 1.5rem
+      font-size: 1.375rem
       margin-bottom: $space-xs
       
       a
@@ -707,6 +1017,14 @@
     time
       font-size: 0.875rem
       color: var(--text-tertiary)
+      display: inline-flex
+      align-items: center
+      gap: $space-xs
+      
+      &::before
+        content: '◆'
+        font-size: 0.5rem
+        color: var(--accent-secondary)
 
 // ===========================================
 // PAGINATION
@@ -741,11 +1059,19 @@
     display: flex
     align-items: baseline
     gap: $space-md
-    padding: $space-sm 0
+    padding: $space-md 0
     border-bottom: 1px solid var(--border-light)
+    transition: background-color $transition-fast
     
     &:last-child
       border-bottom: none
+    
+    &:hover
+      background: var(--bg-elevated)
+      margin: 0 -$space-md
+      padding-left: $space-md
+      padding-right: $space-md
+      border-radius: 4px
       
   time
     flex-shrink: 0
@@ -755,3 +1081,20 @@
     
   a
     font-weight: 500
+
+// ===========================================
+// CTA BOXES
+// ===========================================
+
+.cta-box
+  text-align: center
+  margin-top: $space-2xl
+  padding: $space-xl
+  background: var(--bg-elevated)
+  border: 1px solid var(--border-subtle)
+  border-radius: 6px
+  box-shadow: var(--shadow-xs)
+  
+  p
+    color: var(--text-secondary)
+    margin-bottom: $space-lg

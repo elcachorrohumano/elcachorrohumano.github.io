@@ -5,17 +5,31 @@
 
 // ===========================================
 // RESPONSIVE CONTAINER WIDTHS
+// WIDER columns for better readability
 // ===========================================
 
+// Medium screens: comfortable reading width
 @media (min-width: 768px)
   body > header, body > article, body > footer
-    padding-left: calc(50% - 440px)
-    padding-right: calc(50% - 440px)
+    padding-left: calc(50% - 500px)
+    padding-right: calc(50% - 500px)
 
+// Large screens: wider content area
 @media (min-width: 1200px)
   body > header, body > article, body > footer
-    padding-left: calc(50% - 520px)
-    padding-right: calc(50% - 520px)
+    padding-left: calc(50% - 580px)
+    padding-right: calc(50% - 580px)
+
+// Extra large screens: max width with generous margins
+@media (min-width: 1440px)
+  body > header, body > article, body > footer
+    padding-left: calc(50% - 640px)
+    padding-right: calc(50% - 640px)
 
 body > footer
   opacity: 1
+
+// ===========================================
+// GOOGLE FONTS IMPORT
+// ===========================================
+// Note: Fonts are loaded via default.html for better performance

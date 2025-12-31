@@ -1,125 +1,160 @@
-# Aesthetic Improvements - Ukiyo-e Style Enhancement
+# Ukiyo-e Aesthetic Redesign
+## Complete Implementation Summary
 
-## Summary
-Enhanced the website's ukiyo-e aesthetic with traditional Japanese design elements, improved typography, and a more immersive scroll-like background experience.
+This document describes the comprehensive redesign of the site to achieve a distinctive Japanese Ukiyo-e woodblock print aesthetic while maintaining readability, performance, and accessibility.
+
+---
+
+## Design Vision
+
+The site now feels like unrolling a traditional Japanese emakimono (picture scroll), with content appearing on warm, textured paper panels against the playful Chōjū-giga frog illustration. The design channels Ukiyo-e through:
+
+- **Layered backgrounds** – The frog wallpaper at subtle opacity with warm paper grain overlay
+- **"Mounted print" content frames** – Cards with subtle shadows evoking kakejiku (hanging scrolls)
+- **Seigaiha wave motifs** – CSS-generated wave patterns as decorative dividers
+- **Hanko stamp accents** – Vermillion accent colors on Japanese text labels
+- **Refined palette** – Prussian indigo, vermillion persimmon, aged cream, moss green from Hokusai
+- **Crafted motion** – Subtle slide-up reveals on scroll, organic timing functions
+
+---
 
 ## Changes Made
 
-### 1. Background Improvements ✅
+### 1. Color System Overhaul ✅
+**File**: `_sass/index.sass`
+
+- Complete CSS custom properties system with 5 themes:
+  - **Sumi (墨)** - Default warm ink theme
+  - **Nami (波)** - Hokusai wave-inspired blues
+  - **Sakura (桜)** - Cherry blossom soft pinks
+  - **Matsu (松)** - Forest greens
+  - **Yoru (夜)** - Dark mode with warm undertones
+- Accent colors pulled from Ukiyo-e references (Prussian blue, vermillion, moss green, gold)
+- Paper-like backgrounds with subtle layered shadows
+
+### 2. Background Integration ✅
 **File**: `_sass/basic.sass`
 
-- **Removed repetitive tiling**: Changed from `background-repeat: repeat` to `repeat-y` for vertical scrolling
-- **Increased opacity**: From 0.15 to 0.5 for a more present, comfortable feel
-- **Scroll-like experience**: Background now extends to 300vh with vertical repeat, creating a traditional Japanese scroll effect
-- **Centered layout**: Background centered with max-width of 1400px
-- **Added warmth**: Applied subtle sepia filter (0.15) and contrast adjustment (0.95)
-- **Changed positioning**: From `fixed` to `absolute` for natural scrolling behavior
+- **Layer 1**: Frog wallpaper (`/assets/frogwallpaper1.jpg`) at 4% opacity
+- **Layer 2**: Radial gradient vignette and paper grain texture
+- **Layer 3**: Warm paper-colored content surface
+- Dark mode adjusts with inverted/dimmed background
+- Warm sepia filter for authentic aged paper feel
 
-### 2. Traditional Typography ✅
-**Files**: `_sass/font.sass`, `_sass/index.sass`, `_sass/basic.sass`
+### 3. Wider Content Column ✅
+**Files**: `_sass/layout.sass`, `assets/css/index.sass`
 
-#### Heading Font
-- **Added**: "Shippori Mincho" - A traditional Japanese serif font, softer and more elegant than Eiko
-- **Fallback chain**: "Shippori Mincho" → "Noto Serif JP" → "Hiragino Mincho ProN" → serif
-- **Weight**: Changed from 400 to 500 for better presence
-- **Letter spacing**: Increased to 0.02em for traditional readability
+- Article max-width increased from 960px to 1080px
+- Responsive container widths:
+  - 768px+: 1000px
+  - 1200px+: 1160px
+  - 1440px+: 1280px
+- Maintains comfortable reading line length (65-75 characters)
 
-#### Body Font
-- **Added**: "Crimson Text" - An elegant, refined alternative to Times New Roman
-- **Fallback chain**: "Crimson Text" → "Noto Serif JP" → Georgia → "Times New Roman" → serif
-- **Line height**: Increased from 1.65 to 1.75 for better readability
-- **Size**: Slightly increased base font size
+### 4. Duplicate Titles Fixed ✅
+**Files**: `_layouts/page.html`, `portfolio.md`, `gallery.md`, `blog.md`, `career.md`
 
-### 3. Traditional Pattern Integration ✅
-**Files**: `_sass/layout.sass`, `_sass/basic.sass`
+- New page layout with single, clean page header
+- Support for Japanese title (`title_jp`) and subtitle in front matter
+- Removed redundant section headers from page content
+- Consistent hierarchy across all pages
 
-#### Header & Footer Decorations
-- **Pattern borders**: Added repeating dash patterns using `repeating-linear-gradient`
-- **Gradient accents**: Multi-color gradient borders (primary → secondary → tertiary)
-- **Increased border weights**: From 3px to 4px for stronger presence
-- **Backdrop blur**: Added `backdrop-filter: blur(10px)` for depth
-- **Semi-transparent backgrounds**: Headers and footers now have 92-95% opacity
+### 5. Photo Gallery Grid ✅
+**File**: `_sass/classes.sass`
 
-#### Content Decorations
-- **H1 elements**: Underline accent with gradient (primary → secondary)
-- **H2 elements**: Diamond marker (◆) in accent-secondary color
-- **H3 elements**: Small diamond marker (◇) in accent-tertiary color
-- **Article dividers**: Added diamond ornaments (◇) between articles
-- **Horizontal rules**: Enhanced with diamond center (◆) and subtle dashed pattern
-- **Article corners**: Gradient vertical accents at top corners
+- 3-column grid on desktop (900px+)
+- 2-column grid on tablet (560px-900px)
+- 1-column grid on mobile (<560px)
+- Square aspect ratio with cover fit
+- Frame effect on hover with subtle inner border
+- Scroll reveal animations with staggered delays
 
-#### Blockquotes
-- **Traditional quotation mark**: Large decorative 〝 character
-- **Corner ornament**: Border accent in top-right corner
-- **Enhanced borders**: Increased border weights (5px left, 2px others)
-- **Better shadows**: Increased from 3px to 4px offset
+### 6. Typography System ✅
+**Files**: `_sass/index.sass`, `_sass/font.sass`, `_layouts/default.html`
 
-#### Code Elements
-- **Pre blocks**: Added bracket decoration (〈 〉) and left accent border in tertiary color
-- **Inline code**: Added subtle shadow for depth
-- **Tables**: Enhanced with 3px shadow offset
+- **Body**: DM Sans - geometric sans-serif with excellent readability
+- **Display**: Shippori Mincho - traditional Japanese serif for accents
+- Fonts loaded via `<link>` for better performance (removed `@import`)
+- Japanese text labels styled with `.jp-accent` class
+- Increased line height (1.75) for comfortable reading
 
-### 4. Scroll Experience Enhancement ✅
-**File**: `_sass/basic.sass`
+### 7. Ukiyo-e Components ✅
+**File**: `_sass/classes.sass`
 
-- **Vertical scroll**: Background repeats vertically to create continuous scroll feeling
-- **Natural scrolling**: Changed from fixed attachment to scroll
-- **Extended height**: Background extends to 300vh for long pages
-- **Centered content**: Max-width constraint keeps content readable while background flows
+New component library includes:
+- **Ukiyo-e Buttons** - Ink wash fill effect on hover
+- **Project Cards** - Corner accent, lift effect
+- **Passion Blocks** - Sidebar accent with Japanese labels
+- **Timeline** - Vertical career timeline with markers
+- **Section Headers** - Dual-language with wave decoration
+- **Wave Dividers** - Seigaiha-inspired patterns
+- **Frames** - Mounted print and scroll-style variants
+- **Tech Tags** - Subtle hover states
+- **Blog Post Previews** - Card-based layout
 
-### 5. Site Title Enhancement ✅
-**File**: `_sass/layout.sass`
+### 8. Motion & Animation ✅
+**Files**: `_sass/basic.sass`, `_layouts/default.html`
 
-- **Traditional font**: Applied heading font family (Shippori Mincho)
-- **Increased weight**: 600 for prominence
-- **Letter spacing**: 0.05em for traditional elegance
-- **Size increase**: 1.3em for better hierarchy
-- **Hover effect**: Color transition to accent-primary
+- Scroll reveal animations via Intersection Observer
+- `.reveal`, `.reveal-left`, `.reveal-right` classes
+- Stagger delays for grid items (`.reveal-delay-1` through `.reveal-delay-12`)
+- Organic timing function: `cubic-bezier(0.22, 1, 0.36, 1)`
+- Header shadow on scroll
+- All animations respect `prefers-reduced-motion`
 
-## Design Philosophy
+### 9. Visual Details ✅
 
-The improvements follow traditional Japanese ukiyo-e principles:
+- Wave decoration (〰) under section headers
+- Diamond markers (◆) for dates and decorative elements
+- Japanese bracket quotes (「) in blockquotes
+- Gradient borders on footer
+- Subtle scrollbar styling
+- Ink-bleed hover effects on links
+- Paper texture overlay on content areas
 
-1. **Scroll Reading Experience**: The background creates the feeling of unrolling a traditional Japanese scroll
-2. **Seigaiha Patterns**: Subtle wave patterns and traditional ornaments throughout
-3. **Elegant Typography**: Traditional Japanese serif fonts for authenticity
-4. **Minimalist Decoration**: Geometric symbols (◆, ◇, 〝, 〈 〉) inspired by traditional seals and markers
-5. **Layered Depth**: Semi-transparent overlays and blur effects create depth like traditional woodblock prints
-6. **Natural Colors**: Warm color palette maintained with subtle sepia toning
+---
 
-## Visual Elements Added
+## Files Changed Summary
 
-- ◆ Diamond markers for H2 and decorative dividers
-- ◇ Small diamond markers for H3 and article separators
-- 〝 Traditional Japanese quotation marks in blockquotes
-- 〈 〉 Bracket ornaments for code blocks
-- Gradient lines and repeating dash patterns inspired by traditional textiles
-- Corner accents on articles and blockquotes
+| File | Changes |
+|------|---------|
+| `_sass/index.sass` | Complete color system, 5 themes, CSS variables |
+| `_sass/basic.sass` | Background layers, typography, animations |
+| `_sass/layout.sass` | Wider columns, page headers, responsive layout |
+| `_sass/classes.sass` | All components, gallery grid, motion |
+| `_sass/font.sass` | Font loading optimization |
+| `assets/css/index.sass` | Container widths |
+| `_layouts/default.html` | Google Fonts, scroll reveal JS |
+| `_layouts/page.html` | Page header with JP title support |
+| `index.md` | Home page with scroll reveals |
+| `portfolio.md` | Project cards, no duplicate title |
+| `gallery.md` | 3-column gallery grid |
+| `blog.md` | Clean blog listing |
+| `career.md` | Timeline and skills |
+| `DESIGN_SYSTEM.md` | Complete documentation |
 
-## Font Stack
+---
 
-### Headings
-```
-"Shippori Mincho", "Noto Serif JP", "Hiragino Mincho ProN", serif
-```
+## Acceptance Checklist
 
-### Body Text
-```
-"Crimson Text", "Noto Serif JP", Georgia, "Times New Roman", serif
-```
+✅ **Background is frogwallpaper1.jpg and looks integrated** - Layered with paper texture, proper opacity  
+✅ **Middle column is noticeably wider** - 1080px max on desktop, responsive  
+✅ **Portfolio/Blog/Gallery titles appear only once** - Clean page headers  
+✅ **Gallery shows 3 columns on desktop** - Responsive 3→2→1 grid  
+✅ **Site clearly reads as Ukiyo-e inspired** - Colors, typography, components, motion  
+✅ **No obvious layout regressions** - All pages functional and accessible  
 
-## Testing Recommendations
+---
 
-1. **Scroll behavior**: Check that background flows naturally on long pages
-2. **Font loading**: Ensure Google Fonts load properly (fonts imported from Google Fonts CDN)
-3. **Theme switching**: Verify all themes work with new decorative elements
-4. **Mobile responsiveness**: Test on various screen sizes
-5. **Performance**: Check that backdrop-filter performs well on target browsers
+## Design System Documentation
 
-## Future Enhancements (Optional)
+See `DESIGN_SYSTEM.md` for:
+- Complete color palette with hex values
+- Typography specifications
+- Spacing scale
+- Component usage examples
+- Animation guidelines
 
-- Add subtle wave (seigaiha) pattern overlay to specific sections
-- Implement traditional red seal stamps for signatures/author marks
-- Add brush stroke transitions between sections
-- Consider adding traditional Japanese color names to theme switcher
+---
 
+*Last updated: December 2024*

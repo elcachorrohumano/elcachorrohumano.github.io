@@ -25,14 +25,14 @@ title: ""
 </div>
 
 <div class="main-content">
-  <p class="intro-text reveal">My name is Jorge Esteban Ramírez Sashida and I was born on June 27, 2002. I'm currently studying Data Science at Instituto Tecnológico Autónomo de México (ITAM). My favorite things in life are music, the sea, chess, sports, my family, and my pets.</p>
+  <p class="intro-text reveal">My name is Jorge Esteban Ramírez Sashida and I was born on June 27, 2002. I'm recently graduated from Data Science at Instituto Tecnológico Autónomo de México (ITAM). My favorite things in life are music, the sea, chess, sports, my family, and my pets.</p>
 
   <div class="passion-block reveal">
     <h3 class="passion-title">
       <span class="jp-accent">データサイエンス</span>
       <span>Data Science</span>
     </h3>
-    <p>I love studying and learning about data science and mathematics. I really enjoy programming, especially using machine learning. My work has spanned from building ETL pipelines to developing AI models for music classification and implementing minimax algorithms for game AI. Check out my <a href="/portfolio/">portfolio</a> and <a href="/career/">career timeline</a> to learn more about my journey!</p>
+    <p>I’ve started to genuinely enjoy software development projects centered on data science. Building data-driven tools, like MCP servers, ETL pipelines, and machine learning APIs, has become one of my favorite ways to bring together my interests in programming and mathematics. You can see more about my journey in my <a href="/portfolio/">portfolio</a> and <a href="/career/">career timeline</a>!</p>
   </div>
 
   <div class="passion-block reveal">
@@ -60,6 +60,14 @@ title: ""
     <h3 class="passion-title">
       <span class="jp-accent">チェス</span>
       <span>Chess</span>
+    </h3>
+    <p></p>
+  </div>
+
+  <div class="passion-block reveal">
+    <h3 class="passion-title">
+      <span class="jp-accent">バレーボール</span>
+      <span>Volleyball</span>
     </h3>
     <p></p>
   </div>

@@ -3,9 +3,19 @@
 
 @import index, font, basic, layout, classes
 
-@media (min-width: 40em)
+// ===========================================
+// RESPONSIVE CONTAINER WIDTHS
+// ===========================================
+
+@media (min-width: 768px)
   body > header, body > article, body > footer
-    padding: 1.75em calc(50% - 22em)
+    padding-left: calc(50% - 440px)
+    padding-right: calc(50% - 440px)
+
+@media (min-width: 1200px)
+  body > header, body > article, body > footer
+    padding-left: calc(50% - 520px)
+    padding-right: calc(50% - 520px)
 
 body > footer
   opacity: 1

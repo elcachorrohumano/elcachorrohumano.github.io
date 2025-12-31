@@ -1,95 +1,558 @@
-.title
-  font-size: 1.3em
-  font-weight: 400
-  color: var(--accent-primary)
-  transition: $transition-speed all
-  letter-spacing: 0.01em
-  
-.title:hover
-  color: var(--accent-secondary)
+// ===========================================
+// COMPONENT STYLES
+// ===========================================
 
-// Ukiyo-e Button Styles  
+// ===========================================
+// TITLE LINK
+// ===========================================
+
+.title
+  font-size: 1.125rem
+  font-weight: 600
+  color: var(--text-primary)
+  transition: color $transition-fast
+  
+  &:hover
+    color: var(--accent-primary)
+
+// ===========================================
+// BUTTONS
+// ===========================================
+
+.btn
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  gap: $space-sm
+  padding: $space-sm $space-lg
+  font-family: $font-family
+  font-size: 0.9375rem
+  font-weight: 500
+  border-radius: 6px
+  border: 1px solid transparent
+  cursor: pointer
+  transition: all $transition-fast
+  text-decoration: none
+  
+  &:focus-visible
+    outline: none
+    box-shadow: var(--focus-ring)
+
+.btn-primary
+  background: var(--accent-primary)
+  color: white
+  border-color: var(--accent-primary)
+  
+  &:hover
+    background: var(--accent-secondary)
+    border-color: var(--accent-secondary)
+    color: white
+
+.btn-secondary
+  background: transparent
+  color: var(--accent-primary)
+  border-color: var(--accent-primary)
+  
+  &:hover
+    background: var(--accent-primary)
+    color: white
+
+.btn-tertiary
+  background: var(--bg-secondary)
+  color: var(--text-secondary)
+  border-color: var(--border-subtle)
+  
+  &:hover
+    background: var(--bg-accent)
+    border-color: var(--accent-primary)
+    color: var(--accent-primary)
+
+// Legacy button class
 .more
-  margin: 1.5em 0 1em
+  margin: $space-lg 0 $space-md
 
 .more a
-  border: 1px solid var(--accent-primary)
-  padding: 0.7em 1.5em
-  transition: $transition-speed all
-  font-weight: 400
-  color: var(--accent-primary)
-  background: var(--bg-elevated)
-  box-shadow: 2px 2px 0 var(--border-subtle)
-
-.more a:hover
-  background: var(--accent-primary)
-  color: var(--bg-elevated)
-  text-decoration: none
-  transform: translate(-1px, -1px)
-  box-shadow: 3px 3px 0 var(--border-subtle)
+  @extend .btn
+  @extend .btn-secondary
 
 // CTA Button Styles
 .cta-button
-  display: inline-block
-  background: var(--accent-primary)
-  color: var(--bg-elevated)
-  padding: 0.8em 1.8em
-  font-weight: 400
-  margin: 0.5em 0.8em 0.5em 0
-  transition: $transition-speed all
-  text-decoration: none
-  border: 1px solid var(--accent-primary)
-  box-shadow: 2px 2px 0 var(--border-subtle)
-
-.cta-button:hover
-  background: transparent
-  color: var(--accent-primary)
-  transform: translate(-1px, -1px)
-  box-shadow: 3px 3px 0 var(--border-subtle)
-  text-decoration: none
+  @extend .btn
+  @extend .btn-primary
 
 .cta-button.secondary
-  background: var(--accent-secondary)
-  border-color: var(--accent-secondary)
-  color: var(--bg-elevated)
+  @extend .btn-secondary
+
+// ===========================================
+// UKIYO-E BUTTONS (Japanese style)
+// ===========================================
+
+.ukiyo-button
+  display: inline-flex
+  flex-direction: column
+  align-items: center
+  padding: $space-md $space-xl
+  background: var(--bg-elevated)
+  border: 1px solid var(--accent-primary)
+  border-radius: 4px
+  color: var(--accent-primary)
+  font-size: 0.9375rem
+  font-weight: 500
+  text-decoration: none
+  transition: all $transition-fast
+  box-shadow: var(--shadow-xs)
   
-.cta-button.secondary:hover
-  background: transparent
+  &:hover
+    background: var(--accent-primary)
+    color: white
+    transform: translateY(-2px)
+    box-shadow: var(--shadow-sm)
+  
+  &:focus-visible
+    outline: none
+    box-shadow: var(--focus-ring)
+
+.ukiyo-button.primary
+  border-color: var(--accent-primary)
+  color: var(--accent-primary)
+  
+  &:hover
+    background: var(--accent-primary)
+    color: white
+
+.ukiyo-button.secondary
+  border-color: var(--accent-secondary)
   color: var(--accent-secondary)
-  box-shadow: 3px 3px 0 var(--border-subtle)
+  
+  &:hover
+    background: var(--accent-secondary)
+    color: white
+
+.ukiyo-button.tertiary
+  border-color: var(--accent-tertiary)
+  color: var(--accent-tertiary)
+  
+  &:hover
+    background: var(--accent-tertiary)
+    color: white
+
+.button-en
+  display: block
+  font-size: 0.75rem
+  margin-top: $space-xs
+  opacity: 0.7
+  font-weight: 400
+
+// ===========================================
+// HERO SECTION
+// ===========================================
+
+.ukiyo-hero
+  text-align: center
+  padding: $space-xl 0 $space-2xl
+  background: var(--bg-elevated)
+  border-bottom: 1px solid var(--border-subtle)
+  margin-bottom: $space-xl
+  position: relative
+  overflow: hidden
+
+// Background pattern for hero
+.ukiyo-hero::before
+  content: ''
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background-image: url('/assets/frogwallpaper1.jpg')
+  background-size: 600px auto
+  background-position: center
+  background-repeat: repeat
+  opacity: 0.04
+  pointer-events: none
+
+.hero-title
+  margin: 0 0 $space-md
+  position: relative
+
+.title-japanese
+  display: block
+  font-size: 1rem
+  color: var(--text-tertiary)
+  font-weight: 400
+  letter-spacing: 0.1em
+  margin-bottom: $space-xs
+
+.title-main
+  display: block
+  font-size: clamp(1.75rem, 5vw, 2.5rem)
+  color: var(--text-primary)
+  font-weight: 600
+  letter-spacing: -0.02em
+  line-height: 1.2
+
+.hero-subtitle
+  font-size: 0.9rem
+  color: var(--text-tertiary)
+  margin: $space-xs 0
+  letter-spacing: 0.05em
+
+.hero-subtitle-en
+  font-size: 1rem
+  color: var(--text-secondary)
+  margin: $space-sm 0 $space-lg
+  font-weight: 400
+
+.hero-actions
+  display: flex
+  gap: $space-md
+  justify-content: center
+  flex-wrap: wrap
+  margin-top: $space-xl
+  position: relative
+
+// ===========================================
+// SECTIONS
+// ===========================================
+
+.ukiyo-section
+  padding: 0 0 $space-xl
+  max-width: 100%
+
+.section-header
+  text-align: center
+  margin-bottom: $space-xl
+  padding-bottom: $space-md
+  border-bottom: 1px solid var(--border-subtle)
+
+.section-title-jp
+  font-size: 0.875rem
+  color: var(--accent-secondary)
+  margin: 0 0 $space-xs
+  letter-spacing: 0.15em
+  font-weight: 400
+  text-transform: uppercase
+
+.section-title-en
+  font-size: clamp(1.5rem, 4vw, 2rem)
+  color: var(--accent-primary)
+  margin: 0
+  font-weight: 600
+
+// ===========================================
+// CONTENT LAYOUT
+// ===========================================
+
+.content-with-art
+  display: grid
+  grid-template-columns: 1fr
+  gap: $space-xl
+
+.main-content
+  font-size: 1rem
+  line-height: 1.75
+
+.intro-text
+  font-size: 1.0625rem
+  margin-bottom: $space-lg
+  color: var(--text-secondary)
+  line-height: 1.8
+
+// ===========================================
+// PASSION BLOCKS
+// ===========================================
+
+.passion-block
+  margin: $space-xl 0
+  padding: $space-lg
+  background: var(--bg-elevated)
+  border-left: 3px solid var(--accent-tertiary)
+  border-radius: 0 8px 8px 0
+  box-shadow: var(--shadow-xs)
+  transition: transform $transition-fast, box-shadow $transition-fast
+  
+  &:hover
+    transform: translateX(4px)
+    box-shadow: var(--shadow-sm)
+
+@media (prefers-reduced-motion: reduce)
+  .passion-block:hover
+    transform: none
+
+.passion-title
+  display: flex
+  align-items: center
+  gap: $space-sm
+  margin: 0 0 $space-md
+  color: var(--accent-primary)
+  font-size: 1.25rem
+  font-weight: 600
+
+.jp-accent
+  font-size: 0.875rem
+  color: var(--accent-secondary)
+  padding: $space-xs $space-sm
+  background: var(--bg-accent)
+  border-radius: 4px
+  font-weight: 500
+
+// ===========================================
+// PROJECT CARDS
+// ===========================================
+
+.project-grid
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
+  gap: $space-lg
+
+.project-card
+  background: var(--bg-elevated)
+  padding: $space-lg
+  border-radius: 8px
+  border: 1px solid var(--border-subtle)
+  box-shadow: var(--shadow-xs)
+  transition: all $transition-fast
+  
+  &:hover
+    border-color: var(--accent-primary)
+    box-shadow: var(--shadow-md)
+    transform: translateY(-4px)
+
+@media (prefers-reduced-motion: reduce)
+  .project-card:hover
+    transform: none
+
+.project-card h3
+  color: var(--accent-primary)
+  margin: 0 0 $space-sm
+  font-size: 1.25rem
+  font-weight: 600
+
+.project-card .date
+  color: var(--text-tertiary)
+  font-size: 0.8125rem
+  margin-bottom: $space-sm
+  font-weight: 500
+
+.project-card p
+  color: var(--text-secondary)
+  font-size: 0.9375rem
+  line-height: 1.6
+
+.project-card .tech-stack
+  display: flex
+  flex-wrap: wrap
+  gap: $space-sm
+  margin: $space-md 0
+
+.tech-tag
+  background: var(--bg-accent)
+  color: var(--accent-tertiary)
+  padding: $space-xs $space-sm
+  font-size: 0.75rem
+  font-weight: 500
+  border-radius: 4px
+  border: 1px solid var(--border-light)
+
+.project-link
+  display: inline-flex
+  align-items: center
+  color: var(--accent-primary)
+  font-weight: 500
+  font-size: 0.9375rem
+  transition: color $transition-fast
+  
+  &:hover
+    color: var(--accent-secondary)
+
+// ===========================================
+// TIMELINE
+// ===========================================
+
+.timeline
+  position: relative
+  padding: $space-md 0
+  max-width: 800px
+  margin: 0 auto
+
+.timeline-item
+  position: relative
+  margin-bottom: $space-xl
+  padding-left: $space-xl
+  
+  &:last-child
+    margin-bottom: 0
+
+.timeline-item::before
+  content: ''
+  position: absolute
+  left: 5px
+  top: 8px
+  bottom: -$space-xl
+  width: 2px
+  background: var(--border-subtle)
+
+.timeline-item:last-child::before
+  display: none
+
+.timeline-marker
+  position: absolute
+  left: 0
+  top: 4px
+  width: 12px
+  height: 12px
+  border-radius: 50%
+  background: var(--accent-primary)
+  border: 2px solid var(--bg-primary)
+  box-shadow: 0 0 0 2px var(--accent-primary)
+  z-index: 1
+
+.timeline-content
+  transition: transform $transition-fast
+  
+  &:hover
+    transform: translateX(4px)
+
+@media (prefers-reduced-motion: reduce)
+  .timeline-content:hover
+    transform: none
+
+.timeline-content h3
+  color: var(--accent-primary)
+  margin: 0 0 $space-xs
+  font-size: 1.375rem
+  font-weight: 600
+
+.timeline-content .position
+  color: var(--text-secondary)
+  font-size: 1rem
+  margin-bottom: $space-xs
+  font-weight: 500
+
+.timeline-content .location
+  color: var(--text-tertiary)
+  font-size: 0.875rem
+  margin-bottom: $space-md
+
+.timeline-content .company-logo
+  max-width: 100px
+  margin-bottom: $space-md
+  border-radius: 6px
+  border: 1px solid var(--border-light)
+
+// ===========================================
+// SKILLS
+// ===========================================
+
+.skills-list
+  display: flex
+  flex-wrap: wrap
+  gap: $space-sm
+
+.skill-tag
+  background: var(--bg-accent)
+  color: var(--accent-tertiary)
+  padding: $space-xs $space-sm
+  font-size: 0.8125rem
+  font-weight: 500
+  border-radius: 4px
+  border: 1px solid var(--border-light)
+  transition: all $transition-fast
+  
+  &:hover
+    border-color: var(--accent-tertiary)
+    background: var(--bg-elevated)
+
+.skills-category
+  margin: $space-lg 0
+  padding: $space-lg
+  background: var(--bg-elevated)
+  border-radius: 8px
+  border: 1px solid var(--border-subtle)
+
+.skills-category-title
+  display: flex
+  align-items: center
+  gap: $space-sm
+  margin: 0 0 $space-md
+  color: var(--accent-primary)
+  font-size: 1.125rem
+  font-weight: 600
+
+// ===========================================
+// PHOTO GALLERY
+// ===========================================
+
+.photo-gallery
+  display: grid
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))
+  gap: $space-lg
+  padding: $space-md 0
+
+.gallery-item
+  position: relative
+  overflow: hidden
+  background: var(--bg-elevated)
+  border-radius: 8px
+  border: 1px solid var(--border-subtle)
+  box-shadow: var(--shadow-xs)
+  aspect-ratio: 4/3
+  transition: all $transition-fast
+  
+  &:hover
+    box-shadow: var(--shadow-md)
+    transform: scale(1.02)
+    
+    img
+      transform: scale(1.05)
+
+@media (prefers-reduced-motion: reduce)
+  .gallery-item:hover
+    transform: none
+    
+    img
+      transform: none
+
+.gallery-item img
+  width: 100%
+  height: 100%
+  object-fit: cover
+  border-radius: 7px
+  transition: transform $transition-speed
+
+.gallery-empty
+  text-align: center
+  padding: $space-3xl $space-xl
+  color: var(--text-tertiary)
+  grid-column: 1 / -1
+
+// ===========================================
+// ARCHIVE (Blog listing)
+// ===========================================
 
 .archive
-  font-size: 1.1em
+  font-size: 1rem
 
 .archive time
   display: inline-block
   min-width: 10ch
-  min-height: 1.75em
-  margin: 0 .2em
+  color: var(--text-tertiary)
+  font-size: 0.875rem
 
-.icon
-  height: 1em
-  width: 1em
-  fill: currentColor
-  transition: $transition-speed all
-  vertical-align: middle
-  margin-bottom: .15em
+.archive a
+  font-weight: 500
 
-footer .icon
-  height: 1.5em
-  width: 1.5em
-
-a:hover .icon
-  color: var(--accent-secondary)
-  transform: scale(1.15)
-
-.full table
-  display: table
-  width: 100%
+// ===========================================
+// KATEX
+// ===========================================
 
 .katex
   overflow-x: auto
   overflow-y: hidden
+
+// ===========================================
+// SYNTAX HIGHLIGHTING
+// ===========================================
 
 .rouge-table
   &, th, td, tr, pre
@@ -99,602 +562,196 @@ a:hover .icon
     width: initial
     margin: 0
     padding: 0
+    
   .gl pre
-    margin: 0 1.5em 0 .25em
-    opacity: .5
+    margin: 0 $space-lg 0 $space-xs
+    opacity: 0.5
 
-// Project Cards (Ukiyo-e style)
-.project-grid
-  display: grid
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
-  gap: 1.5em
-  margin: 2em 0
-
-.project-card
-  background: var(--bg-elevated)
-  padding: 1.5em
-  transition: $transition-speed all
-  border: 1px solid var(--border-subtle)
-  box-shadow: 2px 2px 0 var(--border-subtle)
-  position: relative
-  
-.project-card:hover
-  transform: translate(-1px, -1px)
-  box-shadow: 3px 3px 0 var(--border-subtle)
-  border-color: var(--accent-primary)
-
-.project-card h3
-  color: var(--accent-primary)
-  margin-top: 0
-  font-size: 1.2em
-  font-weight: 400
-
-.project-card .date
-  color: var(--text-tertiary)
-  font-size: 0.85em
-  margin-bottom: 0.7em
-
-.project-card .tech-stack
-  display: flex
-  flex-wrap: wrap
-  gap: 0.6em
-  margin: 1.2em 0
-
-.tech-tag
-  background: var(--bg-accent)
-  color: var(--accent-tertiary)
-  padding: 0.3em 0.8em
-  font-size: 0.8em
-  font-weight: 400
-  border: 1px solid var(--border-subtle)
-
-.project-link
-  display: inline-block
-  color: var(--accent-primary)
-  margin-top: 1em
-  font-weight: 500
-  transition: $transition-speed color
-
-.project-link:hover
-  color: var(--accent-secondary)
-
-// Timeline Styles - Simplified
-.timeline
-  position: relative
-  padding: 1em 0
-  max-width: 800px
-  margin: 0 auto
-
-.timeline-item
-  position: relative
-  margin-bottom: 2.5em
-  padding-left: 2em
-  border-left: 2px solid var(--border-subtle)
-
-.timeline-item:last-child
-  margin-bottom: 0
-
-.timeline-content
-  background: transparent
-  padding: 0
-  position: relative
-  transition: $transition-speed all
-
-.timeline-content:hover
-  transform: translateX(5px)
-
-.timeline-marker
-  position: absolute
-  left: -7px
-  top: 5px
-  width: 12px
-  height: 12px
-  border-radius: 50%
-  background: var(--accent-primary)
-  border: 2px solid var(--bg-primary)
-  z-index: 1
-
-.timeline-content h3
-  color: var(--accent-primary)
-  margin: 0 0 0.3em
-  font-weight: 400
-  font-size: 1.3em
-
-.timeline-content .position
-  color: var(--text-secondary)
-  font-size: 1em
-  margin-bottom: 0.4em
-  font-weight: 400
-
-.timeline-content .location
-  color: var(--text-tertiary)
-  font-size: 0.85em
-  margin-bottom: 0.8em
-
-.timeline-content .company-logo
-  max-width: 100px
-  margin-bottom: 0.8em
-  border: 1px solid var(--border-subtle)
-  padding: 0.2em
-
-.skills-list
-  display: flex
-  flex-wrap: wrap
-  gap: 0.5em
-  margin-top: 0.8em
-
-.skill-tag
-  background: var(--bg-accent)
-  color: var(--accent-tertiary)
-  padding: 0.3em 0.8em
-  font-size: 0.8em
-  font-weight: 400
-  border: 1px solid var(--border-subtle)
-
-// Hero Section
-.hero
-  text-align: center
-  padding: 3em 0 4em
-  
-.hero-image
-  width: 240px
-  height: 320px
-  border-radius: 16px
-  margin: 0 auto 2em
-  display: block
-  border: 2px solid var(--border-subtle)
-  box-shadow: 0 8px 24px var(--shadow-md)
-  object-fit: cover
-  transition: $transition-speed all
-
-.hero-image:hover
-  transform: translateY(-4px)
-  box-shadow: 0 12px 32px var(--shadow-md)
-  border-color: var(--accent-primary)
-
-.hero h1
-  font-size: 2.8em
-  margin-bottom: 0.3em
-  color: var(--text-primary)
-  font-weight: 600
-  letter-spacing: -0.02em
-
-.hero .tagline
-  font-size: 1.2em
-  color: var(--text-tertiary)
-  margin-bottom: 2.5em
-  font-weight: 400
-
-.stats
-  display: flex
-  justify-content: center
-  gap: 3.5em
-  margin: 2.5em 0
-  flex-wrap: wrap
-
-.stat-item
-  text-align: center
-  
-.stat-number
-  font-size: 2.3em
-  font-weight: 600
-  color: var(--accent-primary)
-  display: block
-  margin-bottom: 0.2em
-
-.stat-label
-  color: var(--text-tertiary)
-  font-size: 0.9em
-  font-weight: 500
-
-// Section Styles
-.section
-  padding: 3em 0
-  max-width: 750px
-  margin: 0 auto
-  
-.section-title
-  font-size: 2.2em
-  margin-bottom: 1.5em
-  color: var(--accent-primary)
-  text-align: center
-  font-weight: 600
-
-// Responsive Design
-// Ukiyo-e Hero Section
-.ukiyo-hero
-  text-align: center
-  padding: 0 0 2.5em
-  position: relative
-  background: var(--bg-elevated)
-  border-bottom: 2px solid var(--border-strong)
-  margin-bottom: 2.5em
-
-.hero-banner
-  position: relative
-  margin-bottom: 1.5em
-  width: 100%
-  overflow: hidden
-  
-.banner-image
-  width: 100%
-  height: auto
-  display: block
-  max-height: 300px
-  object-fit: cover
-  object-position: center
-
-.frog-seal
-  position: absolute
-  top: 15px
-  right: 15px
-  width: 50px
-  height: 50px
-  border: 2px solid var(--accent-secondary)
-  border-radius: 50%
-  display: flex
-  align-items: center
-  justify-content: center
-  background: rgba(255, 255, 255, 0.9)
-  transform: rotate(-15deg)
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1)
-  
-.japanese-text
-  font-family: sans-serif
-  font-size: 1.1em
-  color: var(--accent-secondary)
-  font-weight: 500
-
-.hero-title
-  margin: 1em 0 0.5em
-  
-.title-japanese
-  display: block
-  font-size: 0.95em
-  color: var(--text-tertiary)
-  font-weight: 400
-  letter-spacing: 0.05em
-  margin-bottom: 0.3em
-  
-.title-main
-  display: block
-  font-size: 2.2em
-  color: var(--text-primary)
-  font-weight: 400
-  letter-spacing: 0
-
-.hero-subtitle
-  font-size: 0.9em
-  color: var(--text-tertiary)
-  margin: 0.3em 0
-  letter-spacing: 0.05em
-  
-.hero-subtitle-en
-  font-size: 1em
-  color: var(--text-secondary)
-  margin: 0.4em 0 1.5em
-  font-weight: 400
-
-.hero-actions
-  display: flex
-  gap: 1em
-  justify-content: center
-  flex-wrap: wrap
-  margin-top: 1.5em
-
-// Ukiyo-e Buttons
-.ukiyo-button
-  display: inline-flex
-  flex-direction: column
-  align-items: center
-  padding: 0.8em 1.8em
-  border: 1px solid var(--accent-primary)
-  background: var(--bg-elevated)
-  color: var(--accent-primary)
-  text-decoration: none
-  transition: $transition-speed all
-  font-size: 0.95em
-  font-weight: 400
-  position: relative
-  box-shadow: 2px 2px 0 var(--border-subtle)
-  
-.ukiyo-button:hover
-  transform: translate(-1px, -1px)
-  box-shadow: 3px 3px 0 var(--border-subtle)
-  background: var(--accent-primary)
-  color: var(--bg-elevated)
-  
-.ukiyo-button.primary
-  border-color: var(--accent-primary)
-  color: var(--accent-primary)
-  
-.ukiyo-button.primary:hover
-  background: var(--accent-primary)
-  color: var(--bg-elevated)
-
-.ukiyo-button.secondary
-  border-color: var(--accent-secondary)
-  color: var(--accent-secondary)
-  
-.ukiyo-button.secondary:hover
-  background: var(--accent-secondary)
-  color: var(--bg-elevated)
-
-.ukiyo-button.tertiary
-  border-color: var(--accent-tertiary)
-  color: var(--accent-tertiary)
-  
-.ukiyo-button.tertiary:hover
-  background: var(--accent-tertiary)
-  color: var(--bg-elevated)
-
-.button-en
-  display: block
-  font-size: 0.7em
-  margin-top: 0.2em
-  letter-spacing: 0.02em
-  opacity: 0.7
-
-// Ukiyo-e Section Styles
-.ukiyo-section
-  padding: 2em 2em
-  max-width: 1100px
-  margin: 0 auto
-  
-.section-header
-  text-align: center
-  margin-bottom: 2em
-  border-bottom: 1px solid var(--border-strong)
-  padding-bottom: 0.8em
-  
-.section-title-jp
-  font-size: 0.9em
-  color: var(--accent-secondary)
-  margin: 0 0 0.3em
-  letter-spacing: 0.1em
-  font-weight: 400
-  
-.section-title-en
-  font-size: 2em
-  color: var(--accent-primary)
-  margin: 0
-  font-weight: 400
-  letter-spacing: 0
-
-.content-with-art
-  display: grid
-  grid-template-columns: 1fr 280px
-  gap: 2.5em
-  align-items: start
-  
-.main-content
-  font-size: 1em
-  line-height: 1.7
-  
-.intro-text
-  font-size: 1.05em
-  margin-bottom: 1.5em
-  color: var(--text-secondary)
-
-.passion-block
-  margin: 2em 0
-  padding: 1.2em
-  background: var(--bg-elevated)
-  border-left: 3px solid var(--accent-tertiary)
-  box-shadow: 1px 1px 4px var(--shadow-sm)
-  
-.passion-title
-  display: flex
-  align-items: center
-  gap: 0.7em
-  margin: 0 0 0.8em
-  color: var(--accent-primary)
-  font-size: 1.2em
-  font-weight: 400
-  
-.jp-accent
-  color: var(--accent-secondary)
-  font-size: 1em
-  padding: 0.2em 0.5em
-  background: var(--bg-accent)
-  border-radius: 3px
-
-.art-sidebar
-  position: sticky
-  top: 100px
-  
-.woodblock-frame
-  background: var(--bg-elevated)
-  border: 2px solid var(--border-strong)
-  padding: 1em
-  box-shadow: 3px 3px 0 var(--border-subtle)
-  text-align: center
-  
-.frog-illustration
-  width: 100%
-  height: auto
-  margin-bottom: 0.8em
-  display: block
-  
-.art-caption
-  color: var(--text-tertiary)
-  font-size: 0.85em
-  margin: 0
-
-// Gallery Styles
-.photo-gallery
-  display: grid
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))
-  gap: 2em
-  padding: 2em 0
-  
-.gallery-item
-  position: relative
-  overflow: hidden
-  background: var(--bg-elevated)
-  border: 2px solid var(--border-strong)
-  box-shadow: 4px 4px 0 var(--border-subtle)
-  transition: $transition-speed all
-  aspect-ratio: 4/3
-  
-.gallery-item:hover
-  transform: translate(-2px, -2px)
-  box-shadow: 6px 6px 0 var(--border-subtle)
-  
-.gallery-item img
-  width: 100%
-  height: 100%
-  object-fit: cover
-  display: block
-  transition: $transition-speed transform
-  
-.gallery-item:hover img
-  transform: scale(1.05)
-
-.gallery-empty
-  text-align: center
-  padding: 4em 2em
-  color: var(--text-tertiary)
-  font-style: italic
-
-// Skills Category Styles
-.skills-category
-  margin: 2em 0
-  padding: 1.2em
-  background: var(--bg-elevated)
-  border: 1px solid var(--border-subtle)
-  box-shadow: 2px 2px 0 var(--border-subtle)
-  
-.skills-category-title
-  display: flex
-  align-items: center
-  gap: 0.7em
-  margin: 0 0 1em
-  color: var(--accent-primary)
-  font-size: 1.1em
-  font-weight: 400
-
-@media (max-width: 768px)
-  .timeline
-    padding-left: 0
-  
-  .timeline-item
-    padding-left: 1.5em
-    
-  .timeline-marker
-    left: -6px
-  
-  .hero h1
-    font-size: 2em
-    
-  .hero-image
-    width: 200px
-    height: 267px
-  
-  .stats
-    gap: 2em
-  
-  .project-grid
-    grid-template-columns: 1fr
-    
-  .content-with-art
-    grid-template-columns: 1fr
-    
-  .art-sidebar
-    position: static
-    max-width: 300px
-    margin: 2em auto
-    
-  .title-main
-    font-size: 1.8em
-    
-  .hero-actions
-    flex-direction: column
-    align-items: stretch
-    
-  .ukiyo-button
-    width: 100%
-
-.highlight // https://github.com/richleland/pygments-css/blob/master/monokai.css <http://unlicense.org>
+.highlight
   pre
-    background: rgba(lighten($dark, 6%), 0.9)
-    color: white
-  .c
-    color: #a29f90
+    background: var(--bg-secondary)
+    color: var(--text-primary)
+    
+  .c, .cm, .cp, .c1, .cs
+    color: var(--text-tertiary)
   .err
-    color: #960050
-    background-color: #1e0010
-  .k
-    color: #66d9ef
-  .l
-    color: #ae81ff
+    color: #E53935
+  .k, .kc, .kd, .kp, .kr, .kt
+    color: #7C4DFF
+  .l, .m, .mf, .mh, .mi, .mo, .il
+    color: #FF9100
   .n
-    color: #f8f8f2
-  .o
-    color: #f92672
+    color: var(--text-primary)
+  .o, .ow
+    color: #E91E63
   .p
-    color: #f8f8f2
-  .cm, .cp, .c1, .cs
-    color: #75715e
+    color: var(--text-primary)
+  .s, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .sr, .s1, .ss
+    color: #8BC34A
+  .na
+    color: #00BCD4
+  .nb, .nc, .nd, .ne, .nf, .nx
+    color: #2196F3
+  .no, .ni, .nl, .nn, .py
+    color: var(--text-primary)
+  .nt
+    color: #E91E63
+  .nv, .bp, .vc, .vg, .vi
+    color: var(--text-secondary)
   .ge
     font-style: italic
   .gs
     font-weight: bold
-  .kc, .kd
-    color: #66d9ef
-  .kn
-    color: #f92672
-  .kp, .kr, .kt
-    color: #66d9ef
-  .ld
-    color: #e6db74
-  .m
-    color: #ae81ff
-  .s
-    color: #e6db74
-  .na
-    color: #a6e22e
-  .nb
-    color: #f8f8f2
-  .nc
-    color: #a6e22e
-  .no
-    color: #66d9ef
-  .nd
-    color: #a6e22e
-  .ni
-    color: #f8f8f2
-  .ne, .nf
-    color: #a6e22e
-  .nl, .nn
-    color: #f8f8f2
-  .nx
-    color: #a6e22e
-  .py
-    color: #f8f8f2
-  .nt
-    color: #f92672
-  .nv
-    color: #f8f8f2
-  .ow
-    color: #f92672
-  .w
-    color: #f8f8f2
-  .mf, .mh, .mi, .mo
-    color: #ae81ff
-  .sb, .sc, .sd, .s2
-    color: #e6db74
-  .se
-    color: #ae81ff
-  .sh, .si, .sx, .sr, .s1, .ss
-    color: #e6db74
-  .bp, .vc, .vg, .vi
-    color: #f8f8f2
-  .il
-    color: #ae81ff
   .gu
-    color: #75715e
+    color: var(--text-tertiary)
   .gd
-    color: #f92672
+    color: #E53935
   .gi
-    color: #a6e22e
+    color: #4CAF50
+
+// ===========================================
+// RESPONSIVE ADJUSTMENTS
+// ===========================================
+
+@media (max-width: 768px)
+  .ukiyo-hero
+    padding: $space-lg 0 $space-xl
+    
+  .hero-actions
+    flex-direction: column
+    align-items: stretch
+    padding: 0 $space-lg
+    
+  .ukiyo-button
+    width: 100%
+    
+  .project-grid
+    grid-template-columns: 1fr
+    
+  .timeline-item
+    padding-left: $space-lg
+    
+  .timeline-marker
+    width: 10px
+    height: 10px
+    
+  .passion-block
+    padding: $space-md
+    
+  .skills-category
+    padding: $space-md
+
+@media (max-width: 480px)
+  .title-main
+    font-size: 1.5rem
+    
+  .project-card
+    padding: $space-md
+    
+  .photo-gallery
+    grid-template-columns: 1fr
+
+// ===========================================
+// UTILITY CLASSES
+// ===========================================
+
+.text-center
+  text-align: center
+
+.text-muted
+  color: var(--text-tertiary)
+
+.mt-0
+  margin-top: 0
+
+.mb-0
+  margin-bottom: 0
+
+.mt-lg
+  margin-top: $space-lg
+
+.mb-lg
+  margin-bottom: $space-lg
+
+.mt-xl
+  margin-top: $space-xl
+
+.mb-xl
+  margin-bottom: $space-xl
+
+// ===========================================
+// BLOG POST PREVIEWS
+// ===========================================
+
+.post-preview
+  margin-bottom: $space-xl
+  padding-bottom: $space-xl
+  border-bottom: 1px solid var(--border-subtle)
+  
+  &:last-child
+    border-bottom: none
+    
+  header
+    margin-bottom: $space-md
+    
+    h1
+      font-size: 1.5rem
+      margin-bottom: $space-xs
+      
+      a
+        color: var(--text-primary)
+        
+        &:hover
+          color: var(--accent-primary)
+    
+    time
+      font-size: 0.875rem
+      color: var(--text-tertiary)
+
+// ===========================================
+// PAGINATION
+// ===========================================
+
+.pagination
+  display: flex
+  justify-content: space-between
+  align-items: center
+  gap: $space-md
+  margin-top: $space-2xl
+  padding-top: $space-xl
+  border-top: 1px solid var(--border-subtle)
+  
+.pagination-info
+  font-size: 0.875rem
+  color: var(--text-tertiary)
+
+// ===========================================
+// ARCHIVE LIST
+// ===========================================
+
+.archive-list
+  h2
+    margin-bottom: $space-lg
+    
+  ul
+    list-style: none
+    padding: 0
+    
+  li
+    display: flex
+    align-items: baseline
+    gap: $space-md
+    padding: $space-sm 0
+    border-bottom: 1px solid var(--border-light)
+    
+    &:last-child
+      border-bottom: none
+      
+  time
+    flex-shrink: 0
+    font-size: 0.875rem
+    color: var(--text-tertiary)
+    font-variant-numeric: tabular-nums
+    
+  a
+    font-weight: 500

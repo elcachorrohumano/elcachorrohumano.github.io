@@ -331,8 +331,8 @@
 .ukiyo-hero
   text-align: center
   padding: $space-2xl 0 $space-3xl
-  background: var(--bg-elevated)
-  border-bottom: 1px solid var(--border-subtle)
+  background: linear-gradient(135deg, rgba(61, 107, 74, 0.15) 0%, rgba(181, 155, 90, 0.1) 50%, rgba(184, 93, 61, 0.1) 100%), var(--bg-elevated)
+  border-bottom: 2px solid var(--border-subtle)
   margin-bottom: $space-xl
   position: relative
   overflow: hidden
@@ -349,19 +349,24 @@
   background-size: 600px auto
   background-position: center
   background-repeat: repeat
-  opacity: 0.06
+  opacity: 0.08
   pointer-events: none
+  z-index: 0
 
-// Hero gradient overlay
+// Hero gradient overlay + gradient border
 .ukiyo-hero::after
   content: ''
   position: absolute
   top: 0
   left: 0
   right: 0
-  bottom: 0
-  background: radial-gradient(ellipse at center top, transparent 0%, var(--bg-elevated) 70%)
+  bottom: -2px
+  background: radial-gradient(ellipse at center top, rgba(61, 107, 74, 0.2) 0%, transparent 70%), linear-gradient(to top, transparent calc(100% - 2px), linear-gradient(90deg, var(--accent-moss), var(--accent-gold), var(--accent-vermillion)) calc(100% - 2px))
+  background-size: 100% 100%, 100% 2px
+  background-position: 0 0, 0 100%
+  background-repeat: no-repeat
   pointer-events: none
+  z-index: 0
 
 // ===========================================
 // HERO PROFILE PHOTO
@@ -459,13 +464,13 @@
     max-width: 350px
     height: auto
     border-radius: 8px
-    box-shadow: var(--shadow-md)
-    border: 2px solid var(--border-subtle)
+    box-shadow: var(--shadow-md), 0 0 0 3px rgba(181, 155, 90, 0.3)
+    border: 2px solid var(--accent-gold)
     transition: transform $transition-fast, box-shadow $transition-fast
     
     &:hover
       transform: scale(1.02)
-      box-shadow: var(--shadow-lg)
+      box-shadow: var(--shadow-lg), 0 0 0 4px rgba(181, 155, 90, 0.4)
 
 @media (max-width: 768px)
   .about-photo
@@ -478,8 +483,21 @@
   text-align: center
   margin-bottom: $space-2xl
   padding-bottom: $space-lg
-  border-bottom: 1px solid var(--border-subtle)
+  border-bottom: 2px solid var(--border-subtle)
+  background: linear-gradient(to bottom, transparent, rgba(61, 107, 74, 0.05), transparent)
   position: relative
+  padding: $space-lg $space-xl $space-xl
+  
+  // Gradient border effect
+  &::before
+    content: ''
+    position: absolute
+    bottom: -2px
+    left: 0
+    right: 0
+    height: 2px
+    background: linear-gradient(90deg, var(--accent-moss), var(--accent-gold), var(--accent-vermillion), var(--accent-moss))
+    opacity: 0.8
 
 // Decorative wave under section header
 .section-header::after
@@ -490,22 +508,29 @@
   transform: translateX(-50%)
   background: var(--bg-paper)
   padding: 0 $space-lg
-  color: var(--accent-primary)
+  color: var(--accent-gold)
   font-size: 0.875rem
   letter-spacing: -0.2em
-  opacity: 0.4
+  opacity: 0.6
 
 .section-title-jp
   font-family: $display-font
   font-size: 0.9375rem
-  color: var(--accent-secondary)
+  color: var(--accent-vermillion)
   margin: 0 0 $space-sm
   letter-spacing: 0.2em
   font-weight: 400
+  background: linear-gradient(135deg, var(--accent-vermillion), var(--accent-gold))
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  background-clip: text
 
 .section-title-en
   font-size: clamp(1.5rem, 4vw, 2rem)
-  color: var(--accent-primary)
+  background: linear-gradient(135deg, var(--accent-indigo), var(--accent-moss))
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  background-clip: text
   margin: 0
   font-weight: 600
 
@@ -531,10 +556,15 @@
 .passions-intro
   font-size: 1rem
   margin-bottom: $space-lg
-  color: var(--text-secondary)
+  color: var(--accent-indigo)
   font-style: italic
   text-align: center
   padding: $space-md 0
+  font-weight: 500
+  background: linear-gradient(135deg, rgba(61, 107, 74, 0.08), transparent)
+  padding: $space-md $space-lg
+  border-radius: 6px
+  border-left: 3px solid var(--accent-gold)
 
 // ===========================================
 // PASSION BLOCKS
@@ -544,16 +574,61 @@
   margin: $space-xl 0
   padding: $space-xl $space-xl $space-xl $space-2xl
   background: var(--bg-elevated)
-  border-left: 3px solid var(--accent-tertiary)
+  border-left: 4px solid var(--accent-tertiary)
   border-radius: 0 6px 6px 0
   box-shadow: var(--shadow-sm)
-  transition: transform $transition-fast, box-shadow $transition-fast, border-color $transition-fast
+  transition: transform $transition-fast, box-shadow $transition-fast, border-color $transition-fast, background $transition-fast
   position: relative
   
   &:hover
     transform: translateX(6px)
     box-shadow: var(--shadow-md)
     border-color: var(--accent-primary)
+
+// Data Science - Green tint
+.passion-block:nth-of-type(1)
+  background: linear-gradient(to right, rgba(61, 107, 74, 0.12), var(--bg-elevated))
+  border-left-color: #3D6B4A
+  
+  &:hover
+    background: linear-gradient(to right, rgba(61, 107, 74, 0.18), var(--bg-elevated))
+    border-left-color: #2F5240
+
+// Music - Gold tint
+.passion-block:nth-of-type(2)
+  background: linear-gradient(to right, rgba(181, 155, 90, 0.12), var(--bg-elevated))
+  border-left-color: #B59855
+  
+  &:hover
+    background: linear-gradient(to right, rgba(181, 155, 90, 0.18), var(--bg-elevated))
+    border-left-color: #9A8250
+
+// Sea - Deep green tint (with image)
+.passion-block.with-image
+  background: linear-gradient(to right, rgba(47, 82, 64, 0.12), var(--bg-elevated))
+  border-left-color: #2F5240
+  
+  &:hover
+    background: linear-gradient(to right, rgba(47, 82, 64, 0.18), var(--bg-elevated))
+    border-left-color: #1A3020
+
+// Chess - Neutral with subtle pattern
+.passion-block:nth-of-type(4)
+  background: linear-gradient(to right, rgba(22, 29, 20, 0.08), var(--bg-elevated))
+  border-left-color: #526850
+  
+  &:hover
+    background: linear-gradient(to right, rgba(22, 29, 20, 0.12), var(--bg-elevated))
+    border-left-color: #3D6B4A
+
+// Volleyball - Vermillion tint
+.passion-block:nth-of-type(5)
+  background: linear-gradient(to right, rgba(184, 93, 61, 0.12), var(--bg-elevated))
+  border-left-color: #B85D3D
+  
+  &:hover
+    background: linear-gradient(to right, rgba(184, 93, 61, 0.18), var(--bg-elevated))
+    border-left-color: #9A4E33
 
 // Passion block with image (e.g., diving photo)
 .passion-block.with-image
@@ -632,34 +707,37 @@
   gap: $space-xl
 
 .project-card
-  background: var(--bg-elevated)
+  background: linear-gradient(135deg, rgba(61, 107, 74, 0.08), var(--bg-elevated))
   padding: $space-xl
   border-radius: 6px
-  border: 1px solid var(--border-subtle)
+  border: 2px solid var(--border-subtle)
+  border-top: 3px solid var(--accent-moss)
   box-shadow: var(--shadow-sm)
   transition: all $transition-fast
   position: relative
   
-  // Corner accent
+  // Corner accent with gradient
   &::before
     content: ''
     position: absolute
     top: 0
     right: 0
-    width: 40px
-    height: 40px
-    background: linear-gradient(135deg, transparent 50%, var(--accent-primary) 50%)
-    opacity: 0.1
+    width: 50px
+    height: 50px
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-vermillion))
+    opacity: 0.3
     border-radius: 0 6px 0 0
     transition: opacity $transition-fast
   
   &:hover
-    border-color: var(--accent-primary)
-    box-shadow: var(--shadow-lg)
+    border-color: var(--accent-gold)
+    border-top-color: var(--accent-vermillion)
+    box-shadow: var(--shadow-lg), 0 0 20px rgba(181, 155, 90, 0.2)
     transform: translateY(-6px)
+    background: linear-gradient(135deg, rgba(61, 107, 74, 0.15), var(--bg-elevated))
     
     &::before
-      opacity: 0.2
+      opacity: 0.5
 
 @media (prefers-reduced-motion: reduce)
   .project-card:hover
@@ -697,18 +775,20 @@
   margin: $space-lg 0
 
 .tech-tag
-  background: var(--bg-accent)
+  background: linear-gradient(135deg, rgba(61, 107, 74, 0.1), var(--bg-accent))
   color: var(--accent-tertiary)
   padding: $space-xs $space-sm
   font-size: 0.75rem
   font-weight: 500
   border-radius: 3px
-  border: 1px solid var(--border-light)
+  border: 1px solid var(--accent-moss)
   transition: all $transition-fast
   
   &:hover
-    border-color: var(--accent-tertiary)
-    background: var(--bg-elevated)
+    border-color: var(--accent-gold)
+    background: linear-gradient(135deg, rgba(181, 155, 90, 0.15), var(--bg-elevated))
+    transform: translateY(-2px)
+    box-shadow: var(--shadow-xs)
 
 .project-link
   display: inline-flex
@@ -814,27 +894,35 @@
   gap: $space-sm
 
 .skill-tag
-  background: var(--bg-accent)
+  background: linear-gradient(135deg, rgba(61, 107, 74, 0.1), var(--bg-accent))
   color: var(--accent-tertiary)
   padding: $space-xs $space-md
   font-size: 0.8125rem
   font-weight: 500
   border-radius: 3px
-  border: 1px solid var(--border-light)
+  border: 1px solid var(--accent-moss)
   transition: all $transition-fast
   
   &:hover
-    border-color: var(--accent-tertiary)
-    background: var(--bg-elevated)
+    border-color: var(--accent-gold)
+    background: linear-gradient(135deg, rgba(181, 155, 90, 0.15), var(--bg-elevated))
     transform: translateY(-2px)
+    box-shadow: var(--shadow-xs)
 
 .skills-category
   margin: $space-lg 0
   padding: $space-xl
-  background: var(--bg-elevated)
+  background: linear-gradient(135deg, rgba(61, 107, 74, 0.08), var(--bg-elevated))
   border-radius: 6px
-  border: 1px solid var(--border-subtle)
+  border: 2px solid var(--border-subtle)
+  border-left: 4px solid var(--accent-moss)
   box-shadow: var(--shadow-xs)
+  transition: all $transition-fast
+  
+  &:hover
+    border-left-color: var(--accent-gold)
+    box-shadow: var(--shadow-sm)
+    background: linear-gradient(135deg, rgba(61, 107, 74, 0.12), var(--bg-elevated))
 
 .skills-category-title
   display: flex
@@ -872,18 +960,26 @@
   overflow: hidden
   background: var(--bg-elevated)
   border-radius: 4px
-  border: 1px solid var(--border-subtle)
+  border: 2px solid var(--border-subtle)
   box-shadow: var(--shadow-sm)
   aspect-ratio: 1 / 1
   cursor: pointer
   transition: all $transition-fast
+  
+  // Colored border rotation based on position
+  &:nth-child(3n+1)
+    border-color: rgba(61, 107, 74, 0.4)
+  &:nth-child(3n+2)
+    border-color: rgba(181, 155, 90, 0.4)
+  &:nth-child(3n+3)
+    border-color: rgba(184, 93, 61, 0.4)
   
   // Frame effect
   &::before
     content: ''
     position: absolute
     inset: 4px
-    border: 1px solid rgba(255,255,255,0.3)
+    border: 2px solid rgba(255,255,255,0.5)
     border-radius: 2px
     z-index: 2
     pointer-events: none
@@ -891,9 +987,20 @@
     transition: opacity $transition-fast
   
   &:hover
-    box-shadow: var(--shadow-lg)
+    box-shadow: var(--shadow-lg), 0 0 25px rgba(61, 107, 74, 0.3)
     transform: scale(1.02)
     z-index: 10
+    border-width: 3px
+    
+    &:nth-child(3n+1)
+      border-color: var(--accent-moss)
+      box-shadow: var(--shadow-lg), 0 0 25px rgba(61, 107, 74, 0.4)
+    &:nth-child(3n+2)
+      border-color: var(--accent-gold)
+      box-shadow: var(--shadow-lg), 0 0 25px rgba(181, 155, 90, 0.4)
+    &:nth-child(3n+3)
+      border-color: var(--accent-vermillion)
+      box-shadow: var(--shadow-lg), 0 0 25px rgba(184, 93, 61, 0.4)
     
     &::before
       opacity: 1

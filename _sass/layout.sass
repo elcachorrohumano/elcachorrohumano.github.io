@@ -18,18 +18,30 @@ body > header
   align-items: center
   justify-content: space-between
   padding: $space-md $space-xl
-  background: var(--bg-overlay)
+  background: linear-gradient(135deg, rgba(61, 107, 74, 0.1), var(--bg-overlay))
   backdrop-filter: blur(16px) saturate(1.2)
   -webkit-backdrop-filter: blur(16px) saturate(1.2)
-  border-bottom: 1px solid var(--border-subtle)
+  border-bottom: 2px solid var(--border-subtle)
   position: sticky
   top: 0
   z-index: 100
   transition: background-color $transition-speed, border-color $transition-speed, box-shadow $transition-speed
   
+  // Gradient border effect
+  &::before
+    content: ''
+    position: absolute
+    bottom: -2px
+    left: 0
+    right: 0
+    height: 2px
+    background: linear-gradient(90deg, var(--accent-moss), var(--accent-gold), var(--accent-vermillion))
+    opacity: 0.8
+  
   // Subtle shadow when scrolled
   &.scrolled
     box-shadow: var(--shadow-sm)
+    background: linear-gradient(135deg, rgba(61, 107, 74, 0.15), var(--bg-overlay))
 
 body > header .title
   font-family: $heading-font
@@ -68,24 +80,26 @@ nav a
     bottom: -2px
     left: 0
     right: 0
-    height: 2px
-    background: var(--accent-primary)
+    height: 3px
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-vermillion))
     transform: scaleX(0)
     transform-origin: center
     transition: transform $transition-fast
+    border-radius: 2px
   
   &:hover
-    color: var(--accent-primary)
+    color: var(--accent-indigo)
     
     &::after
       transform: scaleX(1)
   
   &.selected
-    color: var(--accent-primary)
+    color: var(--accent-indigo)
     font-weight: 600
     
     &::after
       transform: scaleX(1)
+      background: linear-gradient(90deg, var(--accent-moss), var(--accent-gold))
 
 // ===========================================
 // THEME TOGGLE BUTTON
@@ -229,24 +243,24 @@ article:not(:last-of-type)
 // ===========================================
 
 body > footer
-  background: var(--bg-secondary)
-  border-top: 1px solid var(--border-subtle)
+  background: linear-gradient(135deg, rgba(61, 107, 74, 0.12), var(--bg-secondary), rgba(181, 155, 90, 0.08))
+  border-top: 2px solid var(--border-subtle)
   padding: $space-2xl $space-xl
   margin-top: auto
   text-align: center
   transition: background-color $transition-speed, border-color $transition-speed
   position: relative
   
-  // Wave pattern top border
+  // Gradient border effect
   &::before
     content: ''
     position: absolute
-    top: 0
+    top: -2px
     left: 0
     right: 0
-    height: 3px
-    background: linear-gradient(90deg, var(--accent-tertiary) 0%, var(--accent-primary) 50%, var(--accent-secondary) 100%)
-    opacity: 0.6
+    height: 4px
+    background: linear-gradient(90deg, var(--accent-moss) 0%, var(--accent-gold) 33%, var(--accent-vermillion) 66%, var(--accent-moss) 100%)
+    opacity: 0.8
 
 .footer-tagline
   font-size: 1rem
@@ -275,18 +289,20 @@ body > footer nav a
   height: 44px
   color: var(--text-secondary)
   border-radius: 6px
-  border: 1px solid var(--border-light)
+  border: 2px solid var(--border-light)
   transition: all $transition-fast
   background: var(--bg-elevated)
+  position: relative
   
   &::after
     display: none
   
   &:hover
-    color: var(--accent-primary)
-    border-color: var(--accent-primary)
+    color: var(--accent-indigo)
+    border-color: var(--accent-gold)
+    background: linear-gradient(135deg, rgba(181, 155, 90, 0.15), var(--bg-elevated))
     transform: translateY(-3px)
-    box-shadow: var(--shadow-sm)
+    box-shadow: var(--shadow-sm), 0 0 15px rgba(181, 155, 90, 0.3)
 
 // ===========================================
 // ICONS

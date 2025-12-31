@@ -10,7 +10,7 @@ title: ""
   </h1>
   
   <p class="hero-subtitle">データサイエンティスト · 音楽愛好家 · 海の探検家</p>
-  <p class="hero-subtitle-en">Data Scientist · Music Enthusiast · Sea Explorer</p>
+  <p class="hero-subtitle-en">Data Scientist</p>
   
   <div class="hero-actions">
     <a href="/portfolio/" class="ukiyo-button primary">作品集<span class="button-en">Portfolio</span></a>

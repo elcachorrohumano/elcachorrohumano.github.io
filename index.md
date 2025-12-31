@@ -4,6 +4,10 @@ title: ""
 ---
 
 <div class="ukiyo-hero">
+  <div class="hero-photo">
+    <img src="/files_and_phhotos/esteban_main.jpeg" alt="Jorge Esteban Ramírez Sashida" class="profile-photo">
+  </div>
+  
   <h1 class="hero-title">
     <span class="title-japanese">ホルヘ・エステバン</span>
     <span class="title-main">Jorge Esteban Ramírez Sashida</span>
@@ -35,12 +39,17 @@ title: ""
     <p>Music is my passion, both listening and playing. I've played the piano since I was 4 years old, and over the years I've learned guitar, keyboard, drums, bass guitar, and ukulele. My favorite genres are jazz and rock. One of my big dreams is to use my knowledge in data science to have an impact on the music industry—perhaps by creating better recommendation algorithms or finding ways to generate more revenue for artists.</p>
   </div>
 
-  <div class="passion-block reveal">
-    <h3 class="passion-title">
-      <span class="jp-accent">海</span>
-      <span>The Sea</span>
-    </h3>
-    <p>Ever since I can remember, I've spent most of my holidays near the sea. I'm passionate about freediving and I'm also a certified scuba diver. I believe I have a special connection with the sea and the animals that live in it. One of my favorite animals is the hawksbill turtle, and I've been fortunate to have many encounters with them while diving.</p>
+  <div class="passion-block with-image reveal">
+    <div class="passion-content">
+      <h3 class="passion-title">
+        <span class="jp-accent">海</span>
+        <span>The Sea</span>
+      </h3>
+      <p>Ever since I can remember, I've spent most of my holidays near the sea. I'm passionate about freediving and I'm also a certified scuba diver. I believe I have a special connection with the sea and the animals that live in it. One of my favorite animals is the hawksbill turtle, and I've been fortunate to have many encounters with them while diving.</p>
+    </div>
+    <div class="passion-image">
+      <img src="/files_and_phhotos/esteban_dive.jpeg" alt="Esteban scuba diving" loading="lazy">
+    </div>
   </div>
 
   <div class="passion-block reveal">

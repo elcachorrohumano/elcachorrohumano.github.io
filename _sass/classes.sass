@@ -363,6 +363,35 @@
   background: radial-gradient(ellipse at center top, transparent 0%, var(--bg-elevated) 70%)
   pointer-events: none
 
+// ===========================================
+// HERO PROFILE PHOTO
+// ===========================================
+
+.hero-photo
+  position: relative
+  z-index: 1
+  margin-bottom: $space-xl
+  display: flex
+  justify-content: center
+
+.profile-photo
+  width: 180px
+  height: 180px
+  border-radius: 50%
+  object-fit: cover
+  border: 4px solid var(--bg-paper)
+  box-shadow: var(--shadow-lg), 0 0 0 1px var(--border-subtle)
+  transition: transform $transition-fast, box-shadow $transition-fast
+  
+  &:hover
+    transform: scale(1.03)
+    box-shadow: var(--shadow-lg), 0 0 0 2px var(--accent-primary)
+
+@media (max-width: 480px)
+  .profile-photo
+    width: 140px
+    height: 140px
+
 .hero-title
   margin: 0 0 $space-lg
   position: relative
@@ -492,8 +521,51 @@
     box-shadow: var(--shadow-md)
     border-color: var(--accent-primary)
 
+// Passion block with image (e.g., diving photo)
+.passion-block.with-image
+  display: grid
+  grid-template-columns: 1fr 280px
+  gap: $space-xl
+  align-items: center
+  padding: $space-xl
+  
+  &:hover
+    transform: none
+    
+    .passion-image img
+      transform: scale(1.03)
+
+.passion-content
+  // Text content in the grid
+  
+.passion-image
+  overflow: hidden
+  border-radius: 6px
+  box-shadow: var(--shadow-md)
+  
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+    border-radius: 6px
+    transition: transform $transition-slow
+    aspect-ratio: 1 / 1.2
+
+@media (max-width: 768px)
+  .passion-block.with-image
+    grid-template-columns: 1fr
+    gap: $space-lg
+    
+  .passion-image
+    order: -1
+    max-width: 300px
+    margin: 0 auto
+
 @media (prefers-reduced-motion: reduce)
   .passion-block:hover
+    transform: none
+    
+  .passion-block.with-image:hover .passion-image img
     transform: none
 
 .passion-title

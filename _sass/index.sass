@@ -1,149 +1,150 @@
-// Ukiyo-e Inspired Design System - Japanese Woodblock Aesthetic
-$font-size: calc(0.95rem + 0.15vw) !default
+// ===========================================
+// UKIYO-E INSPIRED DESIGN SYSTEM
+// Modern Japanese Woodblock Print Aesthetic
+// ===========================================
+
+// Typography - Clean Sans-Serif System
+$font-size: calc(1rem + 0.12vw) !default
 $font-weight: 400 !default
-$font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", "Hiragino Sans", sans-serif !default
-$heading-weight: 400 !default
-$line-height: 1.65 !default
+$font-family: "DM Sans", "Noto Sans JP", system-ui, -apple-system, sans-serif !default
+$heading-font: "DM Sans", "Noto Sans JP", system-ui, sans-serif !default
+$heading-weight: 600 !default
+$line-height: 1.7 !default
 
-// Smooth transitions
-$transition-speed: 0.4s
+// Animation timing
+$transition-fast: 0.2s ease
+$transition-speed: 0.35s cubic-bezier(0.4, 0, 0.2, 1)
+$transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1)
 
-// CSS Custom Properties for Ukiyo-e themes
+// Spacing scale (8px base)
+$space-xs: 0.25rem   // 4px
+$space-sm: 0.5rem    // 8px
+$space-md: 1rem      // 16px
+$space-lg: 1.5rem    // 24px
+$space-xl: 2rem      // 32px
+$space-2xl: 3rem     // 48px
+$space-3xl: 4rem     // 64px
+
+// ===========================================
+// CSS CUSTOM PROPERTIES
+// ===========================================
+
 \:root
-  // Default theme: Hokusai Wave (藍色 - Indigo Blue)
-  --bg-primary: #F5F2ED
-  --bg-secondary: #EBE6DF
-  --bg-elevated: #FFFDFB
-  --bg-accent: #E8E3D8
-  --text-primary: #2C2420
-  --text-secondary: #4A433D
-  --text-tertiary: #7A736D
-  --accent-primary: #1E3A5F
-  --accent-secondary: #B8503D
-  --accent-tertiary: #3B5F4F
-  --accent-gold: #B8956A
-  --border-subtle: rgba(44, 36, 32, 0.1)
-  --border-strong: rgba(44, 36, 32, 0.2)
-  --shadow-sm: rgba(44, 36, 32, 0.08)
-  --shadow-md: rgba(44, 36, 32, 0.12)
+  // Default theme: Sumi (墨 - Ink)
+  --bg-primary: #F7F5F0
+  --bg-secondary: #EFEBE3
+  --bg-elevated: #FDFCFA
+  --bg-accent: #E8E4D9
+  --text-primary: #1A1815
+  --text-secondary: #3D3833
+  --text-tertiary: #6B6560
+  --text-muted: #9A958E
+  --accent-primary: #2B4A5E
+  --accent-secondary: #C45B3E
+  --accent-tertiary: #3D6B58
+  --accent-gold: #B89B5A
+  --border-light: rgba(26, 24, 21, 0.08)
+  --border-subtle: rgba(26, 24, 21, 0.12)
+  --border-strong: rgba(26, 24, 21, 0.2)
+  --shadow-xs: 0 1px 2px rgba(26, 24, 21, 0.05)
+  --shadow-sm: 0 2px 8px rgba(26, 24, 21, 0.08)
+  --shadow-md: 0 4px 16px rgba(26, 24, 21, 0.1)
+  --shadow-lg: 0 8px 32px rgba(26, 24, 21, 0.12)
+  --focus-ring: 0 0 0 3px rgba(43, 74, 94, 0.25)
+  --gradient-primary: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-tertiary) 100%)
+  --gradient-warm: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-gold) 100%)
 
-// Theme: Hokusai Wave (藍色 - Deep Indigo)
-[data-theme="hokusai"]
-  --bg-primary: #F5F2ED
-  --bg-secondary: #EBE6DF
-  --bg-elevated: #FFFDFB
-  --bg-accent: #E8E3D8
-  --text-primary: #2C2420
-  --text-secondary: #4A433D
-  --text-tertiary: #7A736D
-  --accent-primary: #1E3A5F
-  --accent-secondary: #B8503D
-  --accent-tertiary: #3B5F4F
-  --accent-gold: #B8956A
-  --border-subtle: rgba(44, 36, 32, 0.1)
-  --border-strong: rgba(44, 36, 32, 0.2)
-  --shadow-sm: rgba(44, 36, 32, 0.08)
-  --shadow-md: rgba(44, 36, 32, 0.12)
+// Theme: Wave (波 - Hokusai Blue)
+[data-theme="wave"]
+  --bg-primary: #F5F7FA
+  --bg-secondary: #E8ECF2
+  --bg-elevated: #FAFBFD
+  --bg-accent: #DCE2EB
+  --text-primary: #141E2A
+  --text-secondary: #2E3D4F
+  --text-tertiary: #576778
+  --text-muted: #8895A5
+  --accent-primary: #1E4B6E
+  --accent-secondary: #D4623A
+  --accent-tertiary: #2B5D4E
+  --accent-gold: #C4A155
+  --border-light: rgba(20, 30, 42, 0.06)
+  --border-subtle: rgba(20, 30, 42, 0.1)
+  --border-strong: rgba(20, 30, 42, 0.18)
 
-// Theme: Crimson Sunset (紅葉 - Autumn Maple)
-[data-theme="crimson"]
-  --bg-primary: #FAF6F0
-  --bg-secondary: #F3EDE3
-  --bg-elevated: #FFFDFB
-  --bg-accent: #EBE4D5
-  --text-primary: #2A1810
-  --text-secondary: #533F30
-  --text-tertiary: #7D6A58
-  --accent-primary: #A8342A
-  --accent-secondary: #D97C3C
-  --accent-tertiary: #5A7765
-  --accent-gold: #C5A572
-  --border-subtle: rgba(42, 24, 16, 0.15)
-  --border-strong: rgba(42, 24, 16, 0.3)
-  --shadow-sm: rgba(42, 24, 16, 0.1)
-  --shadow-md: rgba(42, 24, 16, 0.15)
-
-// Theme: Forest Temple (森の寺 - Moss & Cedar)
-[data-theme="forest"]
-  --bg-primary: #F7F5F1
-  --bg-secondary: #EBE8DF
-  --bg-elevated: #FCFAF7
-  --bg-accent: #E3DFD2
-  --text-primary: #1A1F18
-  --text-secondary: #3A4738
-  --text-tertiary: #6A7368
-  --accent-primary: #2E4F3D
-  --accent-secondary: #9B5635
-  --accent-tertiary: #4A6B5E
-  --accent-gold: #B59863
-  --border-subtle: rgba(26, 31, 24, 0.15)
-  --border-strong: rgba(26, 31, 24, 0.3)
-  --shadow-sm: rgba(26, 31, 24, 0.1)
-  --shadow-md: rgba(26, 31, 24, 0.15)
-
-// Theme: Cherry Blossom (桜 - Sakura)
+// Theme: Sakura (桜 - Cherry Blossom)
 [data-theme="sakura"]
-  --bg-primary: #FCF9F6
-  --bg-secondary: #F7F1EB
-  --bg-elevated: #FFFEFD
-  --bg-accent: #F0E8DE
-  --text-primary: #2D1F18
-  --text-secondary: #5A473D
-  --text-tertiary: #8A766A
-  --accent-primary: #B8405E
-  --accent-secondary: #D98A78
-  --accent-tertiary: #6A8076
-  --accent-gold: #C7A67A
-  --border-subtle: rgba(45, 31, 24, 0.15)
-  --border-strong: rgba(45, 31, 24, 0.3)
-  --shadow-sm: rgba(45, 31, 24, 0.1)
-  --shadow-md: rgba(45, 31, 24, 0.15)
+  --bg-primary: #FBF8F6
+  --bg-secondary: #F5EFEB
+  --bg-elevated: #FDFCFB
+  --bg-accent: #EDE5DE
+  --text-primary: #241D19
+  --text-secondary: #4A3F36
+  --text-tertiary: #7A6D62
+  --text-muted: #A89D92
+  --accent-primary: #9E4B5C
+  --accent-secondary: #D67D6A
+  --accent-tertiary: #5B7D6D
+  --accent-gold: #C9A86A
+  --border-light: rgba(36, 29, 25, 0.06)
+  --border-subtle: rgba(36, 29, 25, 0.1)
+  --border-strong: rgba(36, 29, 25, 0.18)
 
-// SASS fallback variables (for use in Sass functions/operations)
-// Default theme values as Sass variables
-$dark-fallback: #F9F7F3
-$light-fallback: #1F1810
-$bg-secondary-fallback: #F0EBE1
-$bg-elevated-fallback: #FDFCF9
-$bg-accent-fallback: #E8E3D5
-$text-primary-fallback: #1F1810
-$text-secondary-fallback: #4A3F2F
-$text-tertiary-fallback: #7A6E5B
-$accent-primary-fallback: #1E3A5F
-$accent-secondary-fallback: #C8503D
-$accent-tertiary-fallback: #2B5F4F
-$accent-gold-fallback: #B8956A
-$border-subtle-fallback: rgba(31, 24, 16, 0.15)
-$border-strong-fallback: rgba(31, 24, 16, 0.3)
-$shadow-sm-fallback: rgba(31, 24, 16, 0.1)
-$shadow-md-fallback: rgba(31, 24, 16, 0.15)
+// Theme: Forest (森 - Moss Green)
+[data-theme="forest"]
+  --bg-primary: #F5F7F4
+  --bg-secondary: #E9EDE6
+  --bg-elevated: #FAFBF9
+  --bg-accent: #DCE3D7
+  --text-primary: #161D14
+  --text-secondary: #323D2E
+  --text-tertiary: #5A6855
+  --text-muted: #8A9583
+  --accent-primary: #2F5240
+  --accent-secondary: #B85D3D
+  --accent-tertiary: #4A7560
+  --accent-gold: #B59855
+  --border-light: rgba(22, 29, 20, 0.06)
+  --border-subtle: rgba(22, 29, 20, 0.1)
+  --border-strong: rgba(22, 29, 20, 0.18)
 
-// Main variables - use CSS custom properties where possible, fallback for Sass operations
-$dark: $dark-fallback
-$light: $light-fallback
-$bg-secondary: $bg-secondary-fallback
-$bg-elevated: $bg-elevated-fallback
-$bg-accent: $bg-accent-fallback
-$text-primary: $text-primary-fallback
-$text-secondary: $text-secondary-fallback
-$text-tertiary: $text-tertiary-fallback
-$accent-primary: $accent-primary-fallback
-$accent-secondary: $accent-secondary-fallback
-$accent-tertiary: $accent-tertiary-fallback
-$accent-gold: $accent-gold-fallback
-$border-subtle: $border-subtle-fallback
-$border-strong: $border-strong-fallback
-$shadow-sm: $shadow-sm-fallback
-$shadow-md: $shadow-md-fallback
+// Theme: Night (夜 - Dark Mode)
+[data-theme="night"]
+  --bg-primary: #141210
+  --bg-secondary: #1E1B18
+  --bg-elevated: #252220
+  --bg-accent: #2C2825
+  --text-primary: #F2EFE9
+  --text-secondary: #CCC7BE
+  --text-tertiary: #9A958C
+  --text-muted: #6B6660
+  --accent-primary: #6B9DB8
+  --accent-secondary: #E88B6A
+  --accent-tertiary: #6BAA8A
+  --accent-gold: #D4B86A
+  --border-light: rgba(242, 239, 233, 0.05)
+  --border-subtle: rgba(242, 239, 233, 0.1)
+  --border-strong: rgba(242, 239, 233, 0.18)
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3)
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4)
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5)
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6)
+  --focus-ring: 0 0 0 3px rgba(107, 157, 184, 0.35)
+
+// ===========================================
+// SASS FALLBACK VARIABLES
+// ===========================================
+$dark: #F7F5F0
+$light: #1A1815
+$accent-primary: #2B4A5E
+$accent-secondary: #C45B3E
+$accent-tertiary: #3D6B58
+$accent-gold: #B89B5A
+$border-subtle: rgba(26, 24, 21, 0.12)
+$shadow-sm: rgba(26, 24, 21, 0.08)
 
 // Compatibility aliases
 $link-color: $accent-primary
-$dark-charcoal: $bg-secondary
-$coral: $accent-secondary
-$teal: $accent-tertiary
-$purple: $accent-gold
-$light-text: $text-primary
-$mid-gray: $text-tertiary
 
-@function reduce ($percent)
-  @return $border-subtle
+@function reduce($percent)
+  @return var(--border-subtle)

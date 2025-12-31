@@ -5,18 +5,16 @@ title: "Blog"
 
 <div class="ukiyo-section">
   <div class="section-header">
-    <h2 class="section-title-jp">文章</h2>
+    <p class="section-title-jp">文章</p>
     <h2 class="section-title-en">Blog</h2>
   </div>
   
-  <div style="margin-bottom: 3em; text-align: center; max-width: 700px; margin-left: auto; margin-right: auto;">
-    <p style="color: var(--text-secondary); font-size: 1.05em; line-height: 1.8;">
-      Welcome to my blog where I share thoughts on music, data science, diving, and life.
-      <span style="display: block; margin-top: 0.5em; font-family: 'Hiragino Mincho ProN', 'Yu Mincho', serif; color: var(--text-tertiary); font-size: 0.95em;">
-        音楽、データサイエンス、ダイビング、そして人生についての考えを共有します。
-      </span>
-    </p>
-  </div>
+  <p class="intro-text text-center" style="max-width: 700px; margin: 0 auto 2rem;">
+    Welcome to my blog where I share thoughts on music, data science, diving, and life.
+    <span style="display: block; margin-top: 0.5rem; color: var(--text-tertiary); font-size: 0.9rem;">
+      音楽、データサイエンス、ダイビング、そして人生についての考えを共有します。
+    </span>
+  </p>
 
   <div class="blog-posts">
     {% if site.show_excerpts %}

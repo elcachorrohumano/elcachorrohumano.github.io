@@ -1,151 +1,301 @@
+// ===========================================
+// PAGE LAYOUT
+// ===========================================
+
 body
   display: flex
   flex-direction: column
   min-height: 100vh
 
-article
-  flex-grow: 1
-  max-width: 900px
-  width: 100%
-  margin: 0 auto
-  padding: 2em 2em
+// ===========================================
+// HEADER / NAVIGATION
+// ===========================================
 
 body > header
   display: flex
-  flex-wrap: wrap
   align-items: center
-  justify-content: center
-  gap: 2em
-  padding: 1.5em 2em
-  background: var(--bg-elevated)
-  border-bottom: 3px solid var(--border-strong)
+  justify-content: space-between
+  padding: $space-md $space-xl
+  background: rgba(253, 252, 250, 0.92)
+  backdrop-filter: blur(12px)
+  -webkit-backdrop-filter: blur(12px)
+  border-bottom: 1px solid var(--border-subtle)
   position: sticky
   top: 0
   z-index: 100
-  box-shadow: 0 4px 12px var(--shadow-sm)
-  position: relative
-  
-body > header::before
-  content: ''
-  position: absolute
-  bottom: -3px
-  left: 0
-  right: 0
-  height: 3px
-  background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-secondary) 50%, var(--accent-tertiary) 100%)
-  opacity: 0.3
+  transition: background-color $transition-speed, border-color $transition-speed
+
+[data-theme="night"] body > header
+  background: rgba(20, 18, 16, 0.92)
 
 body > header .title
-  margin-right: auto
+  font-family: $heading-font
+  font-weight: 600
+  font-size: 1.125rem
+  color: var(--text-primary)
+  letter-spacing: -0.01em
+  transition: color $transition-fast
+  white-space: nowrap
+  
+  &:hover
+    color: var(--accent-primary)
 
-body > footer
-  display: flex
-  flex-wrap: wrap
-  align-items: center
-  justify-content: center
-  background: var(--bg-secondary)
-  border-top: 3px solid var(--border-strong)
-  padding: 3em 2em
-  margin-top: 4em
-  position: relative
-  
-body > footer::before
-  content: ''
-  position: absolute
-  top: -3px
-  left: 0
-  right: 0
-  height: 3px
-  background: linear-gradient(90deg, var(--accent-tertiary) 0%, var(--accent-primary) 50%, var(--accent-secondary) 100%)
-  opacity: 0.3
-  
-body > footer nav
-  margin: 1em 0
-  
-body > footer nav a
-  margin: 0.5em 1em
-  display: inline-flex
-  align-items: center
-  transition: $transition-speed all
-  color: var(--text-secondary)
-  
-body > footer nav a:hover
-  transform: translateY(-2px)
-  color: var(--accent-primary)
-
-article header
-  margin-bottom: 2em
-  text-align: center
-
-article header h1
-  font-size: 2.2em
-  margin: 0 0 .5em
-  color: var(--accent-primary)
+// ===========================================
+// MAIN NAVIGATION
+// ===========================================
 
 nav
   display: flex
-  gap: 1.5em
   align-items: center
-
+  gap: $space-lg
+  
 nav a
   font-weight: 500
-  transition: $transition-speed all
-  position: relative
+  font-size: 0.9375rem
   color: var(--text-secondary)
-  letter-spacing: 0.01em
+  transition: color $transition-fast
+  position: relative
+  padding: $space-xs 0
   
-nav a:hover
-  color: var(--accent-primary)
+  &::after
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    height: 2px
+    background: var(--accent-primary)
+    transform: scaleX(0)
+    transform-origin: center
+    transition: transform $transition-fast
   
-nav a.selected
-  color: var(--accent-primary)
-  font-weight: 600
+  &:hover
+    color: var(--accent-primary)
+    
+    &::after
+      transform: scaleX(1)
+  
+  &.selected
+    color: var(--accent-primary)
+    font-weight: 600
+    
+    &::after
+      transform: scaleX(1)
+
+// ===========================================
+// THEME TOGGLE BUTTON
+// ===========================================
 
 .theme-toggle
-  background: transparent
-  border: 1.5px solid var(--border-subtle)
-  border-radius: 8px
-  padding: 0.5em
-  cursor: pointer
   display: flex
   align-items: center
   justify-content: center
-  transition: $transition-speed all
-  color: var(--text-secondary)
-  margin-left: 1em
+  width: 40px
+  height: 40px
+  padding: 0
+  background: transparent
+  border: 1px solid var(--border-subtle)
+  border-radius: 8px
+  cursor: pointer
+  color: var(--text-tertiary)
+  transition: all $transition-fast
+  flex-shrink: 0
   
-.theme-toggle:hover
-  background: var(--bg-secondary)
-  border-color: var(--accent-primary)
-  color: var(--accent-primary)
-  transform: rotate(90deg)
+  &:hover
+    background: var(--bg-secondary)
+    border-color: var(--accent-primary)
+    color: var(--accent-primary)
+  
+  &:focus-visible
+    outline: none
+    box-shadow: var(--focus-ring)
 
-.theme-toggle svg
-  display: block
-  width: 20px
-  height: 20px
+  svg
+    width: 20px
+    height: 20px
+    display: block
+
+// ===========================================
+// MAIN CONTENT AREA
+// ===========================================
+
+article
+  flex: 1
+  width: 100%
+  max-width: 960px
+  margin: 0 auto
+  padding: $space-2xl $space-xl
+
+article > header
+  margin-bottom: $space-xl
+  text-align: center
+  
+  h1
+    margin-bottom: $space-sm
+    
+    a
+      color: inherit
+      
+      &:hover
+        color: var(--accent-primary)
+
+article > header time
+  font-size: 0.9375rem
+  color: var(--text-tertiary)
+
+// Article separators (for blog list)
+article:not(:last-of-type)
+  border-bottom: 1px solid var(--border-subtle)
+  padding-bottom: $space-2xl
+  margin-bottom: $space-2xl
+
+// ===========================================
+// FOOTER
+// ===========================================
+
+body > footer
+  background: var(--bg-secondary)
+  border-top: 1px solid var(--border-subtle)
+  padding: $space-2xl $space-xl
+  margin-top: auto
+  text-align: center
+  transition: background-color $transition-speed, border-color $transition-speed
+
+.footer-tagline
+  font-size: 1rem
+  color: var(--text-secondary)
+  margin-bottom: $space-lg
+  font-weight: 500
+
+.footer-copyright
+  font-size: 0.875rem
+  color: var(--text-tertiary)
+  margin-top: $space-lg
+
+// Footer social icons
+body > footer nav
+  display: flex
+  justify-content: center
+  align-items: center
+  gap: $space-md
+  flex-wrap: wrap
+  
+body > footer nav a
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 44px
+  height: 44px
+  color: var(--text-secondary)
+  border-radius: 8px
+  transition: all $transition-fast
+  
+  &::after
+    display: none
+  
+  &:hover
+    color: var(--accent-primary)
+    background: var(--bg-elevated)
+    transform: translateY(-2px)
+
+// ===========================================
+// ICONS
+// ===========================================
+
+.icon
+  width: 1.25em
+  height: 1.25em
+  fill: currentColor
+  vertical-align: middle
+  flex-shrink: 0
+
+footer .icon
+  width: 1.5em
+  height: 1.5em
+
+// ===========================================
+// RESPONSIVE DESIGN
+// ===========================================
 
 @media (max-width: 768px)
   body > header
-    padding: 1.2em 1.5em
-    gap: 1em
+    padding: $space-md $space-lg
+    flex-wrap: wrap
+    gap: $space-md
     
   body > header .title
-    margin-right: 0
-    width: 100%
-    text-align: center
-    
-  nav
-    width: 100%
-    justify-content: center
-    flex-wrap: wrap
-    gap: 1em
+    order: 1
+    flex: 1
     
   .theme-toggle
-    margin-left: 0
+    order: 2
+    
+  nav
+    order: 3
+    width: 100%
+    justify-content: center
+    gap: $space-md
+    padding-top: $space-sm
+    border-top: 1px solid var(--border-light)
+    
+  nav a
+    font-size: 0.875rem
     
   article
-    padding: 2em 1.5em
+    padding: $space-xl $space-lg
     
   body > footer
-    padding: 2em 1.5em
+    padding: $space-xl $space-lg
+
+@media (max-width: 480px)
+  body > header
+    padding: $space-md
+    
+  nav
+    gap: $space-sm
+    
+  nav a
+    font-size: 0.8125rem
+    
+  article
+    padding: $space-lg $space-md
+
+// ===========================================
+// ANIMATION UTILITIES
+// ===========================================
+
+@keyframes fadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+@keyframes slideUp
+  from
+    opacity: 0
+    transform: translateY(20px)
+  to
+    opacity: 1
+    transform: translateY(0)
+
+@keyframes slideInLeft
+  from
+    opacity: 0
+    transform: translateX(-20px)
+  to
+    opacity: 1
+    transform: translateX(0)
+
+// Apply animations to main content
+article
+  animation: fadeIn 0.4s ease-out
+
+@media (prefers-reduced-motion: reduce)
+  article
+    animation: none
+  
+  nav a::after
+    transition: none
+    
+  .theme-toggle
+    transition: none

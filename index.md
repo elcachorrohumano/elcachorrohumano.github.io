@@ -19,20 +19,26 @@ title: ""
   </div>
 </div>
 
+<div class="about-photo reveal">
+  <img src="/files_and_phhotos/esteban_main.jpeg" alt="Jorge Esteban Ramírez Sashida" loading="lazy">
+</div>
+
 <div class="section-header reveal">
   <p class="section-title-jp">自己紹介</p>
   <h2 class="section-title-en">About Me</h2>
 </div>
 
 <div class="main-content">
-  <p class="intro-text reveal">My name is Jorge Esteban Ramírez Sashida and I was born on June 27, 2002. I'm recently graduated from Data Science at Instituto Tecnológico Autónomo de México (ITAM). My favorite things in life are music, the sea, chess, sports, my family, and my pets.</p>
+  <p class="intro-text reveal">My name is Jorge Esteban Ramírez Sashida and I was born on June 27, 2002. I recently graduated with a degree in Data Science from Instituto Tecnológico Autónomo de México (ITAM). My favorite things in life are music, the sea, chess, sports, my family, and my pets.</p>
+
+  <p class="passions-intro reveal">Here you can find some of the things that I like:</p>
 
   <div class="passion-block reveal">
     <h3 class="passion-title">
       <span class="jp-accent">データサイエンス</span>
       <span>Data Science</span>
     </h3>
-    <p>I’ve started to genuinely enjoy software development projects centered on data science. Building data-driven tools, like MCP servers, ETL pipelines, and machine learning APIs, has become one of my favorite ways to bring together my interests in programming and mathematics. You can see more about my journey in my <a href="/portfolio/">portfolio</a> and <a href="/career/">career timeline</a>!</p>
+    <p>I've started to genuinely enjoy software development projects centered on data science. Building data-driven tools, like MCP servers, ETL pipelines, and machine learning APIs, has become one of my favorite ways to bring together my interests in programming and mathematics. You can see more about my journey in my <a href="/portfolio/">portfolio</a> and <a href="/career/">career timeline</a>!</p>
   </div>
 
   <div class="passion-block reveal">

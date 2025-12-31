@@ -4,10 +4,6 @@ title: ""
 ---
 
 <div class="ukiyo-hero">
-  <div class="hero-photo">
-    <img src="/files_and_phhotos/esteban_main.jpeg" alt="Jorge Esteban Ramírez Sashida" class="profile-photo">
-  </div>
-  
   <h1 class="hero-title">
     <span class="title-japanese">ホルヘ・エステバン</span>
     <span class="title-main">Jorge Esteban Ramírez Sashida</span>

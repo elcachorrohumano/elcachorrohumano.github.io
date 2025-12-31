@@ -524,8 +524,8 @@
 // Passion block with image (e.g., diving photo)
 .passion-block.with-image
   display: grid
-  grid-template-columns: 1fr 280px
-  gap: $space-xl
+  grid-template-columns: 1fr 140px
+  gap: $space-lg
   align-items: center
   padding: $space-xl
   
@@ -541,7 +541,7 @@
 .passion-image
   overflow: hidden
   border-radius: 6px
-  box-shadow: var(--shadow-md)
+  box-shadow: var(--shadow-sm)
   
   img
     width: 100%
@@ -554,11 +554,11 @@
 @media (max-width: 768px)
   .passion-block.with-image
     grid-template-columns: 1fr
-    gap: $space-lg
+    gap: $space-md
     
   .passion-image
     order: -1
-    max-width: 300px
+    max-width: 160px
     margin: 0 auto
 
 @media (prefers-reduced-motion: reduce)

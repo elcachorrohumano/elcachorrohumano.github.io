@@ -29,6 +29,14 @@ title: ""
 
   <div class="passion-block reveal">
     <h3 class="passion-title">
+      <span class="jp-accent">データサイエンス</span>
+      <span>Data Science</span>
+    </h3>
+    <p>I love studying and learning about data science and mathematics. I really enjoy programming, especially using machine learning. My work has spanned from building ETL pipelines to developing AI models for music classification and implementing minimax algorithms for game AI. Check out my <a href="/portfolio/">portfolio</a> and <a href="/career/">career timeline</a> to learn more about my journey!</p>
+  </div>
+
+  <div class="passion-block reveal">
+    <h3 class="passion-title">
       <span class="jp-accent">音楽</span>
       <span>Music</span>
     </h3>
@@ -50,9 +58,9 @@ title: ""
 
   <div class="passion-block reveal">
     <h3 class="passion-title">
-      <span class="jp-accent">データサイエンス</span>
-      <span>Data Science</span>
+      <span class="jp-accent">チェス</span>
+      <span>Chess</span>
     </h3>
-    <p>I love studying and learning about data science and mathematics. I really enjoy programming, especially using machine learning. My work has spanned from building ETL pipelines to developing AI models for music classification and implementing minimax algorithms for game AI. Check out my <a href="/portfolio/">portfolio</a> and <a href="/career/">career timeline</a> to learn more about my journey!</p>
+    <p></p>
   </div>
 </div>
